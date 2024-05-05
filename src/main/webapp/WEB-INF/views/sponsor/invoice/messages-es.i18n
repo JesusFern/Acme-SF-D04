@@ -1,0 +1,30 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+sponsor.invoice.form.title = Detalles de factura
+sponsor.invoice.list.title = Lista de facturas
+sponsor.invoice.list.button.create = Crear una factura
+sponsor.invoice.form.button.create = Crear
+sponsor.invoice.form.button.delete = Eliminar
+sponsor.invoice.form.button.update = Actualizar
+
+sponsor.invoice.form.label.code = Código:
+sponsor.invoice.form.label.registrationTime = Tiempo de registro:
+sponsor.invoice.form.label.dueDate = Fecha de vencimiento:
+sponsor.invoice.form.label.quantity = Cantidad:
+sponsor.invoice.form.label.tax = Tax:
+sponsor.invoice.form.label.link = Enlace:
+
+sponsor.invoice.list.label.code = Código
+sponsor.invoice.list.label.link = Cantidad
+
+sponsor.invoice.form.error.duplicated = El código ya esta siendo utilizado
+sponsor.invoice.form.error.too-close = La fecha de vencimiento debe ser al menos 1 mes después de la fecha de registro 
+sponsor.invoice.form.error.negative-amount = La cantidad debe ser positiva

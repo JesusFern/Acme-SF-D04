@@ -1,0 +1,140 @@
+# menu-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+﻿# master.menu #################################################################
+
+master.menu.home = Inicio
+master.menu.sign-up = Registrarse
+master.menu.sign-in = Entrar
+master.menu.sign-out = Salir
+
+# master.menu.anonymous #######################################################
+
+master.menu.anonymous = Anónimo
+master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.favourite-link-student1 = 49135542K: Fernandez Rodriguez, Jesus
+master.menu.anonymous.favourite-link-student4 = 20965165K: Gonzalez Ortiz, Miguel
+master.menu.anonymous.favourite-link-student2 = 26777686M: Periañez Franco, Luis Javier
+master.menu.anonymous.favourite-link-student3 = 53966154N: Garcia Rodriguez, Javier
+master.menu.anonymous.favourite-link-student5 = 45970335M: Palomo García, Miguel
+
+# master.menu.administrator ###################################################
+
+master.menu.administrator = Administrador
+master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.populate-initial = Poblar BD (inicial)
+master.menu.administrator.populate-sample = Poblar BD (ejemplos)
+master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.banner = Ver Banners
+
+# master.menu.provider ########################################################
+
+master.menu.provider = Proveedor
+master.menu.provider.favourite-link = Enlace favorito
+
+# master.menu.consumer ##########################################################
+
+master.menu.consumer = Consumidor
+master.menu.consumer.favourite-link = Enlace favorito
+
+
+
+
+# master.menu.claim ##########################################################
+master.menu.actions = Acciones
+master.menu.user-account.claim= Reclamaciones
+master.menu.auditor.all-code-audit= Ver todas las auditorias de código
+
+master.menu.contract = Contrato
+master.menu.any.all-contracts= Ver Contratos
+
+
+master.menu.training-module = Módulo de entrenamiento
+master.menu.any.all-training-module= Ver módulos de entrenamiento
+
+master.menu.sponsorship = Patrocinio
+master.menu.any.all-sponsorship = Ver patrocinios
+
+master.menu.project = Proyecto
+master.menu.any.all-projects = Ver proyectos
+
+
+# master.menu.user-account ####################################################
+
+master.menu.user-account = Cuenta
+master.menu.user-account.general-data = Datos generales
+master.menu.user-account.provider = Datos de proveedor
+master.menu.user-account.become-provider = Hazte proveedor
+master.menu.user-account.consumer = Datos de consumidor
+master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.auditor = Datos de auditor
+master.menu.user-account.auditor = Datos de Cliente
+master.menu.user-account.sponsor = Datos de patrocinador
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.become-client = Hazte cliente
+master.menu.user-account.become-sponsor = Hazte patrocinador
+master.menu.user-account.become-manager = Hazte director
+master.menu.user-account.become-developer = Hazte desarrollador
+master.menu.user-account.manager = Datos de director
+master.menu.user-account.developer = Datos de desarrollador
+
+
+# master.menu.manager ####################################################
+
+master.menu.manager = Director
+master.menu.manager.favourite-link = Enlace favorito
+master.menu.manager.my-projects = Ver mis proyectos	
+master.menu.manager.all-projects = Ver todos los proyectos
+master.menu.manager.my-user-stories = Ver mis historias de usuario
+master.menu.manager.my-dashboard = Ver mi panel
+
+# master.menu.sponsor ####################################################
+
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.favourite-link = Enlace favorito
+master.menu.sponsor.my-sponsorships = Ver mis patrocinios
+master.menu.sponsor.all-sponsorships = Ver todos los patrocinios
+master.menu.sponsor.my-dashboard = Ver mi panel
+
+# master.menu.developer ####################################################
+
+master.menu.developer = Desarrollador
+master.menu.developer.all-modules = Ver todos los módulos de entrenamiento
+master.menu.developer.my-modules = Ver mis módulos de entrenamiento	
+master.menu.developer.my-dashboard = Ver mi panel de desarrollador	
+
+# master.menu.auditor ####################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.favourite-link = Enlace favorito
+master.menu.auditor.my-code-audit = Ver mis auditorias de código	
+master.menu.auditor.my-dashboard= Ver mi panel de auditor
+
+
+# master.menu.client ####################################################
+
+master.menu.client = Cliente
+master.menu.client.my-contracts = Ver mis contratos
+master.menu.client.create-contracts = Crear un contrato
+master.menu.client.all-contracts = Ver todos los contratos
+master.menu.client.my-dashboard = Ver mi panel
+
+master.menu.client.my-progressLogs = Ver mis registros de proceso
+
+
+master.menu.manager.all-projects = Ver todos los proyectos
+
+
+master.menu.client.create-contracts = Crear un contrato
+
+master.menu.manager.all-projects = Ver todos los proyectos
+
+

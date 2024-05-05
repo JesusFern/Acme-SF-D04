@@ -1,0 +1,19 @@
+manager.user-story.list.title = Historias de Usuario
+manager.user-story.form.title = Historia de Usuario
+
+manager.user-story.list.label.title = Titulo
+manager.user-story.list.label.description = Descripción
+
+manager.user-story.form.label.title = Titulo
+manager.user-story.form.label.description = Descripción
+manager.user-story.form.label.acceptanceCriteria = Criterios de aceptación
+manager.user-story.form.label.estimatedCost = Coste Estimado
+manager.user-story.form.label.priority = Prioridad
+manager.user-story.form.label.link = Enlace
+
+manager.user-story.list.button.create = Crear
+manager.user-story.form.button.create = Crear
+manager.user-story.form.button.update = Actualizar
+manager.user-story.form.button.delete = Borrar
+manager.user-story.form.button.publish = Publicar
+

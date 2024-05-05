@@ -1,0 +1,11 @@
+manager.project-user-story.list.title = Historias de usuario en este proyecto
+manager.project-user-story.list.label.project = Proyecto
+manager.project-user-story.list.label.userStory = Historia de usuario
+
+manager.project-user-story.form.button.create = Añadir
+manager.project-user-story.form.title = Historia de usuario de este proyecto
+manager.project-user-story.form.label.userStory = Historia de usuario
+
+manager.project-user-story.list.button.create = Añadir una historia de usuario
+
+manager.project-user-story.form.error.existing-p-u-s = Ya existe la relación

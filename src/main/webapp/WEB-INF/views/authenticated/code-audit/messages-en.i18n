@@ -1,0 +1,23 @@
+authenticated.code-audit.list.title = Listing of code audits
+
+auditor.code-audit.list.label.code = Code
+auditor.code-audit.list.label.corrective-actions = Corrective actions
+
+authenticated.code-audit.form.title = Details of code audit
+
+auditor.code-audit.form.label.code= Code
+auditor.code-audit.form.label.execution= Time of execution
+auditor.code-audit.form.label.type= Type
+auditor.code-audit.form.label.correctiveActions= Corrective actions
+auditor.code-audit.form.label.link= Link
+
+
+auditor.code-audit.list.button.create= Create Code audit
+auditor.codeAudit.form.button.create= Create
+auditor.code-audit.form.button.delete= Delete
+auditor.code-audit.form.button.update= Update
+auditor.code-audit.form.button.publish= Publish
+
+auditor.code-audit.form.error.duplicated= Code is taken
+
+auditor.code-audit.form.error.notEnoughMark= The mark is not high enough

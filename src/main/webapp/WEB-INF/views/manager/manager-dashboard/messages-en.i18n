@@ -1,0 +1,14 @@
+manager.manager-dashboard.form.title = Manager Dashboard
+manager.dashboard.form.title.general-indicators= Dashboard
+manager.dashboard.form.label.totalNumberOfMustUserStories = Total number of user stories with priority MUST
+manager.dashboard.form.label.totalNumberOfShouldUserStories = Total number of user stories with priority SHOULD
+manager.dashboard.form.label.totalNumberOfCouldUserStories = Total number of user stories with priority COULD
+manager.dashboard.form.label.totalNumberOfWontUserStories = Total number of user stories with priority WON'T
+manager.dashboard.form.label.averageEstimatedCostUserStories = Average estimated cost of user stories
+manager.dashboard.form.label.deviationEstimatedCostUserStories = Deviation estimated cost of user stories
+manager.dashboard.form.label.minimumEstimatedCostUserStories = Minimum estimated cost of user stories
+manager.dashboard.form.label.maximumEstimatedCostUserStories = Maximum estimated cost of user stories
+manager.dashboard.form.label.averageProjectsCost = Average cost of the project
+manager.dashboard.form.label.deviationProjectsCost = Project cost deviation
+manager.dashboard.form.label.minimumProjectsCost = Minimum project cost
+manager.dashboard.form.label.label.minimumProjectsCost = Maximum project cost

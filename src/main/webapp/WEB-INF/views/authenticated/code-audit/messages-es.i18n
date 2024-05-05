@@ -1,0 +1,22 @@
+authenticated.code-audit.list.title = Listado de auditorias de código
+
+auditor.code-audit.list.label.code = Código
+auditor.code-audit.list.label.corrective-actions = Acciones correctivas
+
+authenticated.code-audit.form.title = Detalle de auditoria de código
+
+auditor.code-audit.form.label.code= Código
+auditor.code-audit.form.label.execution= Fecha de ejecución
+auditor.code-audit.form.label.type= Tipo
+auditor.code-audit.form.label.correctiveActions= Acciones correctivas
+auditor.code-audit.form.label.link= Link
+
+auditor.code-audit.list.button.create= Crear auditoria de codigo
+auditor.codeAudit.form.button.create= Crear
+auditor.code-audit.form.button.delete= Borrar
+auditor.code-audit.form.button.update= Actualizar
+auditor.code-audit.form.button.publish= Publicar
+
+auditor.code-audit.form.error.duplicated= El código ya esta siendo utilizado
+
+auditor.code-audit.form.error.notEnoughMark= La nota no es suficientemente alta

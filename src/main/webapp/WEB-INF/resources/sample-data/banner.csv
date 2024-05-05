@@ -1,0 +1,28 @@
+key,instantiation-moment,start-display-period,end-display-period,picture-link,slogan,target-web-document-link
+banner-01,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-02,2000/01/01 00:00,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-03,2000/01/01 00:01,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-04,2000/02/29 12:00,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-05,2000/07/29 23:58,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-06,2022/07/29 23:59,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-07,2013/01/01 12:30,2013/01/01 12:31,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-08,2013/01/01 12:30,2013/01/01 12:32,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-09,2013/01/01 12:30,2016/02/29 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-10,2013/01/01 12:30,2022/07/29 23:58,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-11,2013/01/01 12:30,2022/07/29 23:59,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-12,2013/01/01 12:30,2014/01/01 12:30,2014/01/08 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-13,2013/01/01 12:30,2014/01/01 12:30,2014/01/08 12:31,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-14,2013/01/01 12:30,2014/01/01 12:30,2024/02/29 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-15,2013/01/01 12:30,2014/01/01 12:30,2200/12/31 23:58,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-16,2013/01/01 12:30,2014/01/01 12:30,2200/12/31 23:59,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-17,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.es/banner/picture,Inspirando un futuro brillante,https://example.com/banner/document
+banner-18,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,I,https://example.com/banner/document
+banner-19,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,In,https://example.com/banner/document
+banner-20,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,<h1>hacked</h1>,https://example.com/banner/document
+banner-21,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,or 'A' = 'A',https://example.com/banner/document
+banner-26,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,https://example.com/banner/document
+banner-22,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante con el sol,https://example.com/banner/document
+banner-23,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium,https://example.com/banner/document
+banner-24,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiums,https://example.com/banner/document
+banner-25,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.es/banner/document
+banner-27,2013/01/01 12:30,2014/01/01 12:30,2015/01/01 12:30,https://example.com/banner/picture,Inspirando un futuro brillante,https://example.es/banner/document

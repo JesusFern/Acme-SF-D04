@@ -1,0 +1,20 @@
+key,code,instantiation-moment,heading,description,department,email,link
+claim-01,C-0001,2010/07/11 21:00,Title,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-02,C-0002,2000/01/01 00:00,Title,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-03,C-0003,2010/01/01 00:00,Title,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-04,C-0004,2000/01/01 01:00,Title,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-05,C-0005,2022/07/29 23:58,Title,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-06,C-0006,2022/07/29 23:58,Title,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-07,C-0007,2010/07/11 21:00,T,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-08,C-0008,2010/07/11 21:00,Te,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-09,C-0009,2010/07/11 21:00,Li Europan lingues es membres del sam.,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-10,C-0010,2010/07/11 21:00,Li Europan lingues es membres del sam familie. Lor separat existentie es,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-11,C-0011,2010/07/11 21:00,Li Europan lingues es membres del sam familie. Lor separat existentie es u.,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-12,C-0012,2010/07/11 21:00,Title,L,L,usuario1@acme.com,https://example.com/objective
+claim-13,C-0013,2010/07/11 21:00,Title,Li.,Li.,usuario1@acme.com,https://example.com/objective
+claim-14,C-0014,2010/07/11 21:00,Title,Li Europan lingues es membres del sam familie. Lor,Li Europan lingues es membres del sam familie. Lor,usuario1@acme.com,https://example.com/objective
+claim-15,C-0015,2010/07/11 21:00,Title,Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie mus,Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie mus,usuario1@acme.com,https://example.com/objective
+claim-16,C-0016,2010/07/11 21:00,Title,Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie musi,Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie musi,usuario1@acme.com,https://example.com/objective
+claim-17,C-0017,2010/07/11 21:00,Title,Description,Description,usuario1@acme.com,https://example.com/objective
+claim-18,C-0018,2010/07/11 21:00,Title,Description,Description,,https://example.com/objective
+claim-19,C-0019,2010/07/11 21:00,Title,Description,Description,usuario1@acme.com,

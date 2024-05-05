@@ -1,0 +1,19 @@
+key,code,start-period,end-period,location,instructor,email,link,key:training-module
+training-session-01,TS-A-000,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario1@acme.com,https://example.com/objective,training-module-01
+training-session-02,TS-AB-555,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario2@acme.com,https://example.com/objective,training-module-01
+training-session-03,TS-ZZZ-999,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario3@acme.com,https://example.com/objective,training-module-01
+training-session-04,TS-ABC-001,2000/01/01 00:01,2000/01/01 01:00,Title,Title,usuario4@acme.com,https://example.com/objective,training-module-01
+training-session-05,TS-ABC-002,2000/01/01 01:01,2000/01/01 02:00,Title,Title,usuario5@acme.com,https://example.com/objective,training-module-01
+training-session-06,TS-ABC-003,2022/07/29 00:01,2022/07/29 01:00,Title,Title,usuario6@acme.com,https://example.com/objective,training-module-01
+training-session-07,TS-ABC-004,2022/07/30 00:00,2022/07/30 00:01,T,T,usuario7@acme.com,https://example.com/objective,training-module-01
+training-session-08,TS-ABC-005,2022/07/30 00:00,2022/08/14 00:00,Te,Te,usuario8@acme.com,https://example.com/objective,training-module-01
+training-session-09,TS-ABC-006,2022/07/30 00:00,2022/08/29 23:59,Li Europan lingues es membres del sam.,Li Europan lingues es membres del sam.,usuario9@acme.com,https://example.com/objective,training-module-01
+training-session-10,TS-ABC-007,2022/07/30 00:00,2022/07/30 12:00,Li Europan lingues es membres del sam familie. Lor separat existentie es,Li Europan lingues es membres del sam familie. Lor separat existentie es,usuario10@acme.com,https://example.com/objective,training-module-01
+training-session-11,TS-ABC-008,2022/07/30 00:00,2022/07/30 12:00,Li Europan lingues es membres del sam familie. Lor separat existentie es u.,Li Europan lingues es membres del sam familie. Lor separat existentie es u.,usuario11@acme.com,https://example.com/objective,training-module-01
+training-session-12,TS-ABC-009,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario12@acme.com,https://example.com/objective,training-module-01
+training-session-13,TS-ABC-010,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario13@acme.com,https://example.com/objective,training-module-01
+training-session-14,TS-ABC-011,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario14@acme.com,https://example.com/objective,training-module-01
+training-session-15,TS-ABC-012,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario15@acme.com,https://example.com/objective,training-module-01
+training-session-16,TS-ABC-013,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario16@acme.com,https://example.com/objective,training-module-01
+training-session-17,TS-ABC-014,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario17@acme.com,https://example.com/objective,training-module-01
+training-session-18,TS-ABC-015,2022/07/30 00:00,2022/07/30 12:00,Title,Title,usuario18@acme.com,,training-module-01

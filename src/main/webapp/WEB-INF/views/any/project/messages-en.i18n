@@ -1,0 +1,15 @@
+any.project.list.title = Listing of projects
+any.project.form.title = Project form
+
+any.project.list.label.code = Code
+any.project.list.label.title = Title
+any.project.list.label.abstractString = Abstract
+
+any.project.form.label.code = Code
+any.project.form.label.title = Title
+any.project.form.label.abstractString = Abstract
+any.project.form.label.indication= Indication
+any.project.form.label.cost = Cost
+any.project.form.label.link = Link
+
+any.project.form.placeholder.cost = 0 - 10000

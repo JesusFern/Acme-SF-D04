@@ -1,0 +1,31 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+any.progress-log.form.title = Detalles de Resgistros de Progreso
+any.progress-log.list.title = Lista de Resgistros de Progreso
+any.progress-log.list.button.create = Crear Resgistro de Progreso
+any.progress-log.form.button.create = Crear Resgistros de Progreso
+any.progress-log.form.button.delete = Eliminar Resgistros de Progreso
+any.progress-log.form.button.update = Actualizar Resgistros de Progreso
+
+any.progress-log.form.label.code = Código:
+any.progress-log.form.label.recordId = Id de Registro:
+any.progress-log.form.label.percentageCompleteness = Porcentaje de Completitud:
+any.progress-log.form.label.comment = Comentario:
+any.progress-log.form.label.registrationMoment = Momento de Registro:
+any.progress-log.form.label.contract = Contracto:
+any.progress-log.form.label.responsiblePerson = Persona Responsable:
+
+any.progress-log.form.error.duplicated = Id de Registro Duplicatada
+
+any.progress-log.list.label.code = Código
+any.progress-log.list.label.recordId = Id de Registro
+any.progress-log.list.label.percentageCompleteness =  Porcentaje de Completitud
+any.progress-log.list.label.responsiblePerson =  Persona Responsable
