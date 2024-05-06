@@ -53,7 +53,7 @@ public class ManagerProjectUserStoryCreateService extends AbstractService<Manage
 		int userStoryId;
 		UserStory userStory;
 
-		super.bind(object, "optional");
+		super.bind(object, "version");
 
 		userStoryId = super.getRequest().getData("userStory", int.class);
 		userStory = this.repository.findOneUserStoryById(userStoryId);
@@ -90,7 +90,7 @@ public class ManagerProjectUserStoryCreateService extends AbstractService<Manage
 		SelectChoices choicesU;
 		Dataset dataset;
 
-		dataset = super.unbind(object, "optional");
+		dataset = super.unbind(object, "version");
 
 		Principal principal;
 

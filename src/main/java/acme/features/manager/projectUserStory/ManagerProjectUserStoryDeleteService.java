@@ -49,7 +49,7 @@ public class ManagerProjectUserStoryDeleteService extends AbstractService<Manage
 	public void bind(final ProjectUserStory object) {
 		assert object != null;
 
-		super.bind(object, "optional");
+		super.bind(object, "version");
 	}
 
 	@Override
@@ -70,7 +70,7 @@ public class ManagerProjectUserStoryDeleteService extends AbstractService<Manage
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "optional");
+		dataset = super.unbind(object, "version");
 		dataset.put("masterId", object.getProject().getId());
 		dataset.put("draftMode", object.getProject().isDraftMode());
 

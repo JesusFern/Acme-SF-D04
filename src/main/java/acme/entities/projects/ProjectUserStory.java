@@ -21,8 +21,6 @@ public class ProjectUserStory extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	private String				optional;
-
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
