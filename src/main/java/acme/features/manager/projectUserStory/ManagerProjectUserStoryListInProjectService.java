@@ -53,7 +53,7 @@ public class ManagerProjectUserStoryListInProjectService extends AbstractService
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "optional");
+		dataset = super.unbind(object, "version");
 		dataset.put("project", object.getProject().getCode());
 		dataset.put("userStory", object.getUserStory().getTitle());
 
