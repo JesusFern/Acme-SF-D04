@@ -10,7 +10,6 @@ import acme.client.data.accounts.Authenticated;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.auditRecords.AuditRecord;
-import acme.entities.codeAudits.CodeAudit;
 
 @Service
 public class AuthenticatedAuditRecordListMineService extends AbstractService<Authenticated, AuditRecord> {
@@ -55,8 +54,6 @@ public class AuthenticatedAuditRecordListMineService extends AbstractService<Aut
 		assert objects != null;
 
 		int masterId;
-		CodeAudit codeAudit;
-		final boolean showCreate;
 
 		masterId = super.getRequest().getData("masterId", int.class);
 

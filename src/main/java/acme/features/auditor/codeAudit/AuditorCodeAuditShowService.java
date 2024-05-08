@@ -48,10 +48,7 @@ public class AuditorCodeAuditShowService extends AbstractService<Auditor, CodeAu
 		SelectChoices choicesP;
 		Dataset dataset;
 
-		int auditorId;
 		Collection<Project> projects;
-
-		auditorId = object.getAuditor().getId();
 
 		choices = SelectChoices.from(Type.class, object.getType());
 		projects = this.repository.findManyProjectsByAvailability();
