@@ -74,11 +74,24 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 			existing = this.repository.findOneAuditRecordByCode(object.getCode());
 			super.state(existing == null, "code", "auditor.audit-record.form.error.duplicated");
 		}
+		if (!super.getBuffer().getErrors().hasErrors("periodStart")) {
+			Date minimumEnd;
+
+			minimumEnd = java.sql.Date.valueOf("1900-01-01");
+			super.state(MomentHelper.isAfter(object.getPeriodStart(), minimumEnd), "periodStart", "auditor.audit-record.form.error.bad-date");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
 			Date minimumEnd;
 
-			minimumEnd = MomentHelper.deltaFromCurrentMoment(1, ChronoUnit.HOURS);
-			super.state(MomentHelper.isBefore(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.too-close");
+			minimumEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 59, ChronoUnit.MINUTES);
+			super.state(MomentHelper.isAfter(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.too-close");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
+			Date minimumEnd;
+
+			minimumEnd = java.sql.Date.valueOf("2200-01-01");
+			super.state(MomentHelper.isBefore(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.bad-date");
 		}
 	}
 

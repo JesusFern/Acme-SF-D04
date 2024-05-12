@@ -67,19 +67,22 @@ public class AuditorDashboardShowService extends AbstractService<Auditor, Audito
 		minimumTimeOfPeriod = this.repository.minimumTimeOfPeriod(id);
 		maximumTimeOfPeriod = this.repository.maximumTimeOfPeriod(id);
 
-		dashboard = new AuditorDashboard();
-		dashboard.setTotalNumberOfStaticCodeAudit(totalNumberOfStaticCodeAudit);
-		dashboard.setTotalNumberOfDynamicCodeAudit(totalNumberOfDynamicCodeAudit);
-		dashboard.setAverageNumberOfAuditRecords(averageNumberOfAuditRecords);
-		dashboard.setDeviationNumberOfAuditRecords(deviationNumberOfAuditRecords);
-		dashboard.setMinimumNumberOfAuditRecords(minimumNumberOfAuditRecords);
-		dashboard.setMaximumNumberOfAuditRecords(maximumNumberOfAuditRecords);
-		dashboard.setAverageTimeOfPeriod(averageTimeOfPeriod / 10000);
-		dashboard.setDeviationTimeOfPeriod(deviationTimeOfPeriod / 10000);
-		dashboard.setMinimumTimeOfPeriod(minimumTimeOfPeriod / 10000);
-		dashboard.setMaximumTimeOfPeriod(maximumTimeOfPeriod / 10000);
+		if (averageTimeOfPeriod != null) {
 
-		super.getBuffer().addData(dashboard);
+			dashboard = new AuditorDashboard();
+			dashboard.setTotalNumberOfStaticCodeAudit(totalNumberOfStaticCodeAudit);
+			dashboard.setTotalNumberOfDynamicCodeAudit(totalNumberOfDynamicCodeAudit);
+			dashboard.setAverageNumberOfAuditRecords(averageNumberOfAuditRecords);
+			dashboard.setDeviationNumberOfAuditRecords(deviationNumberOfAuditRecords);
+			dashboard.setMinimumNumberOfAuditRecords(minimumNumberOfAuditRecords);
+			dashboard.setMaximumNumberOfAuditRecords(maximumNumberOfAuditRecords);
+			dashboard.setAverageTimeOfPeriod(averageTimeOfPeriod / 10000);
+			dashboard.setDeviationTimeOfPeriod(deviationTimeOfPeriod / 10000);
+			dashboard.setMinimumTimeOfPeriod(minimumTimeOfPeriod / 10000);
+			dashboard.setMaximumTimeOfPeriod(maximumTimeOfPeriod / 10000);
+
+			super.getBuffer().addData(dashboard);
+		}
 	}
 
 	@Override
