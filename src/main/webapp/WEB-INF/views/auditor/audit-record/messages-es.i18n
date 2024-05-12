@@ -7,9 +7,7 @@ auditor.audit-record.form.title = Detalle de registro de auditorias
 auditor.audit-record.form.label.code= Código
 auditor.audit-record.form.label.periodStart= Periodo de inicio
 auditor.audit-record.form.label.periodEnd= Periodo de fin
-auditor.audit-record.form.label.mark= Nota
-auditor.code-audit.form.label.project= Proyecto
-auditor.code-audit.form.label.draftMode= Borrador 
+auditor.audit-record.form.label.mark= Notaç
 auditor.audit-record.form.label.link= Link
 
 
@@ -19,4 +17,5 @@ auditor.audit-record.form.button.delete= Borrar
 auditor.audit-record.form.button.update= Actualizar
 
 auditor.audit-record.form.error.too-close= El periodo debe ser almenos de 1 hora
-auditor.code-audit.form.error.duplicated= El código ya esta siendo utilizado
+auditor.audit-record.form.error.duplicated= El código ya esta siendo utilizado
+auditor.audit-record.form.error.bad-date= Fecha no válida
