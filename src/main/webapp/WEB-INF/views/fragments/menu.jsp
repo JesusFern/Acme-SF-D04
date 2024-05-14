@@ -86,24 +86,16 @@
 			<acme:menu-suboption code="master.menu.sponsor.my-dashboard" action="/sponsor/sponsor-dashboard/show"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.actions" access="isAuthenticated()">	
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">	
 			<acme:menu-suboption code="master.menu.user-account.claim" action="/authenticated/claim/list-all"/>
 			<acme:menu-suboption code="master.menu.auditor.all-code-audit" action="/authenticated/code-audit/list-all"/>
-		</acme:menu-option>
-		<acme:menu-option code="master.menu.contract" access="isAuthenticated()">	
-		<acme:menu-suboption code="master.menu.any.all-contracts" action="/any/contract/list-all"/>
-		</acme:menu-option>
-		<acme:menu-option code="master.menu.training-module" access="isAuthenticated()">	
-		<acme:menu-suboption code="master.menu.any.all-training-module" action="/any/training-module/list-all"/>
-		</acme:menu-option>
-
-		<acme:menu-option code="master.menu.sponsorship" access="isAuthenticated()">	
-		<acme:menu-suboption code="master.menu.any.all-sponsorship" action="/any/sponsorship/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-contracts" action="/any/contract/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-training-module" action="/any/training-module/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-training-module" action="/any/training-module/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-sponsorship" action="/any/sponsorship/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-projects" action="/any/project/list-all"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.project" access="isAuthenticated()">	
-		<acme:menu-suboption code="master.menu.any.all-projects" action="/any/project/list-all"/>
-		</acme:menu-option>
 		
 	</acme:menu-left>
 
