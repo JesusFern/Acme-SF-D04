@@ -17,3 +17,5 @@ authenticated.auditor.form.label.link= Link
 
 authenticated.auditor.form.button.create = Register
 authenticated.auditor.form.button.update = Update
+
+auditor.form.error.duplicated= ProfessionalId is taken

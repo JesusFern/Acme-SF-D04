@@ -44,8 +44,8 @@ public class AuditorDashboardShowService extends AbstractService<Auditor, Audito
 
 		Double averageNumberOfAuditRecords;
 		Double deviationNumberOfAuditRecords;
-		Double minimumNumberOfAuditRecords;
-		Double maximumNumberOfAuditRecords;
+		Integer minimumNumberOfAuditRecords;
+		Integer maximumNumberOfAuditRecords;
 
 		Double averageTimeOfPeriod;
 		Double deviationTimeOfPeriod;
@@ -67,9 +67,14 @@ public class AuditorDashboardShowService extends AbstractService<Auditor, Audito
 		minimumTimeOfPeriod = this.repository.minimumTimeOfPeriod(id);
 		maximumTimeOfPeriod = this.repository.maximumTimeOfPeriod(id);
 
+		dashboard = new AuditorDashboard();
+		dashboard.setTotalNumberOfStaticCodeAudit(0);
+		dashboard.setTotalNumberOfDynamicCodeAudit(0);
+		dashboard.setMinimumNumberOfAuditRecords(0);
+		dashboard.setMaximumNumberOfAuditRecords(0);
+
 		if (averageTimeOfPeriod != null) {
 
-			dashboard = new AuditorDashboard();
 			dashboard.setTotalNumberOfStaticCodeAudit(totalNumberOfStaticCodeAudit);
 			dashboard.setTotalNumberOfDynamicCodeAudit(totalNumberOfDynamicCodeAudit);
 			dashboard.setAverageNumberOfAuditRecords(averageNumberOfAuditRecords);
@@ -81,10 +86,9 @@ public class AuditorDashboardShowService extends AbstractService<Auditor, Audito
 			dashboard.setMinimumTimeOfPeriod(minimumTimeOfPeriod / 10000);
 			dashboard.setMaximumTimeOfPeriod(maximumTimeOfPeriod / 10000);
 
-			super.getBuffer().addData(dashboard);
 		}
+		super.getBuffer().addData(dashboard);
 	}
-
 	@Override
 	public void unbind(final AuditorDashboard object) {
 		Dataset dataset;

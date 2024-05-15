@@ -72,7 +72,7 @@ public class AuditorCodeAuditPublishService extends AbstractService<Auditor, Cod
 
 		id = super.getRequest().getData("id", int.class);
 		auditRecords = this.repository.findManyAuditRecordByCodeAuditId(id);
-
+		super.state(!auditRecords.isEmpty(), "*", "auditor.code-audit.form.error.notEnoughAuditRecords");
 		super.state(object.getMark(auditRecords) != Mark.F && object.getMark(auditRecords) != Mark.F_MINUS, "*", "auditor.code-audit.form.error.notEnoughMark");
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			CodeAudit existing;
@@ -80,6 +80,7 @@ public class AuditorCodeAuditPublishService extends AbstractService<Auditor, Cod
 			existing = this.repository.findOneCodeAuditByCode(object.getCode());
 			super.state(existing == null || existing.equals(object), "code", "auditor.code-audit.form.error.duplicated");
 		}
+
 	}
 
 	@Override

@@ -10,6 +10,7 @@ auditor.code-audit.form.label.execution= Time of execution
 auditor.code-audit.form.label.type= Type
 auditor.code-audit.form.label.correctiveActions= Corrective actions
 auditor.code-audit.form.label.link= Link
+auditor.code-audit.form.label.mark= Mark
 
 
 auditor.code-audit.list.button.create= Create Code audit
@@ -21,3 +22,4 @@ auditor.code-audit.form.button.publish= Publish
 auditor.code-audit.form.error.duplicated= Code is taken
 
 auditor.code-audit.form.error.notEnoughMark= The mark is not high enough
+auditor.code-audit.form.error.notEnoughAuditRecords= There is not enough audit records

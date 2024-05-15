@@ -69,7 +69,7 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 		projectId = super.getRequest().getData("project", int.class);
 		project = this.repository.findOneProjectById(projectId);
 
-		super.bind(object, "code", "execution", "type", "correctiveActions", "link", "draftMode");
+		super.bind(object, "code", "type", "correctiveActions", "link");
 		object.setProject(project);
 	}
 

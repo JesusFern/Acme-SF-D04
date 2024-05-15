@@ -33,10 +33,10 @@ public interface AuditorDashboardRepository extends AbstractRepository {
 	Double deviationNumberOfAuditRecords(int id);
 
 	@Query("select min( select count(ar) from AuditRecord ar where ar.codeAudit.auditor.id= :id and ar.codeAudit.draftMode = false) from Auditor a ")
-	Double minimumNumberOfAuditRecords(int id);
+	Integer minimumNumberOfAuditRecords(int id);
 
 	@Query("select max( select count(ar) from AuditRecord ar where ar.codeAudit.auditor.id= :id and ar.codeAudit.draftMode = false) from Auditor a ")
-	Double maximumNumberOfAuditRecords(int id);
+	Integer maximumNumberOfAuditRecords(int id);
 
 	@Query("select avg(ar.periodEnd - ar.periodStart) from AuditRecord ar where ar.codeAudit.auditor.id= :id and ar.codeAudit.draftMode = false")
 	Double averageTimeOfPeriod(int id);
