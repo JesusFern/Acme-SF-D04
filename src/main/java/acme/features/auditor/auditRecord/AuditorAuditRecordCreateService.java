@@ -77,7 +77,7 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 		if (!super.getBuffer().getErrors().hasErrors("periodStart")) {
 			Date minimumEnd;
 
-			minimumEnd = java.sql.Date.valueOf("1899-12-31");
+			minimumEnd = java.sql.Date.valueOf("1999-12-31");
 			super.state(MomentHelper.isAfter(object.getPeriodStart(), minimumEnd), "periodStart", "auditor.audit-record.form.error.bad-date");
 		}
 
