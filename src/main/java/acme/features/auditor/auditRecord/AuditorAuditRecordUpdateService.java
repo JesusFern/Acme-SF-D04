@@ -78,9 +78,13 @@ public class AuditorAuditRecordUpdateService extends AbstractService<Auditor, Au
 		}
 		if (!super.getBuffer().getErrors().hasErrors("periodStart")) {
 			Date minimumEnd;
+			Date minimumEnd2;
 
 			minimumEnd = java.sql.Date.valueOf("1999-12-31");
-			super.state(MomentHelper.isAfter(object.getPeriodStart(), minimumEnd), "periodStart", "auditor.audit-record.form.error.bad-date");
+			minimumEnd2 = MomentHelper.deltaFromMoment(minimumEnd, 23, ChronoUnit.HOURS);
+
+			minimumEnd2 = MomentHelper.deltaFromMoment(minimumEnd2, 59, ChronoUnit.MINUTES);
+			super.state(MomentHelper.isAfter(object.getPeriodStart(), minimumEnd2), "periodStart", "auditor.audit-record.form.error.bad-date");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
