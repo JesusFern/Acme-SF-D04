@@ -5,7 +5,7 @@ project-03,ABC-2222,ab,Effectively integrate task management tools for better wo
 project-04,ABC-3333,Lorem ipsum dolor sit amet consectetur,Effectively integrate task management tools for better workflow coordination,false,10,http://www.example.com,false,manager-01
 project-05,ABC-4444,Lorem ipsum dolor sit amet consectetur adipiscing elit. Cras lorem urna ut,Effectively integrate task management tools for better workflow coordination,false,10,http://www.example.com,false,manager-01
 project-06,ABC-5555,Lorem ipsum dolor sit amet consectetur adipiscing elit. Cras lorem urna uts,Effectively integrate task management tools for better workflow coordination,false,10,http://www.example.com,false,manager-01
-project-07,ABC-6666,or 'a' = 'a',Effectively integrate task management tools for better workflow coordination,false,10,http://www.example.com,false,manager-01
+project-07,ABC-6666,' or 'A'='A,Effectively integrate task management tools for better workflow coordination,false,10,http://www.example.com,false,manager-01
 project-08,ABC-7777,<h1>hacked</h1>,Effectively integrate task management tools for better workflow coordination,false,10,http://www.example.com,false,manager-01
 project-09,ABC-8888,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,Effectively integrate task management tools for better workflow coordination,false,10,http://www.example.com,false,manager-01
 project-10,ABC-9999,Task Management Tool Integration,a,false,10,http://www.example.com,false,manager-01
@@ -13,7 +13,7 @@ project-11,AAA-0000,Task Management Tool Integration,ab,false,10,http://www.exam
 project-12,AAA-1111,Task Management Tool Integration,sit amet consectetur adipiscing elit ut aliquam,false,10,http://www.example.com,false,manager-01
 project-13,AAA-2222,Task Management Tool Integration,sit amet consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis lectus magna fringa,false,10,http://www.example.com,false,manager-01
 project-14,XYZ-1111,Task Management Tool Integration,sit amet consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis lectus magna fringas,false,10,http://www.example.com,false,manager-01
-project-15,XYZ-2222,Task Management Tool Integration,or 'a' = 'a',false,10,http://www.example.com,false,manager-01
+project-15,XYZ-2222,Task Management Tool Integration,' or 'A'='A,false,10,http://www.example.com,false,manager-01
 project-16,XYZ-3333,Task Management Tool Integration,<h1>hacked</h1>,false,10,http://www.example.com,false,manager-01
 project-17,XYZ-4444,Task Management Tool Integration,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,false,10,http://www.example.com,false,manager-01
 project-18,XYZ-5555,Task Management Tool Integration,Effectively integrate task management tools for better workflow coordination,false,0,http://www.example.com,false,manager-01
