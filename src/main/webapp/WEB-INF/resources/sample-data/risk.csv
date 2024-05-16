@@ -22,7 +22,7 @@ risk-20,R-020,2021/07/30 20:00,20.32,0.56,Th,http://www.example.com
 risk-21,R-021,2021/07/30 20:00,20.32,0.56,sit amet consectetur adipiscing elit ut aliquam purus,http://www.example.com
 risk-22,R-022,2021/07/30 20:00,20.32,0.56,sit amet consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis lectus magna fringa,http://www.example.com
 risk-23,R-023,2021/07/30 20:00,20.32,0.56,sit amet consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis lectus magna fringas,http://www.example.com
-risk-24,R-024,2021/07/30 20:00,20.32,0.56,or 'a' = 'a',http://www.example.com
+risk-24,R-024,2021/07/30 20:00,20.32,0.56,' or 'A'='A,http://www.example.com
 risk-25,R-025,2021/07/30 20:00,20.32,0.56,<h1>hacked</h1>,http://www.example.com
 risk-26,R-026,2021/07/30 20:00,20.32,0.56,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,http://www.example.com
 risk-27,R-027,2021/07/30 20:00,20.32,0.56,This is a sample description,http://www.a.com

@@ -7,9 +7,9 @@
 	<acme:input-textbox code="manager.project.form.label.code" path="code"/>
 	<acme:input-textbox code="manager.project.form.label.title" path="title"/>
 	<acme:input-textbox code="manager.project.form.label.abstractString" path="abstractString"/>
-	<acme:input-textbox code="manager.project.form.label.indication" path="indication" placeholder="manager.project.form.placeholder.indication"/>	
 	<acme:input-double code="manager.project.form.label.cost" path="cost" placeholder="manager.project.form.placeholder.cost"/>
 	<acme:input-url code="manager.project.form.label.link" path="link"/>
+	<acme:input-checkbox code="manager.project.form.label.indication" path="indication"/>	
 	
 	<jstl:choose>
 	
