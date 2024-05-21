@@ -89,7 +89,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 
 		if (!super.getBuffer().getErrors().hasErrors("amount")) {
 			super.state(object.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.negative-amount");
-			super.state(object.getAmount().getAmount() < 1000000, "amount", "sponsor.sponsorship.form.error.too-high-amount");
+			super.state(object.getAmount().getAmount() <= 1000000, "amount", "sponsor.sponsorship.form.error.too-high-amount");
 		}
 	}
 

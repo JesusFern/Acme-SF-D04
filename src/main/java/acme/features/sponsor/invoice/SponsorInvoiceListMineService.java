@@ -26,11 +26,13 @@ public class SponsorInvoiceListMineService extends AbstractService<Sponsor, Invo
 	public void authorise() {
 		boolean status;
 		int masterId;
-		Sponsorship sponsorship;
+		Invoice invoice;
+		Sponsor sponsor;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		sponsorship = this.sir.findOneSponsorshipById(masterId);
-		status = sponsorship != null && (!sponsorship.isDraftMode() || super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor()));
+		masterId = super.getRequest().getData("id", int.class);
+		invoice = this.sir.findOneInvoiceById(masterId);
+		sponsor = invoice == null ? null : invoice.getSponsorship().getSponsor();
+		status = invoice != null && super.getRequest().getPrincipal().hasRole(sponsor);
 
 		super.getResponse().setAuthorised(status);
 	}

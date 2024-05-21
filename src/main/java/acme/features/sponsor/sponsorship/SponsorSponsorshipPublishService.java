@@ -87,8 +87,10 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			super.state(MomentHelper.isAfter(object.getEndSponsor(), minimumEnd), "endSponsor", "sponsor.sponsorship.form.error.too-close");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("amount"))
+		if (!super.getBuffer().getErrors().hasErrors("amount")) {
 			super.state(object.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.negative-amount");
+			super.state(object.getAmount().getAmount() <= 1000000, "amount", "sponsor.sponsorship.form.error.too-high-amount");
+		}
 
 		Money totalInvoiceAmount = new Money();
 		totalInvoiceAmount.setAmount(0.00);
@@ -100,7 +102,10 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		Collection<Invoice> invoices = this.ssr.findManyInvoicesBySponsorshipId(id);
 
 		for (Invoice invoice : invoices)
-			totalInvoiceAmount.setAmount(totalInvoiceAmount.getAmount() + invoice.totalAmount().getAmount());
+			if (totalInvoiceAmount.getCurrency() == invoice.getQuantity().getCurrency())
+				totalInvoiceAmount.setAmount(totalInvoiceAmount.getAmount() + invoice.totalAmount().getAmount());
+			else
+				super.state(totalInvoiceAmount.getCurrency() != invoice.getQuantity().getCurrency(), "*", "sponsor.sponsorship.form.error.invoice-currency-mismatch");
 
 		super.state(totalInvoiceAmount.getAmount().equals(object.getAmount().getAmount()), "*", "sponsor.sponsorship.form.error.invoice-total-amount-mismatch");
 	}
