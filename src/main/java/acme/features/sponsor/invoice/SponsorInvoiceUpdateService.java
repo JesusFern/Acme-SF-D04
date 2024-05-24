@@ -34,7 +34,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		masterId = super.getRequest().getData("id", int.class);
 		invoice = this.sir.findOneInvoiceById(masterId);
 		sponsor = invoice == null ? null : invoice.getSponsorship().getSponsor();
-		status = invoice != null && super.getRequest().getPrincipal().hasRole(sponsor);
+		status = invoice != null && invoice.getSponsorship().isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsor);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -68,11 +68,21 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 			super.state(existing == null || existing.equals(object), "code", "sponsor.invoice.form.error.duplicated");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("dueDate"))
+			super.state(MomentHelper.isAfter(object.getDueDate(), object.getRegistrationTime()), "dueDate", "sponsor.invoice.form.error.wrong-date");
+
 		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
 			Date minimumEnd;
 
 			minimumEnd = MomentHelper.deltaFromCurrentMoment(1, ChronoUnit.MONTHS);
 			super.state(MomentHelper.isAfter(object.getDueDate(), minimumEnd), "dueDate", "sponsor.invoice.form.error.too-close");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
+			Date minimumEnd;
+
+			minimumEnd = java.sql.Date.valueOf("2201-01-01");
+			super.state(MomentHelper.isBefore(object.getDueDate(), minimumEnd), "dueDate", "sponsor.invoice.form.error.wrong-date");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("quantity")) {

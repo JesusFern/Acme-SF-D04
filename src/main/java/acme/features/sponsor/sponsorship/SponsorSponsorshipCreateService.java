@@ -78,14 +78,14 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 			super.state(existing == null, "code", "sponsor.sponsorship.form.error.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("startSponsor")) {
-			Date minimumStart;
-
-			minimumStart = java.sql.Date.valueOf("1999-12-31");
-			minimumStart = MomentHelper.deltaFromMoment(minimumStart, 23, ChronoUnit.HOURS);
-			minimumStart = MomentHelper.deltaFromMoment(minimumStart, 59, ChronoUnit.MINUTES);
-			super.state(MomentHelper.isAfter(object.getStartSponsor(), minimumStart), "startSponsor", "sponsor.sponsorship.form.error.wrong-date");
-		}
+		//		if (!super.getBuffer().getErrors().hasErrors("startSponsor")) {
+		//			Date minimumStart;
+		//
+		//			minimumStart = java.sql.Date.valueOf("1999-12-31");
+		//			minimumStart = MomentHelper.deltaFromMoment(minimumStart, 23, ChronoUnit.HOURS);
+		//			minimumStart = MomentHelper.deltaFromMoment(minimumStart, 59, ChronoUnit.MINUTES);
+		//			super.state(MomentHelper.isAfter(object.getStartSponsor(), minimumStart), "startSponsor", "sponsor.sponsorship.form.error.wrong-date");
+		//		}
 
 		if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
 			super.state(MomentHelper.isAfter(object.getStartSponsor(), object.getMoment()), "startSponsor", "sponsor.sponsorship.form.error.wrong-date");
