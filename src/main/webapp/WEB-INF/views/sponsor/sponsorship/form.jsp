@@ -25,11 +25,11 @@
 	<acme:input-url code="sponsor.sponsorship.form.label.link" path="link"/>
 	<acme:input-select code="sponsor.sponsorship.form.label.project" path="project" choices="${projects}"/>
 
-	<jstl:choose>
+	<%-- <jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show') }">
 			<acme:input-moment code="sponsor.sponsorship.form.label.moment" path="moment"/>
 		</jstl:when>
-	</jstl:choose>
+	</jstl:choose> --%>
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
 			<acme:button code="sponsor.sponsorship.form.button.invoice" action="/sponsor/invoice/list-mine?masterId=${id}"/>			

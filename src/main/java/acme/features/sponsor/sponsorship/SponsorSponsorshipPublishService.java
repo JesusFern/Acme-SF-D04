@@ -80,6 +80,26 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			super.state(existing == null || existing.equals(object), "code", "sponsor.sponsorship.form.error.duplicated");
 		}
 
+		//		if (!super.getBuffer().getErrors().hasErrors("startSponsor")) {
+		//			Date minimumStart;
+		//
+		//			minimumStart = java.sql.Date.valueOf("1999-12-31");
+		//			minimumStart = MomentHelper.deltaFromMoment(minimumStart, 23, ChronoUnit.HOURS);
+		//			minimumStart = MomentHelper.deltaFromMoment(minimumStart, 59, ChronoUnit.MINUTES);
+		//			super.state(MomentHelper.isAfter(object.getStartSponsor(), minimumStart), "startSponsor", "sponsor.sponsorship.form.error.wrong-date");
+		//		}
+
+		if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+			super.state(MomentHelper.isAfter(object.getStartSponsor(), object.getMoment()), "startSponsor", "sponsor.sponsorship.form.error.wrong-date");
+
+		if (!super.getBuffer().getErrors().hasErrors("startSponsor")) {
+			Date minimumEnd;
+
+			minimumEnd = java.sql.Date.valueOf("2200-11-30");
+			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MONTHS);
+			super.state(MomentHelper.isBefore(object.getStartSponsor(), minimumEnd), "startSponsor", "sponsor.sponsorship.form.error.wrong-date");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("endSponsor")) {
 			Date minimumEnd;
 
@@ -87,8 +107,17 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			super.state(MomentHelper.isAfter(object.getEndSponsor(), minimumEnd), "endSponsor", "sponsor.sponsorship.form.error.too-close");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("amount"))
+		if (!super.getBuffer().getErrors().hasErrors("endSponsor")) {
+			Date minimumEnd;
+
+			minimumEnd = java.sql.Date.valueOf("2201-01-01");
+			super.state(MomentHelper.isBefore(object.getEndSponsor(), minimumEnd), "endSponsor", "sponsor.sponsorship.form.error.wrong-date");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("amount")) {
 			super.state(object.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.negative-amount");
+			super.state(object.getAmount().getAmount() <= 1000000, "amount", "sponsor.sponsorship.form.error.too-high-amount");
+		}
 
 		Money totalInvoiceAmount = new Money();
 		totalInvoiceAmount.setAmount(0.00);
@@ -100,7 +129,10 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		Collection<Invoice> invoices = this.ssr.findManyInvoicesBySponsorshipId(id);
 
 		for (Invoice invoice : invoices)
-			totalInvoiceAmount.setAmount(totalInvoiceAmount.getAmount() + invoice.totalAmount().getAmount());
+			if (totalInvoiceAmount.getCurrency().equals(invoice.getQuantity().getCurrency()))
+				totalInvoiceAmount.setAmount(totalInvoiceAmount.getAmount() + invoice.totalAmount().getAmount());
+			else
+				super.state(totalInvoiceAmount.getCurrency() != invoice.getQuantity().getCurrency(), "*", "sponsor.sponsorship.form.error.invoice-currency-mismatch");
 
 		super.state(totalInvoiceAmount.getAmount().equals(object.getAmount().getAmount()), "*", "sponsor.sponsorship.form.error.invoice-total-amount-mismatch");
 	}
