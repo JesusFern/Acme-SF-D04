@@ -56,7 +56,7 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 		projectId = super.getRequest().getData("project", int.class);
 		project = this.repository.findOneProjectById(projectId);
 
-		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "time", "project");
+		super.bind(object, "code", "details", "difficultyLevel", "link", "time", "project");
 
 		Date currentMoment = MomentHelper.getCurrentMoment();
 		Date creationMoment = new Date(currentMoment.getTime() - 600000);

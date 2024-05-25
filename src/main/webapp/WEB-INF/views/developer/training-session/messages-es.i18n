@@ -26,3 +26,9 @@ developer.training-session.form.label.link = Link:
 developer.training-session.list.button.create = Crear módulo de entrenamiento
 developer.training-session.form.button.delete = Eliminar
 developer.training-session.form.button.update = Actualizar
+
+
+developer.tranining-session.form.error.duplicated = El código ya esta siendo usado
+developer.training-session.form.error.invalid-creation-moment = Fecha de inicio debe ser 1 semana despues de la fecha de creacion del modulo de entrenamiento
+developer.training-session.form.error.minimum-time = Fecha fin debe ser 1 semana despues de la fecha de inicio
+developer.training-session.form.error.invalid-date= Fecha invalida

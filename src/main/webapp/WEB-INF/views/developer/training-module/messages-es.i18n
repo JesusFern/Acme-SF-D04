@@ -34,3 +34,7 @@ developer.training-module.form.button.publish = Publicar
 developer.training-module.list.button.create = Crear un nuevo módulo
 
 developer.training-module.form.button.create = Crear módulo
+
+
+developer.training-module.form.error.duplicated = Codigo duplicado
+developer.training-module.form.error.existsTrainingSessions = Este modulo de entrenamiento no tiene sesiones de entrenamiento

@@ -27,7 +27,16 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+
+		boolean status;
+		int trainingModuleId;
+		TrainingModule trainingModule;
+
+		trainingModuleId = super.getRequest().getData("masterId", int.class);
+		trainingModule = this.repository.findOneTrainingModuleById(trainingModuleId);
+		status = trainingModule != null && (!trainingModule.isDraftMode() || super.getRequest().getPrincipal().hasRole(trainingModule.getDeveloper()));
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -64,20 +73,38 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 			super.state(!sameCode, "code", "developer.tranining-session.form.error.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("sessionStart")) {
+		if (!super.getBuffer().getErrors().hasErrors("startPeriod")) {
 			TrainingModule module;
 			int masterId;
+			Date creation;
 
 			masterId = super.getRequest().getData("masterId", int.class);
 			module = this.repository.findOneTrainingModuleById(masterId);
-			super.state(MomentHelper.isAfter(object.getStartPeriod(), module.getCreationMoment()), "sessionStart", "developer.training-session.form.error.invalid-creation-moment");
+			creation = MomentHelper.deltaFromMoment(module.getCreationMoment(), 6, ChronoUnit.DAYS);
+			creation = MomentHelper.deltaFromMoment(creation, 23, ChronoUnit.HOURS);
+			creation = MomentHelper.deltaFromMoment(creation, 59, ChronoUnit.MINUTES);
+			super.state(MomentHelper.isAfter(object.getStartPeriod(), creation), "startPeriod", "developer.training-session.form.error.invalid-creation-moment");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("startPeriod")) {
+			Date maxStart;
+
+			maxStart = java.sql.Date.valueOf("2200-12-25");
+			super.state(MomentHelper.isBefore(object.getStartPeriod(), maxStart), "startPeriod", "developer.training-session.form.error.invalid-date");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("sessionEnd")) {
+		if (!super.getBuffer().getErrors().hasErrors("endPeriod")) {
 			Date minimumTime;
 
-			minimumTime = MomentHelper.deltaFromMoment(object.getStartPeriod(), 7, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfter(object.getEndPeriod(), minimumTime), "sessionEnd", "developer.training-session.form.error.minimum-time");
+			minimumTime = MomentHelper.deltaFromMoment(object.getStartPeriod(), 6, ChronoUnit.DAYS);
+			minimumTime = MomentHelper.deltaFromMoment(minimumTime, 23, ChronoUnit.HOURS);
+			minimumTime = MomentHelper.deltaFromMoment(minimumTime, 59, ChronoUnit.MINUTES);
+			super.state(MomentHelper.isAfter(object.getEndPeriod(), minimumTime), "endPeriod", "developer.training-session.form.error.minimum-time");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("endPeriod")) {
+			Date maxEnd;
+
+			maxEnd = java.sql.Date.valueOf("2201-01-01");
+			super.state(MomentHelper.isBefore(object.getEndPeriod(), maxEnd), "endPeriod", "developer.training-session.form.error.invalid-date");
 		}
 	}
 

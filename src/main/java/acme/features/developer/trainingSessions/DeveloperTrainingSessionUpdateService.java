@@ -71,18 +71,36 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 
 		if (!super.getBuffer().getErrors().hasErrors("startPeriod")) {
 			TrainingModule module;
-			int id;
+			int masterId;
+			Date creation;
 
-			id = super.getRequest().getData("id", int.class);
-			module = this.repository.findOneTrainingModuleByTrainingSessionId(id);
-			super.state(MomentHelper.isAfter(object.getStartPeriod(), module.getCreationMoment()), "startPeriod", "developer.training-session.form.error.invalid-creation-moment");
+			masterId = super.getRequest().getData("masterId", int.class);
+			module = this.repository.findOneTrainingModuleById(masterId);
+			creation = MomentHelper.deltaFromMoment(module.getCreationMoment(), 6, ChronoUnit.DAYS);
+			creation = MomentHelper.deltaFromMoment(creation, 23, ChronoUnit.HOURS);
+			creation = MomentHelper.deltaFromMoment(creation, 59, ChronoUnit.MINUTES);
+			super.state(MomentHelper.isAfter(object.getStartPeriod(), creation), "startPeriod", "developer.training-session.form.error.invalid-creation-moment");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("startPeriod")) {
+			Date maxStart;
+
+			maxStart = java.sql.Date.valueOf("2200-12-25");
+			super.state(MomentHelper.isBefore(object.getStartPeriod(), maxStart), "startPeriod", "developer.training-session.form.error.invalid-date");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("endPeriod")) {
 			Date minimumTime;
 
-			minimumTime = MomentHelper.deltaFromMoment(object.getStartPeriod(), 7, ChronoUnit.DAYS);
+			minimumTime = MomentHelper.deltaFromMoment(object.getStartPeriod(), 6, ChronoUnit.DAYS);
+			minimumTime = MomentHelper.deltaFromMoment(minimumTime, 23, ChronoUnit.HOURS);
+			minimumTime = MomentHelper.deltaFromMoment(minimumTime, 59, ChronoUnit.MINUTES);
 			super.state(MomentHelper.isAfter(object.getEndPeriod(), minimumTime), "endPeriod", "developer.training-session.form.error.minimum-time");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("endPeriod")) {
+			Date maxEnd;
+
+			maxEnd = java.sql.Date.valueOf("2201-01-01");
+			super.state(MomentHelper.isBefore(object.getEndPeriod(), maxEnd), "endPeriod", "developer.training-session.form.error.invalid-date");
 		}
 	}
 

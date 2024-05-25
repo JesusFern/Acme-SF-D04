@@ -59,6 +59,7 @@ public class TrainingModule extends AbstractEntity {
 	private Date				updateMoment;
 
 	@URL
+	@Length( max = 255)
 	private String				link;
 
 	@Min(1)
