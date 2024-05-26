@@ -30,7 +30,6 @@ contract-37,C-151,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspic
 contract-26,T-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
 contract-27,U-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus errora,EUR 00.05,true,project-01,client-01
 contract-28,V-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus erroraa,EUR 00.05,false,project-01,client-01
-contract-40,WW-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,USD 0.00,false,project-01,client-01
 contract-29,W-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,GBP 0.00,false,project-01,client-01
 contract-30,X-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,GBP 0.01,false,project-01,client-01
 contract-31,Y-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,"GBP 10,000.00",false,project-01,client-01
