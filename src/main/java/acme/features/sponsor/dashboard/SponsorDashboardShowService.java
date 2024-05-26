@@ -65,28 +65,28 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 		deviationSponsorshipsAmount.setCurrency("EUR");
 
 		Money averageSponsorshipsAmount0 = new Money();
-		averageSponsorshipsAmount.setAmount(00.00);
-		averageSponsorshipsAmount.setCurrency("EUR");
+		averageSponsorshipsAmount0.setAmount(00.00);
+		averageSponsorshipsAmount0.setCurrency("EUR");
 
 		Money deviationSponsorshipsAmount0 = new Money();
-		deviationSponsorshipsAmount.setAmount(00.00);
-		deviationSponsorshipsAmount.setCurrency("EUR");
+		deviationSponsorshipsAmount0.setAmount(00.00);
+		deviationSponsorshipsAmount0.setCurrency("EUR");
 
 		Money minimumSponsorshipsAmount = new Money();
 		minimumSponsorshipsAmount.setAmount(this.sdr.minimumSponsorshipsAmount(id));
 		minimumSponsorshipsAmount.setCurrency("EUR");
 
 		Money minimumSponsorshipsAmount0 = new Money();
-		minimumSponsorshipsAmount.setAmount(00.00);
-		minimumSponsorshipsAmount.setCurrency("EUR");
+		minimumSponsorshipsAmount0.setAmount(00.00);
+		minimumSponsorshipsAmount0.setCurrency("EUR");
 
 		Money maximumSponsorshipsAmount = new Money();
 		maximumSponsorshipsAmount.setAmount(this.sdr.maximumSponsorshipsAmount(id));
 		maximumSponsorshipsAmount.setCurrency("EUR");
 
 		Money maximumSponsorshipsAmount0 = new Money();
-		maximumSponsorshipsAmount.setAmount(00.00);
-		maximumSponsorshipsAmount.setCurrency("EUR");
+		maximumSponsorshipsAmount0.setAmount(00.00);
+		maximumSponsorshipsAmount0.setCurrency("EUR");
 
 		Money averageInvoicesQuantity = new Money();
 		averageInvoicesQuantity.setAmount(this.sdr.averageInvoicesQuantity(id));
@@ -97,12 +97,12 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 		deviationInvoicesQuantity.setCurrency("EUR");
 
 		Money averageInvoicesQuantity0 = new Money();
-		averageInvoicesQuantity.setAmount(00.00);
-		averageInvoicesQuantity.setCurrency("EUR");
+		averageInvoicesQuantity0.setAmount(00.00);
+		averageInvoicesQuantity0.setCurrency("EUR");
 
 		Money deviationInvoicesQuantity0 = new Money();
-		deviationInvoicesQuantity.setAmount(00.00);
-		deviationInvoicesQuantity.setCurrency("EUR");
+		deviationInvoicesQuantity0.setAmount(00.00);
+		deviationInvoicesQuantity0.setCurrency("EUR");
 
 		Money minimumInvoicesQuantity = new Money();
 		minimumInvoicesQuantity.setAmount(this.sdr.minimumInvoicesQuantity(id));
@@ -113,12 +113,12 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 		maximumInvoicesQuantity.setCurrency("EUR");
 
 		Money minimumInvoicesQuantity0 = new Money();
-		minimumInvoicesQuantity.setAmount(00.00);
-		minimumInvoicesQuantity.setCurrency("EUR");
+		minimumInvoicesQuantity0.setAmount(00.00);
+		minimumInvoicesQuantity0.setCurrency("EUR");
 
 		Money maximumInvoicesQuantity0 = new Money();
-		maximumInvoicesQuantity.setAmount(00.00);
-		maximumInvoicesQuantity.setCurrency("EUR");
+		maximumInvoicesQuantity0.setAmount(00.00);
+		maximumInvoicesQuantity0.setCurrency("EUR");
 
 		totalNumberOfInvoicesWithTaxLessOrEquals21 = this.sdr.totalNumberOfInvoicesWithTaxLessOrEquals21(id);
 		totalNumberOfSponsorshipsLink = this.sdr.totalNumberOfSponsorshipsLink(id);
