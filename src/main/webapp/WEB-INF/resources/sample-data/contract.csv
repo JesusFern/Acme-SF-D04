@@ -1,40 +1,41 @@
 key,code,instantiation-moment,provider-name,customer-name,goals,budget,draft-mode,key:project,key:client
-contract-01,A-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,false,project-01,client-01
-contract-02,B-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-03,C-111,2000/01/01 00:00,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-04,D-111,2000/01/01 00:01,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-05,E-111,2000/02/29 12:00,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-06,F-111,2022/07/29 23:58,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-07,G-111,2022/07/29 23:59,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-08,A-211,2013/01/01 12:30,<h1>hacked</h1>,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-09,A-311,2013/01/01 12:30,or 'A' = 'A',Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-36,B-311,2013/01/01 12:30,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-10,H-111,2013/01/01 12:30,I,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-11,I-111,2013/01/01 12:30,In,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-12,J-111,2013/01/01 12:30,Inspirando un futuro brillante con el sol,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-13,K-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-14,L-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiums,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-15,M-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,I,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-16,N-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,In,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-17,A-121,2013/01/01 12:30,Sed ut perspiciatis unde omnis,<h1>hacked</h1>,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-18,A-131,2013/01/01 12:30,Sed ut perspiciatis unde omnis,or 'A' = 'A',Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-38,D-131,2013/01/01 12:30,Sed ut perspiciatis unde omnis,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-19,O-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Inspirando un futuro brillante con el sol,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-20,P-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-21,Q-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiums,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-22,R-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,I,EUR 10.00,true,project-01,client-01
-contract-23,S-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,In,EUR 10.00,true,project-01,client-01
-contract-24,A-141,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,or 'A' = 'A',EUR 10.00,true,project-01,client-01
-contract-25,A-151,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,<h1>hacked</h1>,EUR 10.00,true,project-01,client-01
-contract-37,C-151,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,EUR 10.00,true,project-01,client-01
-contract-26,T-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-01,client-01
-contract-27,U-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus errora,EUR 10.00,true,project-01,client-01
-contract-28,V-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus erroraa,EUR 10.00,false,project-01,client-01
+contract-01,A-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.01,false,project-01,client-01
+contract-02,B-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.01,true,project-01,client-01
+contract-03,C-111,2000/01/01 00:00,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.01,true,project-01,client-01
+contract-04,D-111,2000/01/01 00:01,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-05,E-111,2000/02/29 12:00,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-06,F-111,2022/07/29 23:58,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-07,G-111,2022/07/29 23:59,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-08,A-211,2013/01/01 12:30,<h1>hacked</h1>,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-09,A-311,2013/01/01 12:30,' or 'A'='A,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-36,B-311,2013/01/01 12:30,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-10,H-111,2013/01/01 12:30,I,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-11,I-111,2013/01/01 12:30,In,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-12,J-111,2013/01/01 12:30,Inspirando un futuro brillante con el sol,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-13,K-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-14,L-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiums,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-15,M-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,I,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-16,N-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,In,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-17,A-121,2013/01/01 12:30,Sed ut perspiciatis unde omnis,<h1>hacked</h1>,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-18,A-131,2013/01/01 12:30,Sed ut perspiciatis unde omnis,' or 'A'='A,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-38,D-131,2013/01/01 12:30,Sed ut perspiciatis unde omnis,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-19,O-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Inspirando un futuro brillante con el sol,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-20,P-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-21,Q-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiums,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-22,R-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,I,EUR 00.05,true,project-01,client-01
+contract-23,S-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,In,EUR 00.05,true,project-01,client-01
+contract-24,A-141,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,' or 'A'='A,EUR 00.05,true,project-01,client-01
+contract-25,A-151,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,<h1>hacked</h1>,EUR 00.05,true,project-01,client-01
+contract-37,C-151,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,EUR 00.05,true,project-01,client-01
+contract-26,T-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
+contract-27,U-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus errora,EUR 00.05,true,project-01,client-01
+contract-28,V-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus erroraa,EUR 00.05,false,project-01,client-01
+contract-40,WW-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,USD 0.00,false,project-01,client-01
 contract-29,W-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,GBP 0.00,false,project-01,client-01
 contract-30,X-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,GBP 0.01,false,project-01,client-01
 contract-31,Y-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,"GBP 10,000.00",false,project-01,client-01
 contract-32,Z-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,"GBP 999,999.99",false,project-01,client-01
 contract-33,AA-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,"GBP 1,000,000.00",false,project-01,client-01
-contract-39,Z-123,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,false,project-01,client-01
-contract-34,BB-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,true,project-02,client-01
-contract-35,CC-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 10.00,false,project-01,client-02
+contract-39,Z-123,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,false,project-01,client-01
+contract-34,BB-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-02,client-01
+contract-35,CC-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,false,project-01,client-02
