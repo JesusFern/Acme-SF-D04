@@ -27,6 +27,7 @@ client.contract.form.label.project = Project:
 client.contract.form.error.duplicated = Code Duplicated
 client.contract.form.error.exceeded-project-cost = Exceeded Project Cost
 client.contract.form.error.negative-budget = The budget must be positive
+client.contract.form.error.much-budget = The maximum budget must be 1,000,000.00.
 
 client.contract.list.label.code = Code
 client.contract.list.label.providerName = Provider Name
