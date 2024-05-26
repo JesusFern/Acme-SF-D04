@@ -15,7 +15,6 @@ package acme.features.auditor.auditRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.auditRecords.AuditRecord;
 import acme.roles.Auditor;
@@ -39,7 +38,7 @@ public class AuditorAuditRecordDeleteService extends AbstractService<Auditor, Au
 		masterId = super.getRequest().getData("id", int.class);
 		auditRecord = this.repository.findOneAuditRecordById(masterId);
 		auditor = auditRecord == null ? null : auditRecord.getCodeAudit().getAuditor();
-		status = auditRecord != null && super.getRequest().getPrincipal().hasRole(auditor);
+		status = auditRecord != null && super.getRequest().getPrincipal().hasRole(auditor) && auditRecord.getCodeAudit().isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -74,17 +73,6 @@ public class AuditorAuditRecordDeleteService extends AbstractService<Auditor, Au
 
 		this.repository.delete(object);
 
-	}
-
-	@Override
-	public void unbind(final AuditRecord object) {
-		assert object != null;
-
-		Dataset dataset;
-
-		dataset = super.unbind(object, "code", "periodStart", "periodEnd", "mark", "link");
-
-		super.getResponse().addData(dataset);
 	}
 
 }

@@ -39,7 +39,16 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+
+		boolean status;
+		int codeAuditId;
+		CodeAudit codeAudit;
+
+		codeAuditId = super.getRequest().getData("masterId", int.class);
+		codeAudit = this.repository.findOneCodeAuditById(codeAuditId);
+		status = codeAudit != null && codeAudit.isDraftMode() && super.getRequest().getPrincipal().hasRole(codeAudit.getAuditor());
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -92,8 +101,12 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 
 		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
 			Date minimumEnd;
-			minimumEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 59, ChronoUnit.MINUTES);
-			super.state(MomentHelper.isAfter(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.too-close");
+			if (object.getPeriodStart() != null) {
+
+				minimumEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 59, ChronoUnit.MINUTES);
+				super.state(MomentHelper.isAfter(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.too-close");
+
+			}
 		}
 		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
 			Date minimumEnd;
