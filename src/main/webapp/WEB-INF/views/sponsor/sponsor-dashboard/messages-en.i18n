@@ -8,8 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-sponsor.dashboard.form.title = Sponsor dashboard
-sponsor.dashboard.form.title.general-indicators = General indicators
+sponsor.sponsor-dashboard.form.title = Sponsor dashboard
+sponsor.dashboard.form.title.general-indicators = Dashboard
 
 sponsor.dashboard.form.label.total-invoices-with-tax-less-or-equals-21 = Total invoices with Tax less or equals 21:
 sponsor.dashboard.form.label.total-sponsorships-link = Total sponsorships with link:
