@@ -26,6 +26,7 @@ client.contract.form.label.project = Projecto:
 
 client.contract.form.error.duplicated = Código Duplicado
 client.contract.form.error.exceeded-project-cost = Coste del Proyecto Sobrepasado
+client.contract.form.error.invalid-currency = El tipo de moneda debe ser EUR, GBP o USD
 client.contract.form.error.negative-budget = El presupuesto debe ser positivo
 
 
