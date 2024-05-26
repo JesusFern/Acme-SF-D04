@@ -23,7 +23,7 @@ sponsor.invoice.form.label.tax = Tax:
 sponsor.invoice.form.label.link = Enlace:
 
 sponsor.invoice.list.label.code = Código
-sponsor.invoice.list.label.link = Cantidad
+sponsor.invoice.list.label.quantity = Cantidad
 
 sponsor.invoice.form.error.duplicated = El código ya esta siendo utilizado
 sponsor.sponsorship.form.error.bad-date= Fecha inválida

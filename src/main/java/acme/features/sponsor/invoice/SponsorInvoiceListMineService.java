@@ -24,17 +24,7 @@ public class SponsorInvoiceListMineService extends AbstractService<Sponsor, Invo
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int masterId;
-		Invoice invoice;
-		Sponsor sponsor;
-
-		masterId = super.getRequest().getData("id", int.class);
-		invoice = this.sir.findOneInvoiceById(masterId);
-		sponsor = invoice == null ? null : invoice.getSponsorship().getSponsor();
-		status = invoice != null && super.getRequest().getPrincipal().hasRole(sponsor);
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override

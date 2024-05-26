@@ -15,5 +15,5 @@ invoice-14,IN-0000-0010,2022/07/29 23:59,2022/08/30 12:00,"GBP 999999.99",00.00,
 invoice-15,IN-0000-0011,2022/07/29 23:59,2022/08/30 12:00,"EUR 1000000.00",00.00,https://example.com/objective,sponsorship-14
 invoice-16,IN-0000-0012,2022/07/29 23:59,2022/08/30 12:00,"EUR 100.0",00.01,https://example.com/objective,sponsorship-15
 invoice-17,IN-0000-0013,2022/07/29 23:59,2022/08/30 12:00,"EUR 100.0",50.00,https://example.com/objective,sponsorship-16
-invoice-18,IN-0000-0014,2022/07/29 23:59,2022/08/30 12:00,"EUR 100.0",99.00,https://example.com/objective,sponsorship-17
+invoice-18,IN-0000-0014,2022/07/29 23:59,2022/08/30 12:00,"EUR 100.0",99.99,https://example.com/objective,sponsorship-17
 invoice-19,IN-0000-0015,2022/07/29 23:59,2022/08/30 12:00,"EUR 100.0",00.00,,sponsorship-18
