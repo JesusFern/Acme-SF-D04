@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorships.Invoice;
+import acme.entities.sponsorships.Sponsorship;
 import acme.roles.Sponsor;
 
 @Service
@@ -23,14 +24,12 @@ public class SponsorInvoiceListShowService extends AbstractService<Sponsor, Invo
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
-		Invoice invoice;
-		Sponsor sponsor;
+		int invoiceId;
+		Sponsorship sponsorship;
 
-		masterId = super.getRequest().getData("id", int.class);
-		invoice = this.sir.findOneInvoiceById(masterId);
-		sponsor = invoice == null ? null : invoice.getSponsorship().getSponsor();
-		status = invoice != null && super.getRequest().getPrincipal().hasRole(sponsor);
+		invoiceId = super.getRequest().getData("id", int.class);
+		sponsorship = this.sir.findOneSponsorshipByInvoiceId(invoiceId);
+		status = sponsorship != null && (!sponsorship.isDraftMode() || super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor()));
 
 		super.getResponse().setAuthorised(status);
 	}
