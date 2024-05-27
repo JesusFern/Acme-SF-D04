@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.entities.contracts.Contract;
 import acme.entities.contracts.ProgressLog;
 import acme.roles.Client;
 
@@ -24,11 +25,13 @@ public class ClientProgressLogUpdateService extends AbstractService<Client, Prog
 		int masterId;
 		ProgressLog progressLog;
 		Client client;
+		Contract contract;
 
 		masterId = super.getRequest().getData("id", int.class);
 		progressLog = this.cpr.findOneProgressLogById(masterId);
+		contract = this.cpr.findOneContractByProgressLogId(masterId);
 		client = progressLog == null ? null : progressLog.getContract().getClient();
-		status = progressLog != null && super.getRequest().getPrincipal().hasRole(client);
+		status = progressLog != null && super.getRequest().getPrincipal().hasRole(client) && contract.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -76,6 +79,7 @@ public class ClientProgressLogUpdateService extends AbstractService<Client, Prog
 
 		dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson");
 		dataset.put("id", super.getRequest().getData("id", int.class));
+		dataset.put("draftMode", object.getContract().isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}
