@@ -44,7 +44,7 @@ public class AuditorAuditRecordUpdateService extends AbstractService<Auditor, Au
 		masterId = super.getRequest().getData("id", int.class);
 		auditRecord = this.repository.findOneAuditRecordById(masterId);
 		auditor = auditRecord == null ? null : auditRecord.getCodeAudit().getAuditor();
-		status = auditRecord != null && super.getRequest().getPrincipal().hasRole(auditor);
+		status = auditRecord != null && (super.getRequest().getPrincipal().hasRole(auditor) || auditRecord.getCodeAudit().isDraftMode());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -78,25 +78,35 @@ public class AuditorAuditRecordUpdateService extends AbstractService<Auditor, Au
 		}
 		if (!super.getBuffer().getErrors().hasErrors("periodStart")) {
 			Date minimumEnd;
-			Date minimumEnd2;
 
 			minimumEnd = java.sql.Date.valueOf("1999-12-31");
-			minimumEnd2 = MomentHelper.deltaFromMoment(minimumEnd, 23, ChronoUnit.HOURS);
+			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 23, ChronoUnit.HOURS);
+			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 59, ChronoUnit.MINUTES);
+			super.state(MomentHelper.isAfter(object.getPeriodStart(), minimumEnd), "periodStart", "auditor.audit-record.form.error.bad-date");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("periodStart")) {
+			Date minimumEnd;
 
-			minimumEnd2 = MomentHelper.deltaFromMoment(minimumEnd2, 59, ChronoUnit.MINUTES);
-			super.state(MomentHelper.isAfter(object.getPeriodStart(), minimumEnd2), "periodStart", "auditor.audit-record.form.error.bad-date");
+			minimumEnd = java.sql.Date.valueOf("2022-07-29");
+			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 23, ChronoUnit.HOURS);
+			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MINUTES);
+			super.state(MomentHelper.isBefore(object.getPeriodStart(), minimumEnd), "periodStart", "auditor.audit-record.form.error.bad-date");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
 			Date minimumEnd;
+			if (object.getPeriodStart() != null) {
 
-			minimumEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 59, ChronoUnit.MINUTES);
-			super.state(MomentHelper.isAfter(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.too-close");
+				minimumEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 59, ChronoUnit.MINUTES);
+				super.state(MomentHelper.isAfter(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.too-close");
+
+			}
 		}
 		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
 			Date minimumEnd;
 
-			minimumEnd = java.sql.Date.valueOf("2200-01-01");
+			minimumEnd = java.sql.Date.valueOf("2022-07-30");
+			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MINUTES);
 			super.state(MomentHelper.isBefore(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.bad-date");
 		}
 	}
@@ -118,6 +128,7 @@ public class AuditorAuditRecordUpdateService extends AbstractService<Auditor, Au
 		dataset = super.unbind(object, "code", "periodStart", "periodEnd", "mark", "link");
 		dataset.put("marks", choices);
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
+		dataset.put("draftMode", object.getCodeAudit().isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}
