@@ -29,11 +29,13 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 	public void authorise() {
 		boolean status;
 		int masterId;
-		Sponsorship sponsorship;
+		Invoice invoice;
+		Sponsor sponsor;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		sponsorship = this.sir.findOneSponsorshipById(masterId);
-		status = sponsorship != null && sponsorship.isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor());
+		masterId = super.getRequest().getData("id", int.class);
+		invoice = this.sir.findOneInvoiceById(masterId);
+		sponsor = invoice == null ? null : invoice.getSponsorship().getSponsor();
+		status = invoice != null && invoice.getSponsorship().isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsor);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -76,6 +78,9 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 			super.state(existing == null, "code", "sponsor.invoice.form.error.duplicated");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("dueDate"))
+			super.state(MomentHelper.isAfter(object.getDueDate(), object.getRegistrationTime()), "dueDate", "sponsor.invoice.form.error.wrong-date");
+
 		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
 			Date minimumEnd;
 
@@ -83,8 +88,17 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 			super.state(MomentHelper.isAfter(object.getDueDate(), minimumEnd), "dueDate", "sponsor.invoice.form.error.too-close");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("quantity"))
+		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
+			Date minimumEnd;
+
+			minimumEnd = java.sql.Date.valueOf("2201-01-01");
+			super.state(MomentHelper.isBefore(object.getDueDate(), minimumEnd), "dueDate", "sponsor.invoice.form.error.wrong-date");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("quantity")) {
 			super.state(object.getQuantity().getAmount() > 0, "quantity", "sponsor.invoice.form.error.negative-quantity");
+			super.state(object.getQuantity().getAmount() <= 1000000, "quantity", "sponsor.invoice.form.error.too-high-amount");
+		}
 	}
 
 	@Override

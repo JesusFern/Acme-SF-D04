@@ -56,7 +56,7 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 		assert object != null;
 
 		Date firstDate = MomentHelper.parse("2000-01-01 00:00", "yyyy-MM-dd HH:mm");
-		Date lastDate = MomentHelper.parse("2100-12-31 23:59", "yyyy-MM-dd HH:mm");
+		Date lastDate = MomentHelper.parse("2200-12-31 23:59", "yyyy-MM-dd HH:mm");
 
 		if (!super.getBuffer().getErrors().hasErrors("startDisplayPeriod"))
 			super.state(MomentHelper.isAfterOrEqual(object.getStartDisplayPeriod(), firstDate), "startDisplayPeriod", "administrator.banner.form.error.first-date");

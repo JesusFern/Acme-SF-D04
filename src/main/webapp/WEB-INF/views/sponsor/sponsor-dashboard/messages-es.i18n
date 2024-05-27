@@ -8,8 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-sponsor.dashboard.form.title = Panel de patrocinador
-sponsor.dashboard.form.title.general-indicators = Indicadores generales
+sponsor.sponsor-dashboard.form.title = Panel de patrocinador
+sponsor.dashboard.form.title.general-indicators = Panel
 
 sponsor.dashboard.form.label.total-invoices-with-tax-less-or-equals-21 = Total de facturas con impuesto menor o igual a 21:
 sponsor.dashboard.form.label.total-sponsorships-link = Patrocinios totales con enlace:
