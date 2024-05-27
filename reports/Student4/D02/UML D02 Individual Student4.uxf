@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text/>
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>16</x>
+      <y>248</y>
+      <w>352</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Sponsorship
+--
++ code: String { Unique, NotBlank, Pattern(" ^[A-Z]{3}-[0-9]{4}$ ") }
++ moment: Date {NotNull, Temporal(TIMESTAMP), PastOrPresent}
++ startSponsor: Date {NotNull, Temporal(TIMESTAMP)}
++ endSponsor: Date {NotNull, Temporal(TIMESTAMP)}
++ amount: Money
++ type: Type
++ email: String {Email}
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>16</y>
+      <w>336</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Project
+--
++ code: String { Unique, NotBlank, Pattern(" ^[A-Z]{3}-[0-9]{4}$ ") }
++ title: String {NotBlank, Length(0, 75)}
++ abstract: String {NotBlank, Length(0, 100)}
++ indication: boolean
++ cost: int {Min(0)}
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>568</x>
+      <y>424</y>
+      <w>112</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Type
+--
++ Financial
++ In kind
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>472</y>
+      <w>384</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Invoice
+--
++ code: String { Unique, NotBlank, Pattern(" ^IN-[0-9]{4}-[0-9]{4}$ ") }
++ registrationTime: Date {NotNull, Temporal(TIMESTAMP), PastOrPresent}
++ startDate: Date {NotNull, Temporal(TIMESTAMP)}
++ endDate: Date {NotNull, Temporal(TIMESTAMP)}
++ quantity: Money
++ tax: double {Min(0), Max(100), Digits(3, 2)} 
++ link: String {URL}
++ /totalAmount: Money {Transient}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>472</x>
+      <y>16</y>
+      <w>296</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+Sponsor Dashboard
+--
++totalNumberOfInvoicesWithTaxLessOrEquals21:	Integer
++totalNumberOfSponsorshipsLink: Integer
++averageSponsorshipsAmount:	Money
++deviationSponsorshipsAmount: Money
++minimumSponsorshipsAmount: Money
++maximumSponsorshipsAmount: Money
++averageInvoicesQuantity: Money
++deviationInvoicesQuantity: Money
++minimumInvoicesQuantity: Money
++maximumInvoicesQuantity: Money
+	</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>264</y>
+      <w>256</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Sponsor
+--
++ name: String {NotBlank, Length(0, 75)}
++ benefits: String {NotBlank, Length(0, 100)}
++ webPage: String {URL}
++ email: String {Email}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>184</x>
+      <y>376</y>
+      <w>40</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-x
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>184</x>
+      <y>160</y>
+      <w>40</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>304</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+Created by
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+  </element>
+</diagram>
