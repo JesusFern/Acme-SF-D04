@@ -33,6 +33,6 @@ sponsor.sponsorship.list.label.type = Tipo
 
 sponsor.sponsorship.form.error.duplicated = El código ya esta siendo utilizado
 sponsor.sponsorship.form.error.too-close = El periodo debe ser almenos de 1 mes
-sponsor.sponsorship.form.error.bad-date= Fecha inválida
+sponsor.sponsorship.form.error.wrong-date= Fecha inválida
 sponsor.sponsorship.form.error.negative-amount = La cantidad debe ser positiva
 sponsor.sponsorship.form.error.invoice-total-amount-mismatch = La suma del importe total de todas sus facturas debe ser igual al importe del patrocinio.

@@ -10,9 +10,9 @@ sponsorship-08,ABC-005,2022/07/29 23:59,2022/07/30 00:00,2022/09/30 00:01,false,
 sponsorship-09,ABC-006,2022/07/29 23:59,2022/07/30 00:00,2022/09/14 00:00,false,EUR 100.00,Financial,usuario8@acme.com,https://example.com/objective,project-01,sponsor-01
 sponsorship-10,ABC-007,2022/07/29 23:59,2022/07/30 00:00,2022/09/29 23:59,false,EUR 100.00,Financial,usuario9@acme.com,https://example.com/objective,project-01,sponsor-01
 sponsorship-11,ABC-008,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 12:00,false,EUR 00.01,Financial,usuario10@acme.com,https://example.com/objective,project-01,sponsor-01
-sponsorship-12,ABC-009,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 12:00,false,EUR 00.02,Financial,usuario11@acme.com,https://example.com/objective,project-01,sponsor-01
+sponsorship-12,ABC-009,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 12:00,false,GBP 00.02,Financial,usuario11@acme.com,https://example.com/objective,project-01,sponsor-01
 sponsorship-13,ABC-010,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 12:00,false,USD 999999.99,Financial,usuario12@acme.com,https://example.com/objective,project-01,sponsor-01
-sponsorship-14,ABC-011,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 12:00,false,GBP 1000000.00,Financial,usuario13@acme.com,https://example.com/objective,project-01,sponsor-01
+sponsorship-14,ABC-011,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 12:00,false,EUR 1000000.00,Financial,usuario13@acme.com,https://example.com/objective,project-01,sponsor-01
 sponsorship-15,ABC-012,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 12:00,true,EUR 100.0,Financial,usuario14@acme.com,https://example.com/objective,project-01,sponsor-01
 sponsorship-16,ABC-013,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 12:00,true,EUR 100.0,In_kind,usuario15@acme.com,https://example.com/objective,project-01,sponsor-01
 sponsorship-17,ABC-014,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 12:00,true,EUR 100.0,Financial,usuario16@acme.com,https://example.com/objective,project-01,sponsor-01
