@@ -23,7 +23,7 @@
 <acme:input-select code="auditor.code-audit.form.label.mark" path="mark" choices="${marks}" readonly="true" />
 	<acme:input-textbox code="auditor.code-audit.form.label.link" path="link"/>
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command, 'show') }">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') }">
 	 <acme:input-moment code="auditor.code-audit.form.label.execution" path="execution" readonly="true" />
 	 
 			<acme:button code="auditor.audit-record.list.title" action="/auditor/audit-record/list?masterId=${id}"/>

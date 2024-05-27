@@ -96,6 +96,7 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 
 			minimumEnd = java.sql.Date.valueOf("2022-07-29");
 			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 23, ChronoUnit.HOURS);
+			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MINUTES);
 			super.state(MomentHelper.isBefore(object.getPeriodStart(), minimumEnd), "periodStart", "auditor.audit-record.form.error.bad-date");
 		}
 
@@ -112,6 +113,7 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 			Date minimumEnd;
 
 			minimumEnd = java.sql.Date.valueOf("2022-07-30");
+			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MINUTES);
 			super.state(MomentHelper.isBefore(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.bad-date");
 		}
 	}
