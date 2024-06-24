@@ -85,7 +85,7 @@
 			<acme:menu-separator/>	
 			<acme:menu-suboption code="master.menu.sponsor.my-dashboard" action="/sponsor/sponsor-dashboard/show"/>
 		</acme:menu-option>
-		<acme:menu-option code="master.menu.options" access="isAnonymous()">	
+		<acme:menu-option code="master.menu.options">	
 			<acme:menu-suboption code="master.menu.user-account.claim" action="/any/claim/list-all"/>
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">	
