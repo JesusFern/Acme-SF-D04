@@ -128,3 +128,4 @@ master.menu.sponsor.my-dashboard = Show my dashboard
 
 # master.menu.authenticated ####################################################
 master.menu.authenticated = Authenticated
+master.menu.options= Options

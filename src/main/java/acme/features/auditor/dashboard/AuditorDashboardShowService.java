@@ -70,8 +70,6 @@ public class AuditorDashboardShowService extends AbstractService<Auditor, Audito
 		dashboard = new AuditorDashboard();
 		dashboard.setTotalNumberOfStaticCodeAudit(0);
 		dashboard.setTotalNumberOfDynamicCodeAudit(0);
-		dashboard.setMinimumNumberOfAuditRecords(0);
-		dashboard.setMaximumNumberOfAuditRecords(0);
 
 		if (averageTimeOfPeriod != null) {
 

@@ -71,6 +71,8 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 
 		super.bind(object, "code", "type", "correctiveActions", "link");
 		object.setProject(project);
+		if (object.getLink() == "")
+			object.setLink(null);
 	}
 
 	@Override

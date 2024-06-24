@@ -29,6 +29,6 @@ administrator.banner.list.label.instantiationMoment = Instantiation Moment
 
 administrator.banner.form.error.first-date = This date is before the supported date
 administrator.banner.form.error.start-period = This date is after the supported date
-administrator.banner.form.error.after-instantiation-moment = This date is after the instantiation moment
+administrator.banner.form.error.after-instantiation-moment = This date should be after today's date : 2022/07/30 00:00
 administrator.banner.form.error.end-period = This date is after the end period
 administrator.banner.form.error.short-period = Must be at least 1 week long
