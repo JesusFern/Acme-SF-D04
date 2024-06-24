@@ -139,5 +139,4 @@ master.menu.manager.all-projects = Ver todos los proyectos
 
 # master.menu.authenticated ####################################################
 master.menu.authenticated = Autenticado
-
-
+master.menu.options= Opciones

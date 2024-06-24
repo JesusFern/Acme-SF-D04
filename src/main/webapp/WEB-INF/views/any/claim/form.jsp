@@ -28,5 +28,5 @@
 			</jstl:when>
 	</jstl:choose>
 	<acme:submit test="${_command == 'create'}" 
-	code="authenticated.claim.form.button.create" action="/authenticated/claim/create"/>
+	code="authenticated.claim.form.button.create" action="/any/claim/create"/>
 </acme:form>

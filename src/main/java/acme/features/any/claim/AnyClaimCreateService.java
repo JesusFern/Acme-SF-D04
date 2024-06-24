@@ -10,25 +10,25 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.claim;
+package acme.features.any.claim;
 
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Authenticated;
+import acme.client.data.accounts.Any;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.claims.Claim;
 
 @Service
-public class AuthenticatedClaimCreateService extends AbstractService<Authenticated, Claim> {
+public class AnyClaimCreateService extends AbstractService<Any, Claim> {
 
 	// Internal state ---------------------------------------------------------
 	@Autowired
-	private AuthenticatedClaimRepository repository;
+	private AnyClaimRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -53,6 +53,10 @@ public class AuthenticatedClaimCreateService extends AbstractService<Authenticat
 		assert object != null;
 
 		super.bind(object, "code", "heading", "description", "department", "email", "link");
+		if (object.getLink() == "")
+			object.setLink(null);
+		if (object.getEmail() == "")
+			object.setEmail(null);
 
 	}
 

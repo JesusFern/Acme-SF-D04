@@ -1,9 +1,11 @@
 
 package acme.entities.codeAudits;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Column;
@@ -64,25 +66,30 @@ public class CodeAudit extends AbstractEntity {
 	private String				correctiveActions;
 
 	@URL
-	@Length(max = 255)
+	@Length(min = 7, max = 255)
 	private String				link;
 
 
 	// Derived attributes ----------------------------------------------------------
 	@Transient
 	public Mark getMark(final Collection<AuditRecord> records) {
+		List<Mark> ORDER = Arrays.asList(Mark.A_PLUS, Mark.A, Mark.B, Mark.C, Mark.F, Mark.F_MINUS);
 		Map<Mark, Integer> frequencyMap = new HashMap<>();
 		for (AuditRecord arecords : records) {
 			Mark mark = arecords.getMark();
 			frequencyMap.put(mark, frequencyMap.getOrDefault(mark, 0) + 1);
 		}
+
 		Mark mode = null;
 		int maxFrequency = 0;
+
 		for (Map.Entry<Mark, Integer> entry : frequencyMap.entrySet())
 			if (entry.getValue() > maxFrequency) {
 				maxFrequency = entry.getValue();
 				mode = entry.getKey();
-			}
+			} else if (entry.getValue() == maxFrequency)
+				if (ORDER.indexOf(entry.getKey()) > ORDER.indexOf(mode))
+					mode = entry.getKey();
 
 		return mode;
 	}

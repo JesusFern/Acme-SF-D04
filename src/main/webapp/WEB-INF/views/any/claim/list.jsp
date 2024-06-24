@@ -21,5 +21,5 @@
 </acme:list>
 
 <jstl:if test="${_command == 'list-all'}">
-	<acme:button code="authenticated.claim.list.button.create" action="/authenticated/claim/create"/>
+	<acme:button code="authenticated.claim.list.button.create" action="/any/claim/create"/>
 </jstl:if>	
