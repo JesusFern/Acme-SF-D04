@@ -4,8 +4,8 @@ package acme.features.client.progressLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.entities.contracts.Contract;
 import acme.entities.contracts.ProgressLog;
 import acme.roles.Client;
 
@@ -24,11 +24,13 @@ public class ClientProgressLogDeleteService extends AbstractService<Client, Prog
 		int masterId;
 		ProgressLog progressLog;
 		Client client;
+		Contract contract;
 
 		masterId = super.getRequest().getData("id", int.class);
 		progressLog = this.cpr.findOneProgressLogById(masterId);
+		contract = this.cpr.findOneContractByProgressLogId(masterId);
 		client = progressLog == null ? null : progressLog.getContract().getClient();
-		status = progressLog != null && super.getRequest().getPrincipal().hasRole(client);
+		status = progressLog != null && super.getRequest().getPrincipal().hasRole(client) && contract.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -65,12 +67,16 @@ public class ClientProgressLogDeleteService extends AbstractService<Client, Prog
 
 	@Override
 	public void unbind(final ProgressLog object) {
-		assert object != null;
+		/*
+		 * assert object != null;
+		 * 
+		 * Dataset dataset;
+		 * 
+		 * dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson");
+		 * 
+		 * super.getResponse().addData(dataset);
+		 * dataset.put("draftMode", object.getContract().isDraftMode());
+		 */
 
-		Dataset dataset;
-
-		dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson");
-
-		super.getResponse().addData(dataset);
 	}
 }

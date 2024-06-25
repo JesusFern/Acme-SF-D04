@@ -19,3 +19,4 @@ auditor.audit-record.form.button.update= Actualizar
 auditor.audit-record.form.error.too-close= El periodo debe ser almenos de 1 hora
 auditor.audit-record.form.error.duplicated= El código ya esta siendo utilizado
 auditor.audit-record.form.error.bad-date= Fecha no válida
+auditor.audit-record.form.error.setStartDate= Fecha inicio necesaria

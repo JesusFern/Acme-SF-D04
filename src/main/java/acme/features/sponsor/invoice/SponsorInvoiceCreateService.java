@@ -28,11 +28,11 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
+		int sponsorshipId;
 		Sponsorship sponsorship;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		sponsorship = this.sir.findOneSponsorshipById(masterId);
+		sponsorshipId = super.getRequest().getData("masterId", int.class);
+		sponsorship = this.sir.findOneSponsorshipById(sponsorshipId);
 		status = sponsorship != null && sponsorship.isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor());
 
 		super.getResponse().setAuthorised(status);
@@ -76,6 +76,9 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 			super.state(existing == null, "code", "sponsor.invoice.form.error.duplicated");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("dueDate"))
+			super.state(MomentHelper.isAfter(object.getDueDate(), object.getRegistrationTime()), "dueDate", "sponsor.invoice.form.error.bad-date");
+
 		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
 			Date minimumEnd;
 
@@ -83,8 +86,17 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 			super.state(MomentHelper.isAfter(object.getDueDate(), minimumEnd), "dueDate", "sponsor.invoice.form.error.too-close");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("quantity"))
+		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
+			Date minimumEnd;
+
+			minimumEnd = java.sql.Date.valueOf("2201-01-01");
+			super.state(MomentHelper.isBefore(object.getDueDate(), minimumEnd), "dueDate", "sponsor.invoice.form.error.bad-date");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("quantity")) {
 			super.state(object.getQuantity().getAmount() > 0, "quantity", "sponsor.invoice.form.error.negative-quantity");
+			super.state(object.getQuantity().getAmount() <= 1000000, "quantity", "sponsor.invoice.form.error.too-high-quantity");
+		}
 	}
 
 	@Override

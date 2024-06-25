@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>200</y>
+      <w>40</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>448</y>
+      <w>112</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Types
+--
++ COMPANY
++ INDIVIDUAL
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>312</y>
+      <w>352</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Client
+--
++ identification: String {Unique,NotBlank, +Pattern("^CLI-[0-9]{4}$")}
++ companyName: String {NotBlank,Length(0,75)}
++ type: Types 
++ email: String {Email,NotBlank}
++ optionalLink: String {URL,Length(0,255)}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>288</y>
+      <w>360</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Contract
+--
++ code: String {NotBlank,Unique,Pattern="^[A-Z]{1,3}-[0-9]{3}$"}
++ instantiationMoment: Date {PastOrPresent,Temporal(TIMESTAMP)}
++ providerName: String {NotBlank,Length(0,75)}
++ customerName: String {NotBlank,Length(0,75)}
++ goals: String {NotBlank,Length(0,100)}
++ budget: Money
++ project: Project
++ client: Client
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>128</x>
+      <y>536</y>
+      <w>360</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Progress Log
+--
++ recordId: String {NotBlank,Unique,Pattern="^PG-[A-Z]{1,2}-[0-9]{4}$"}
++ percentageCompleteness: double {Max(100),Min(0),Digits=(3,2)}
++ comment: String {NotBlank,Length(0,100)}
++ registrationMoment: Date {PastOrPresent,Temporal(TIMESTAMP)}
++ responsiblePerson: String {NotBlank,Length(0,75)}
++ contract: Contract
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>448</y>
+      <w>40</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-x
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>360</y>
+      <w>168</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>created by &gt;
+lt=&lt;-x
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>136</x>
+      <y>56</y>
+      <w>336</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Project
+--
++ code: String { Unique, NotBlank, Pattern(" ^[A-Z]{3}-[0-9]{4}$ ") }
++ title: String {NotBlank, Length(0, 75)}
++ abstract: String {NotBlank, Length(0, 100)}
++ indication: boolen
++ cost: int
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>112</y>
+      <w>280</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+Client Dashboard
+--
++ serialVersionUID = 1L: long
++ totalNumberOfProgressLogsBelow25: Integer
++ totalNumberOfProgressLogsBetween25to50: Integer
++ totalNumberOfProgressLogsBetween50to75: Integer
++ totalNumberOfProgressLogsAbove75: Integer
++ averageContractsBudget: Double
++ deviationProjectsCost: Double
++ minimumContractsBudget: Double
++ maximumContractsBudget: Double
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

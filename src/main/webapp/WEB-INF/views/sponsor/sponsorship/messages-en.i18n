@@ -33,5 +33,6 @@ sponsor.sponsorship.list.label.type = Type
 
 sponsor.sponsorship.form.error.duplicated = This code is taken
 sponsor.sponsorship.form.error.too-close = Period should be at least 1 month long
+sponsor.sponsorship.form.error.wrong-date= Invalid Date
 sponsor.sponsorship.form.error.negative-amount = The amount must be positive
 sponsor.sponsorship.form.error.invoice-total-amount-mismatch = The sum of the total amount of all their invoices must be equal to the amount of the sponsorship

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+fontsize=10
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>320</y>
+      <w>370</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+TrainingModule
+--
++ code: String {Unique, NotBlank, Pattern("A-Z]{1,3}-[0-9]{3}")}
++ creationMoment: Date {NotNull, Temporal(TIMESTAMP), PastOrPresent}
++ details: String {NotBlank, Length(0,100)}
++ difficulty: Level {NotNull}
++ startMoment: Date {NotNull, Temporal(TIMESTAMP)}
++ endMoment: Date {NotNull, Temporal(TIMESTAMP)}
++ link: String {URL}
++ time: int {Min(0)}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>320</y>
+      <w>100</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Level
+--
++ Basic
++ Intermediate
++ Advanced
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>570</y>
+      <w>370</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+TrainingSession
+--
++ code: String {Unique, NotBlank, Pattern("TS-[A-Z]{1,3}-[0-9]{3}")}
++ timeBeforePeriod: Date {NotNull, Temporal(TIMESTAMP)}
++ timeAfterPeriod: Date {NotNull, Temporal(TIMESTAMP)}
++ location: String {NotBlank, Length(0,76)}
++ instructor: String {NotBlank, Length(0,76)}
++ email: String {NotNull, Email}
++ link: String {URL}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>460</y>
+      <w>40</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-x
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>110</y>
+      <w>290</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+DeveloperDashboard
+--
++ totalNumberOfTrainingModulesWithUpdatedMoment: Integer
++ totalNumberOfTrainingSessionsWithLink: Integer
++ averageTimeTrainingModules: Double
++ deviationTimeTrainingModules: Double
++ minimumTimeTrainingModules: Integer
++ maximumTimeTrainingModules: Integer
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>100</y>
+      <w>370</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Project
+--
++ code: String { Unique, NotBlank, Pattern(" ^[A-Z]{3}-[0-9]{4}$ ") }
++ title: String {NotBlank, Length(0, 75)}
++ abstract: String {NotBlank, Length(0, 100)}
++ indication: boolen
++ cost: int int {Min(0)}
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>230</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>330</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Role&gt;&gt;
+Developer
+--
++ degree: String {NotBlank,Length(0,75)}
++ specialisation: String {NotBlank,Length(0,100)}
++ skills: String {NotBlank,Length(0,100)}
++ email: String {NotNull, Email}
++ link: String {URL}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>390</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Created by
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>130</x>
+      <y>410</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>bg=green
+The update moment
+must be in the
+past after the 
+creation moment</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>410</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=..
+</panel_attributes>
+    <additional_attributes>10.0;40.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>130</x>
+      <y>520</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=green
+The time period must
+be at least one week
+ahead the training 
+module creation
+moment</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>440</y>
+      <w>200</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=..
+</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+</diagram>
