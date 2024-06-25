@@ -54,6 +54,9 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		assert object != null;
 
 		super.bind(object, "code", "title", "abstractString", "indication", "cost", "link");
+
+		if (object.getLink() == "")
+			object.setLink(null);
 	}
 
 	@Override
