@@ -64,29 +64,13 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 		deviationSponsorshipsAmount.setAmount(this.sdr.deviationSponsorshipsAmount(id));
 		deviationSponsorshipsAmount.setCurrency("EUR");
 
-		Money averageSponsorshipsAmount0 = new Money();
-		averageSponsorshipsAmount0.setAmount(00.00);
-		averageSponsorshipsAmount0.setCurrency("EUR");
-
-		Money deviationSponsorshipsAmount0 = new Money();
-		deviationSponsorshipsAmount0.setAmount(00.00);
-		deviationSponsorshipsAmount0.setCurrency("EUR");
-
 		Money minimumSponsorshipsAmount = new Money();
 		minimumSponsorshipsAmount.setAmount(this.sdr.minimumSponsorshipsAmount(id));
 		minimumSponsorshipsAmount.setCurrency("EUR");
 
-		Money minimumSponsorshipsAmount0 = new Money();
-		minimumSponsorshipsAmount0.setAmount(00.00);
-		minimumSponsorshipsAmount0.setCurrency("EUR");
-
 		Money maximumSponsorshipsAmount = new Money();
 		maximumSponsorshipsAmount.setAmount(this.sdr.maximumSponsorshipsAmount(id));
 		maximumSponsorshipsAmount.setCurrency("EUR");
-
-		Money maximumSponsorshipsAmount0 = new Money();
-		maximumSponsorshipsAmount0.setAmount(00.00);
-		maximumSponsorshipsAmount0.setCurrency("EUR");
 
 		Money averageInvoicesQuantity = new Money();
 		averageInvoicesQuantity.setAmount(this.sdr.averageInvoicesQuantity(id));
@@ -96,14 +80,6 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 		deviationInvoicesQuantity.setAmount(this.sdr.deviationInvoicesQuantity(id));
 		deviationInvoicesQuantity.setCurrency("EUR");
 
-		Money averageInvoicesQuantity0 = new Money();
-		averageInvoicesQuantity0.setAmount(00.00);
-		averageInvoicesQuantity0.setCurrency("EUR");
-
-		Money deviationInvoicesQuantity0 = new Money();
-		deviationInvoicesQuantity0.setAmount(00.00);
-		deviationInvoicesQuantity0.setCurrency("EUR");
-
 		Money minimumInvoicesQuantity = new Money();
 		minimumInvoicesQuantity.setAmount(this.sdr.minimumInvoicesQuantity(id));
 		minimumInvoicesQuantity.setCurrency("EUR");
@@ -112,30 +88,22 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 		maximumInvoicesQuantity.setAmount(this.sdr.maximumInvoicesQuantity(id));
 		maximumInvoicesQuantity.setCurrency("EUR");
 
-		Money minimumInvoicesQuantity0 = new Money();
-		minimumInvoicesQuantity0.setAmount(00.00);
-		minimumInvoicesQuantity0.setCurrency("EUR");
-
-		Money maximumInvoicesQuantity0 = new Money();
-		maximumInvoicesQuantity0.setAmount(00.00);
-		maximumInvoicesQuantity0.setCurrency("EUR");
-
 		totalNumberOfInvoicesWithTaxLessOrEquals21 = this.sdr.totalNumberOfInvoicesWithTaxLessOrEquals21(id);
 		totalNumberOfSponsorshipsLink = this.sdr.totalNumberOfSponsorshipsLink(id);
 
 		dashboard = new SponsorDashboard();
 		dashboard.setTotalNumberOfInvoicesWithTaxLessOrEquals21(0);
 		dashboard.setTotalNumberOfSponsorshipsLink(0);
-		dashboard.setMinimumSponsorshipsAmount(minimumSponsorshipsAmount0);
-		dashboard.setMaximumSponsorshipsAmount(maximumSponsorshipsAmount0);
-		dashboard.setMinimumInvoicesQuantity(minimumInvoicesQuantity0);
-		dashboard.setMaximumInvoicesQuantity(maximumInvoicesQuantity0);
-		dashboard.setAverageSponsorshipsAmount(averageSponsorshipsAmount0);
-		dashboard.setDeviationSponsorshipsAmount(deviationSponsorshipsAmount0);
-		dashboard.setAverageInvoicesQuantity(averageInvoicesQuantity0);
-		dashboard.setDeviationInvoicesQuantity(deviationInvoicesQuantity0);
+		dashboard.setMinimumSponsorshipsAmount(null);
+		dashboard.setMaximumSponsorshipsAmount(null);
+		dashboard.setMinimumInvoicesQuantity(null);
+		dashboard.setMaximumInvoicesQuantity(null);
+		dashboard.setAverageSponsorshipsAmount(null);
+		dashboard.setDeviationSponsorshipsAmount(null);
+		dashboard.setAverageInvoicesQuantity(null);
+		dashboard.setDeviationInvoicesQuantity(null);
 
-		if (averageSponsorshipsAmount != null) {
+		if (averageSponsorshipsAmount.getAmount() != null) {
 			dashboard.setTotalNumberOfInvoicesWithTaxLessOrEquals21(totalNumberOfInvoicesWithTaxLessOrEquals21);
 			dashboard.setTotalNumberOfSponsorshipsLink(totalNumberOfSponsorshipsLink);
 			dashboard.setAverageSponsorshipsAmount(averageSponsorshipsAmount);
