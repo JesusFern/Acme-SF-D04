@@ -56,6 +56,8 @@ public class ProgressLog extends AbstractEntity {
 	@NotNull
 	private Date				registrationMoment;
 
+	private boolean				draftMode;
+
 	@NotBlank
 	@Length(max = 75)
 	private String				responsiblePerson;
