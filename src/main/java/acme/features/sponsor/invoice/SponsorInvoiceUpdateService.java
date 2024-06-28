@@ -69,7 +69,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("dueDate"))
-			super.state(MomentHelper.isAfter(object.getDueDate(), object.getRegistrationTime()), "dueDate", "sponsor.invoice.form.error.wrong-date");
+			super.state(MomentHelper.isAfter(object.getDueDate(), object.getRegistrationTime()), "dueDate", "sponsor.invoice.form.error.bad-date");
 
 		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
 			Date minimumEnd;
@@ -82,7 +82,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 			Date minimumEnd;
 
 			minimumEnd = java.sql.Date.valueOf("2201-01-01");
-			super.state(MomentHelper.isBefore(object.getDueDate(), minimumEnd), "dueDate", "sponsor.invoice.form.error.wrong-date");
+			super.state(MomentHelper.isBefore(object.getDueDate(), minimumEnd), "dueDate", "sponsor.invoice.form.error.bad-date");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("quantity")) {

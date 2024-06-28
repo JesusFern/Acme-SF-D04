@@ -70,6 +70,8 @@ public class AuditorCodeAuditCreateService extends AbstractService<Auditor, Code
 		projectId = super.getRequest().getData("project", int.class);
 		project = this.repository.findOneProjectById(projectId);
 		object.setProject(project);
+		if (object.getLink() == "")
+			object.setLink(null);
 	}
 
 	@Override

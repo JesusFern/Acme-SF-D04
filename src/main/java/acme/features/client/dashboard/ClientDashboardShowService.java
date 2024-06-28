@@ -69,15 +69,27 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		totalNumberOfProgressLogsCompletenessAbove75 = this.cdr.totalNumberOfProgressLogsCompletenessAbove75(id);
 
 		dashboard = new ClientDashboard();
-		dashboard.setTotalNumberOfProgressLogsCompletenessBelow25(totalNumberOfProgressLogsCompletenessBelow25);
-		dashboard.setTotalNumberOfProgressLogsCompletenessBetween25to50(totalNumberOfProgressLogsCompletenessBetween25to50);
-		dashboard.setTotalNumberOfProgressLogsCompletenessBetween50to75(totalNumberOfProgressLogsCompletenessBetween50to75);
-		dashboard.setTotalNumberOfProgressLogsCompletenessAbove75(totalNumberOfProgressLogsCompletenessAbove75);
-		dashboard.setAverageContractsBudget(averageContractsBudget);
-		dashboard.setDeviationContractsBudget(deviationContractsBudget);
-		dashboard.setMinimumContractsBudget(minimumContractsBudget);
-		dashboard.setMaximumContractsBudget(maximumContractsBudget);
-
+		Money money0 = new Money();
+		money0.setAmount(0.00);
+		money0.setCurrency("EUR");
+		dashboard.setAverageContractsBudget(null);
+		dashboard.setDeviationContractsBudget(null);
+		dashboard.setMaximumContractsBudget(null);
+		dashboard.setMinimumContractsBudget(null);
+		dashboard.setTotalNumberOfProgressLogsCompletenessAbove75(0);
+		dashboard.setTotalNumberOfProgressLogsCompletenessBelow25(0);
+		dashboard.setTotalNumberOfProgressLogsCompletenessBetween25to50(0);
+		dashboard.setTotalNumberOfProgressLogsCompletenessBetween50to75(0);
+		if (minimumContractsBudget.getAmount() != null) {
+			dashboard.setTotalNumberOfProgressLogsCompletenessBelow25(totalNumberOfProgressLogsCompletenessBelow25);
+			dashboard.setTotalNumberOfProgressLogsCompletenessBetween25to50(totalNumberOfProgressLogsCompletenessBetween25to50);
+			dashboard.setTotalNumberOfProgressLogsCompletenessBetween50to75(totalNumberOfProgressLogsCompletenessBetween50to75);
+			dashboard.setTotalNumberOfProgressLogsCompletenessAbove75(totalNumberOfProgressLogsCompletenessAbove75);
+			dashboard.setAverageContractsBudget(averageContractsBudget);
+			dashboard.setDeviationContractsBudget(deviationContractsBudget);
+			dashboard.setMinimumContractsBudget(minimumContractsBudget);
+			dashboard.setMaximumContractsBudget(maximumContractsBudget);
+		}
 		super.getBuffer().addData(dashboard);
 	}
 

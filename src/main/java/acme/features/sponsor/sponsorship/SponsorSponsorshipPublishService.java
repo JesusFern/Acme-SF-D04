@@ -93,11 +93,12 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			super.state(MomentHelper.isAfter(object.getStartSponsor(), object.getMoment()), "startSponsor", "sponsor.sponsorship.form.error.wrong-date");
 
 		if (!super.getBuffer().getErrors().hasErrors("startSponsor")) {
-			Date minimumEnd;
+			Date minimumStart;
 
-			minimumEnd = java.sql.Date.valueOf("2200-11-30");
-			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MONTHS);
-			super.state(MomentHelper.isBefore(object.getStartSponsor(), minimumEnd), "startSponsor", "sponsor.sponsorship.form.error.wrong-date");
+			minimumStart = java.sql.Date.valueOf("2200-11-30");
+			minimumStart = MomentHelper.deltaFromMoment(minimumStart, 23, ChronoUnit.HOURS);
+			minimumStart = MomentHelper.deltaFromMoment(minimumStart, 59, ChronoUnit.MINUTES);
+			super.state(MomentHelper.isBefore(object.getStartSponsor(), minimumStart), "startSponsor", "sponsor.sponsorship.form.error.wrong-date");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("endSponsor")) {

@@ -26,6 +26,7 @@ sponsor.invoice.list.label.code = Code
 sponsor.invoice.list.label.quantity = Quantity
 
 sponsor.invoice.form.error.duplicated = This code is taken
-sponsor.sponsorship.form.error.bad-date= Invalid Date
+sponsor.invoice.form.error.bad-date= Invalid Date
 sponsor.invoice.form.error.too-close = Due date should be at least 1 month ahead the registration time
-sponsor.invoice.form.error.negative-amount = The quantity must be positive
+sponsor.invoice.form.error.negative-quantity = The quantity must be positive
+sponsor.invoice.form.error.high-quantity = The amount must be lower than 1000000

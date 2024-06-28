@@ -1,28 +1,38 @@
-key,code,creation-moment,details,difficulty-level,update-moment,link,time,draft-mode,key:project,key:developer
-training-module-01,AA-000,2000/01/01 00:00,detalles1,Advanced,2022/07/29 23:59,https://www.sport.es,10,true,project-01,developer-01
-training-module-02,AA-001,2000/01/01 00:00,detalles2,Advanced,2022/07/29 23:58,https://www.pocketpair.jp,11,true,project-01,developer-01
-training-module-03,A-000,2000/01/01 00:00,detalles3,Advanced,2022/07/02 06:22,https://www.nintendo.com,1,true,project-01,developer-01
-training-module-04,A-001,2012/11/22 16:22,detalle,Intermediate,2022/07/02 18:37,https://twitter.com/avogado6,12,true,project-01,developer-01
-training-module-05,AAA-001,2000/01/01 00:00,detalles,Intermediate,2022/07/02 00:00,https://twitter.com/avogado6,12,false,project-01,developer-01
-training-module-06,AB-000,2015/05/26 23:58,detallesdetallesdetalles,Intermediate,2022/07/29 23:59,https://twitter.com/elonmusk,100,true,project-01,developer-01
-training-module-07,AZB-001,2018/02/26 23:57,deta,Basic,2022/07/29 23:59,https://twitter.com/JeffBezos,324,true,project-01,developer-01
-training-module-08,AB-002,2010/07/29 23:58,detalles,Basic,2022/07/29 23:59,https://twitter.com/Tesla,665,true,project-01,developer-01
-training-module-09,AAA-000,2001/07/29 23:58,<h1>!</h1>,Basic,2022/07/29 23:59,https://twitter.com/Google,9,false,project-01,developer-01
-training-module-10,AB-004,2001/07/29 23:57,' or 'A'='A,Basic,2022/07/29 23:59,https://twitter.com/X,99,true,project-01,developer-01
-training-module-11,YYY-000,2005/03/01 00:00,국민경제의 발전을,Intermediate,2022/03/02 00:00,https://twitter.com/cnnbrk,999,true,project-01,developer-01
-training-module-12,YYY-001,2004/03/01 00:00,العظمى واعتلاء,Advanced,2022/03/02 00:00,https://twitter.com/Windows,296,true,project-01,developer-01
-training-module-13,ZZZ-000,2007/07/01 00:00,detalles,Basic,,,27,true,project-01,developer-01
-training-module-14,ZZZ-001,2000/01/01 00:01,detalles,Basic,2010/07/29 23:59,https://twitter.com/Microsoft,9999,true,project-01,developer-01
-training-module-15,YY-000,2000/01/01 00:00,detalles,Advanced,2000/01/01 00:01,https://twitter.com/Windows,10000,true,project-01,developer-01
-training-module-16,ZZ-000,2000/01/01 00:01,detalles,Basic,2000/01/01 00:02,https://twitter.com/NVIDIAGeForce,32,true,project-01,developer-01
-training-module-17,ZY-001,2001/01/01 23:58,detalles,Basic,2001/01/01 23:59,https://twitter.com/OpenAI,20,true,project-01,developer-01
-training-module-18,AB-012,2001/01/01 23:59,detalles,Intermediate,2001/01/02 00:00,https://twitter.com/GoogleAI,1,true,project-01,developer-01
-training-module-19,AC-013,2022/07/01 00:00,detalles,Basic,2022/07/02 00:00,http://第1节.com,2,true,project-01,developer-01
-training-module-20,AD-998,2022/07/02 00:00,detalles,Advanced,2022/07/03 00:00,https://module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1modul.com,3,true,project-02,developer-01
-training-module-21,AB-523,2022/07/29 23:59,detalles,Basic,2022/07/02 00:00,https://module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1module1modu.com,4,true,project-01,developer-02
-training-module-22,AJ-999,2022/07/29 23:58,detallesdetallesdetallesdetallesdetallesdetallesde,Basic,2022/07/02 00:00,http://S.com,40,true,project-01,developer-01
-training-module-23,AH-099,2022/07/01 00:00,d,Basic,2022/07/02 00:00,,48,true,project-01,developer-01
-training-module-24,AB-018,2022/07/01 00:00,de,Basic,2022/07/02 00:00,http://se.com,10,true,project-01,developer-01
-training-module-25,AN-009,2022/07/01 08:22,detallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdeta,Basic,2022/07/02 15:00,http://Андрей.com,6,true,project-01,developer-01
-training-module-26,AB-920,2022/07/01 13:21,detallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdet,Intermediate,2022/07/02 04:37,,4000,true,project-01,developer-01
-training-module-27,AHN-263,2022/07/01 00:00,deTAILS,Basic,,https://www.sport.es,333,true,project-02,developer-02
+key,code,details,difficulty-level,creation-moment,update-moment,link,time,draft-mode,key:project,key:developer
+module-01,ABC-123,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-02,XYZ-123,السلام عليكم ورحمة الله وبركاته. كيف حالكم اليوم؟,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-03,DEF-789,<h1>hacked</h1>,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-04,WXY-234,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-05,GHI-345,' or 'A'='A,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-06,ACD-121,S,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-07,ACD-122,Se,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-08,ACD-123,Sed ut perspiciatis unde omnis iste natus error si,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-09,RST-124,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus errora,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-10,RST-724,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus erroraa,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-11,RST-129,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-12,RST-126,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-13,URS-678,Sed ut perspiciatis unde omnis,INTERMEDIATE,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-14,DSO-678,Sed ut perspiciatis unde omnis,ADVANCED,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-15,DSO-285,Sed ut perspiciatis unde omnis,BASIC,2020/12/31 23:59,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-16,BCD-890,Sed ut perspiciatis unde omnis,BASIC,2021/01/01 00:00,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-17,JBP-786,Sed ut perspiciatis unde omnis,BASIC,2020/02/29 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-18,JBP-929,Sed ut perspiciatis unde omnis,BASIC,2000/01/01 00:00,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-19,JBP-781,Sed ut perspiciatis unde omnis,BASIC,2000/01/01 00:01,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-20,UVW-456,Sed ut perspiciatis unde omnis,BASIC,2022/07/29 23:59,2020/04/04 14:35,https://example.com/objective,20,false,project-01,developer-01
+module-21,JFL-681,Sed ut perspiciatis unde omnis,BASIC,2022/07/30 00:00,2020/04/04 14:35,https://example.com/objective,20,false,project-01,developer-01
+module-22,SFB-458,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/12/31 23:59,https://example.com/objective,20,false,project-01,developer-01
+module-23,APS-127,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2021/01/01 00:00,https://example.com/objective,20,false,project-01,developer-01
+module-24,VWX-567,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/02/29 14:35,https://example.com/objective,20,false,project-01,developer-01
+module-25,LMA-125,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2000/01/01 00:00,https://example.com/objective,20,false,project-01,developer-01
+module-26,LMA-452,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2000/01/01 00:01,https://example.com/objective,20,false,project-01,developer-01
+module-27,LMA-928,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2022/07/29 23:59,https://example.com/objective,20,false,project-01,developer-01
+module-28,LMA-922,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/07/30 00:00,https://example.com/objective,20,false,project-01,developer-01
+module-29,RST-382,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,20,false,project-01,developer-01
+module-30,RST-289,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,ftp://a,20,false,project-01,developer-01
+module-31,JEN-890,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,ftp://a.b,20,false,project-01,developer-01
+module-32,JEN-891,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",20,false,project-01,developer-01
+module-33,JEN-898,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",20,false,project-01,developer-01
+module-34,SFP-324,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,ftp://www.lorem-ipsum.org,1,false,project-01,developer-01
+module-35,ASD-762,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,null,2,true,project-01,developer-02
+module-36,ASD-761,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,9999,true,project-01,developer-02
+module-37,ASD-763,Sed ut perspiciatis unde omnis,BASIC,2020/04/04 14:35,2020/04/19 14:54,https://example.com/objective,10000,true,project-01,developer-02

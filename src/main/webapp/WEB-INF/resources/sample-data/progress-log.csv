@@ -1,30 +1,31 @@
-key,record-id,percentage-completeness,comment,registration-moment,responsible-person,key:contract
-progress-log-01,PG-A-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-02,PG-B-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-03,PG-C-1111,0.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-04,PG-D-1111,0.01,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-05,PG-E-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-06,PG-F-1111,99.99,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-07,PG-G-1111,100.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-08,PG-H-1111,50.00,S,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-09,PG-I-1111,50.00,Se,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-10,PG-A-2111,50.00,<h1>hacked</h1>,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-11,PG-A-3111,50.00,' or 'A'='A,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-28,PG-B-3111,50.00,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-12,PG-J-1111,50.00,Sed ut perspiciatis unde omnis iste natus error si,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-13,PG-K-1111,50.00,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus errora,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-14,PG-L-1111,50.00,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus erroraa,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-01
-progress-log-15,PG-M-1111,50.00,Sed ut perspiciatis unde omnis,2000/01/01 00:00,Sed ut perspiciatis unde omnis,contract-01
-progress-log-16,PG-N-1111,50.00,Sed ut perspiciatis unde omnis,2000/01/01 00:01,Sed ut perspiciatis unde omnis,contract-01
-progress-log-17,PG-O-1111,50.00,Sed ut perspiciatis unde omnis,2000/02/29 12:00,Sed ut perspiciatis unde omnis,contract-01
-progress-log-18,PG-P-1111,50.00,Sed ut perspiciatis unde omnis,2022/07/29 23:58,Sed ut perspiciatis unde omnis,contract-01
-progress-log-19,PG-Q-1111,50.00,Sed ut perspiciatis unde omnis,2022/07/29 23:59,Sed ut perspiciatis unde omnis,contract-01
-progress-log-20,PG-R-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,S,contract-01
-progress-log-21,PG-S-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Se,contract-01
-progress-log-22,PG-A-4111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,<h1>hacked</h1>,contract-01
-progress-log-23,PG-A-5111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,' or 'A'='A,contract-01
-progress-log-29,PG-C-5111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,contract-01
-progress-log-24,PG-T-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Inspirando un futuro brillante con el sol,contract-01
-progress-log-25,PG-U-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium,contract-01
-progress-log-26,PG-V-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiums,contract-01
-progress-log-27,PG-W-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,contract-02
+key,record-id,percentage-completeness,comment,registration-moment,responsible-person,draft-mode,key:contract
+progress-log-01,PG-A-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-02,PG-B-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-03,PG-C-1111,0.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-04,PG-D-1111,0.01,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-05,PG-E-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-06,PG-F-1111,99.99,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-07,PG-G-1111,100.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-08,PG-H-1111,50.00,S,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-09,PG-I-1111,50.00,Se,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-10,PG-A-2111,50.00,<h1>hacked</h1>,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-11,PG-A-3111,50.00,' or 'A'='A,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-28,PG-B-3111,50.00,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-12,PG-J-1111,50.00,Sed ut perspiciatis unde omnis iste natus error si,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-13,PG-K-1111,50.00,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus errora,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-14,PG-L-1111,50.00,Sed ut perspiciatis unde omnis iste natus error si sed ut perspiciatis unde omnis iste natus erroraa,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-15,PG-M-1111,50.00,Sed ut perspiciatis unde omnis,2000/01/01 00:00,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-16,PG-N-1111,50.00,Sed ut perspiciatis unde omnis,2000/01/01 00:01,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-17,PG-O-1111,50.00,Sed ut perspiciatis unde omnis,2000/02/29 12:00,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-18,PG-P-1111,50.00,Sed ut perspiciatis unde omnis,2022/07/29 23:58,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-19,PG-Q-1111,50.00,Sed ut perspiciatis unde omnis,2022/07/29 23:59,Sed ut perspiciatis unde omnis,true,contract-01
+progress-log-20,PG-R-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,S,true,contract-01
+progress-log-21,PG-S-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Se,true,contract-01
+progress-log-22,PG-A-4111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,<h1>hacked</h1>,true,contract-01
+progress-log-23,PG-A-5111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,' or 'A'='A,true,contract-01
+progress-log-29,PG-C-5111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,АБХجحذسعف汉书من你好吗РСТУШДذرزطظآحخدشصЮЯОПРСТУكلمة美女,true,contract-01
+progress-log-24,PG-T-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Inspirando un futuro brillante con el sol,true,contract-01
+progress-log-25,PG-U-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium,true,contract-01
+progress-log-26,PG-V-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiums,true,contract-01
+progress-log-30,PG-Z-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,false,contract-01
+progress-log-27,PG-W-1111,50.00,Sed ut perspiciatis unde omnis,2013/01/01 12:30,Sed ut perspiciatis unde omnis,true,contract-02

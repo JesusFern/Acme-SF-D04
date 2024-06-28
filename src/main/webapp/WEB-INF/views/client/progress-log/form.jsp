@@ -27,7 +27,7 @@
 			</jstl:when>
 	</jstl:choose>
 	<jstl:choose>
-   <jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') }">
+   <jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
             <acme:submit code="client.progress-log.form.button.delete" action="/client/progress-log/delete"/>
 			<acme:submit code="client.progress-log.form.button.update" action="/client/progress-log/update?masterId=${masterId}"/>
         </jstl:when>

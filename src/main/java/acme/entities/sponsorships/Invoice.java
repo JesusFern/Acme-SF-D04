@@ -5,7 +5,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -29,6 +31,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "id"), @Index(columnList = "code")
+})
 public class Invoice extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -60,7 +65,7 @@ public class Invoice extends AbstractEntity {
 	private double				tax;
 
 	@URL
-	@Length(max = 255)
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	// Derived attributes ----------------------------------------------------------

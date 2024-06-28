@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>60</y>
+      <w>210</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+Auditor Dashboard
+--
++totalNumberOfStaticCodeAudit:	Integer
++totalNumberOfDynamicCodeAudit: Integer
++averageNumberOfAuditRecords:	Double
++deviationNumberOfAuditRecords: Double
++minimumNumberOfAuditRecords: Double
++maximumNumberOfAuditRecords: Double
++averageNumberOfPeriod: Double
++deviationNumberOfPeriod: Double
++minimumNumberOfPeriod: Double
++maximumNumberOfPeriod: Double
+	</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>168</y>
+      <w>84</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Mark
+--
++ A_PLUS
++ A
++ B
++ C
++ F
++ F_MINUS
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>426</y>
+      <w>84</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Type
+--
++ STATIC
++ DYNAMIC
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>240</y>
+      <w>294</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Audit Record
+--
++ code: String { Unique, NotBlank, Pattern("AU-[0-9]{4}-[0-9]{3}") }
++ periodStart: Date {PastOrPresent, Temporal(TIMESTAMP)}
++ periodEnd: Date {Past, Temporal(TIMESTAMP)}
++ mark: Mark
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>426</y>
+      <w>210</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Code Audit
+--
++ code: String {NotBlank, Unique,Pattern("[A-Z]{1,3}-[0-9]{3}")}
++ execution: Date {Past, Temporal(TIMESTAMP)}
++ type: Type 
++ correctiveActions: String {NotBlank, Length(0,101)}
++ mark: Mark
++ link: String {URL}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>246</y>
+      <w>192</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Auditor
+--
++ firm: String {NotBlank, Length(0, 76)}
++ professionalId: String {NotBlank, Length(0, 26)}
++ certifications: String {NotBlank, Length(0, 101)}
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>288</y>
+      <w>78</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Created by
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>348</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-x
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>492</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>114</x>
+      <y>438</y>
+      <w>252</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Project
+--
++ code: String { Unique, NotBlank, Pattern(" ^[A-Z]{3}-[0-9]{4}$ ") }
++ title: String {NotBlank, Length(0, 75)}
++ abstract: String {NotBlank, Length(0, 100)}
++ indication: boolen
++ cost: int
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

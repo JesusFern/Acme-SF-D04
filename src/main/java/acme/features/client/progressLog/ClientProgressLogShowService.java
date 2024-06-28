@@ -51,8 +51,6 @@ public class ClientProgressLogShowService extends AbstractService<Client, Progre
 	public void unbind(final ProgressLog object) {
 		assert object != null;
 
-		assert object != null;
-
 		SelectChoices choicesC;
 		Dataset dataset;
 
@@ -62,6 +60,7 @@ public class ClientProgressLogShowService extends AbstractService<Client, Progre
 		dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson");
 		dataset.put("contract", choicesC.getSelected().getKey());
 		dataset.put("contracts", choicesC);
+		dataset.put("draftMode", object.getContract().isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}
