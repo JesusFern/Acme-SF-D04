@@ -19,17 +19,17 @@ public interface SponsorDashboardRepository extends AbstractRepository {
 	@Query("select count(s) from Sponsorship s where s.link is not null and s.sponsor.id = :id and s.draftMode = false")
 	Integer totalNumberOfSponsorshipsLink(int id);
 
-	@Query("select avg(s.amount.amount) from Sponsorship s where s.sponsor.id = :id and s.draftMode = false")
-	Double averageSponsorshipsAmount(int id);
+	@Query("select avg(s.amount.amount) from Sponsorship s where s.amount.currency = :currency and s.sponsor.id = :id and s.draftMode = false")
+	Double averageSponsorshipsAmount(int id, String currency);
 
-	@Query("select stddev(s.amount.amount) from Sponsorship s where s.sponsor.id = :id and s.draftMode = false")
-	Double deviationSponsorshipsAmount(int id);
+	@Query("select stddev(s.amount.amount) from Sponsorship s where s.amount.currency = :currency and s.sponsor.id = :id and s.draftMode = false")
+	Double deviationSponsorshipsAmount(int id, String currency);
 
-	@Query("select min(s.amount.amount) from Sponsorship s where s.sponsor.id = :id and s.draftMode = false")
-	Double minimumSponsorshipsAmount(int id);
+	@Query("select min(s.amount.amount) from Sponsorship s where s.amount.currency = :currency and s.sponsor.id = :id and s.draftMode = false")
+	Double minimumSponsorshipsAmount(int id, String currency);
 
-	@Query("select max(s.amount.amount) from Sponsorship s where s.sponsor.id = :id and s.draftMode = false")
-	Double maximumSponsorshipsAmount(int id);
+	@Query("select max(s.amount.amount) from Sponsorship s where s.amount.currency = :currency and s.sponsor.id = :id and s.draftMode = false")
+	Double maximumSponsorshipsAmount(int id, String currency);
 
 	@Query("select s.amount.currency from Sponsorship s where s.sponsor.id = :id and s.draftMode = false")
 	String findCurrentCurrencyAmount(int id);
@@ -43,15 +43,15 @@ public interface SponsorDashboardRepository extends AbstractRepository {
 	@Query("select i.quantity.currency from Invoice i where i.sponsorship.sponsor.id = :id and i.sponsorship.draftMode = false")
 	String findCurrentCurrencyQuantity(int id);
 
-	@Query("select avg(i.quantity.amount) from Invoice i where i.sponsorship.sponsor.id = :id and i.sponsorship.draftMode = false")
-	Double averageInvoicesQuantity(int id);
+	@Query("select avg(i.quantity.amount) from Invoice i where i.quantity.currency = :currency and i.sponsorship.sponsor.id = :id and i.sponsorship.draftMode = false")
+	Double averageInvoicesQuantity(int id, String currency);
 
-	@Query("select stddev(i.quantity.amount) from Invoice i where i.sponsorship.sponsor.id = :id and i.sponsorship.draftMode = false")
-	Double deviationInvoicesQuantity(int id);
+	@Query("select stddev(i.quantity.amount) from Invoice i where i.quantity.currency = :currency and i.sponsorship.sponsor.id = :id and i.sponsorship.draftMode = false")
+	Double deviationInvoicesQuantity(int id, String currency);
 
-	@Query("select min(i.quantity.amount) from Invoice i where i.sponsorship.sponsor.id = :id and i.sponsorship.draftMode = false")
-	Double minimumInvoicesQuantity(int id);
+	@Query("select min(i.quantity.amount) from Invoice i where i.quantity.currency = :currency and i.sponsorship.sponsor.id = :id and i.sponsorship.draftMode = false")
+	Double minimumInvoicesQuantity(int id, String currency);
 
-	@Query("select max(i.quantity.amount) from Invoice i where i.sponsorship.sponsor.id = :id and i.sponsorship.draftMode = false")
-	Double maximumInvoicesQuantity(int id);
+	@Query("select max(i.quantity.amount) from Invoice i where i.quantity.currency = :currency and i.sponsorship.sponsor.id = :id and i.sponsorship.draftMode = false")
+	Double maximumInvoicesQuantity(int id, String currency);
 }

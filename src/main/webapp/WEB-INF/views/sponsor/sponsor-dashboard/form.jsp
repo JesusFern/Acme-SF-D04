@@ -13,7 +13,7 @@
 
 <%@page%>
 
-<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <h1>
@@ -51,7 +51,9 @@
 			<acme:message code="sponsor.dashboard.form.label.average-sponsorships-amount"/>
 		</th>
 		<td>
-			<acme:print value="${averageSponsorshipsAmount}"/>
+			<c:forEach items="${averageSponsorshipsAmount}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
 		</td>
 	</tr>	
 
@@ -60,7 +62,9 @@
 			<acme:message code="sponsor.dashboard.form.label.deviation-sponsorships-amount"/>
 		</th>
 		<td>
-			<acme:print value="${deviationSponsorshipsAmount}"/>
+			<c:forEach items="${deviationSponsorshipsAmount}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
 		</td>
 	</tr>	
 
@@ -69,7 +73,9 @@
 			<acme:message code="sponsor.dashboard.form.label.minimum-sponsorships-amount"/>
 		</th>
 		<td>
-			<acme:print value="${minimumSponsorshipsAmount}"/>
+			<c:forEach items="${minimumSponsorshipsAmount}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
 		</td>
 	</tr>	
 
@@ -78,7 +84,9 @@
 			<acme:message code="sponsor.dashboard.form.label.maximum-sponsorships-amount"/>
 		</th>
 		<td>
-			<acme:print value="${maximumSponsorshipsAmount}"/>
+			<c:forEach items="${maximumSponsorshipsAmount}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
 		</td>
 	</tr>	
 	<tr>
@@ -86,7 +94,9 @@
 			<acme:message code="sponsor.dashboard.form.label.average-invoices-quantity"/>
 		</th>
 		<td>
-			<acme:print value="${averageInvoicesQuantity}"/>
+			<c:forEach items="${averageInvoicesQuantity}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
 		</td>
 	</tr>	
 
@@ -95,7 +105,9 @@
 			<acme:message code="sponsor.dashboard.form.label.deviation-invoices-quantity"/>
 		</th>
 		<td>
-			<acme:print value="${deviationInvoicesQuantity}"/>
+			<c:forEach items="${deviationInvoicesQuantity}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
 		</td>
 	</tr>	
 
@@ -104,7 +116,9 @@
 			<acme:message code="sponsor.dashboard.form.label.minimum-invoices-quantity"/>
 		</th>
 		<td>
-			<acme:print value="${minimumInvoicesQuantity}"/>
+			<c:forEach items="${minimumInvoicesQuantity}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
 		</td>
 	</tr>	
 
@@ -113,7 +127,9 @@
 			<acme:message code="sponsor.dashboard.form.label.maximum-invoices-quantity"/>
 		</th>
 		<td>
-			<acme:print value="${maximumInvoicesQuantity}"/>
+			<c:forEach items="${maximumInvoicesQuantity}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
 		</td>
 	</tr>	
 </table>
