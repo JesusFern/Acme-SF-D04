@@ -1,8 +1,9 @@
 
 package acme.forms;
 
+import java.util.Map;
+
 import acme.client.data.AbstractForm;
-import acme.client.data.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,14 +15,14 @@ public class ClientDashboard extends AbstractForm {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	Integer						totalNumberOfProgressLogsCompletenessBelow25;
-	Integer						totalNumberOfProgressLogsCompletenessBetween25to50;
-	Integer						totalNumberOfProgressLogsCompletenessBetween50to75;
-	Integer						totalNumberOfProgressLogsCompletenessAbove75;
+	int							totalNumberOfProgressLogsCompletenessBelow25;
+	int							totalNumberOfProgressLogsCompletenessBetween25to50;
+	int							totalNumberOfProgressLogsCompletenessBetween50to75;
+	int							totalNumberOfProgressLogsCompletenessAbove75;
 
-	Money						averageContractsBudget;
-	Money						deviationContractsBudget;
-	Money						minimumContractsBudget;
-	Money						maximumContractsBudget;
+	Map<String, Double>			averageContractsBudget;
+	Map<String, Double>			deviationContractsBudget;
+	Map<String, Double>			minimumContractsBudget;
+	Map<String, Double>			maximumContractsBudget;
 
 }

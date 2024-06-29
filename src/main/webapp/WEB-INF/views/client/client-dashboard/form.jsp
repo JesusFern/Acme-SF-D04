@@ -13,7 +13,7 @@
 
 <%@page%>
 
-<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <h2>
@@ -60,40 +60,48 @@
 	</tr>	
 
 	<tr>
-		<th scope="row">
-			<acme:message code="client.client-dashboard.form.label.average-budget-contracts"/>
-		</th>
-		<td>
-			<acme:print value="${averageContractsBudget}"/>
-		</td>
-	</tr>	
+        <th scope="row">
+            <acme:message code="client.client-dashboard.form.label.deviation-budget-contracts"/>
+        </th>
+        <td>
+            <c:forEach items="${deviationContractsBudget}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
+        </td>
+    </tr>
 
 	<tr>
-		<th scope="row">
-			<acme:message code="client.client-dashboard.form.label.deviation-budget-contracts"/>
-		</th>
-		<td>
-			<acme:print value="${deviationContractsBudget}"/>
-		</td>
-	</tr>	
+        <th scope="row">
+            <acme:message code="client.client-dashboard.form.label.average-budget-contracts"/>
+        </th>
+        <td>
+            <c:forEach items="${averageContractsBudget}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
+        </td>
+    </tr>
 
-	<tr>
-		<th scope="row">
-			<acme:message code="client.client-dashboard.form.label.minimum-budget-contracts"/>
-		</th>
-		<td>
-			<acme:print value="${minimumContractsBudget}"/>
-		</td>
-	</tr>	
+<tr>
+        <th scope="row">
+            <acme:message code="client.client-dashboard.form.label.minimum-budget-contracts"/>
+        </th>
+        <td>
+            <c:forEach items="${minimumContractsBudget}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
+        </td>
+    </tr> 
 
-	<tr>
-		<th scope="row">
-			<acme:message code="client.client-dashboard.form.label.maximum-budget-contracts"/>
-		</th>
-		<td>
-			<acme:print value="${maximumContractsBudget}"/>
-		</td>
-	</tr>	
+<tr>
+        <th scope="row">
+            <acme:message code="client.client-dashboard.form.label.maximum-budget-contracts"/>
+        </th>
+        <td>
+            <c:forEach items="${maximumContractsBudget}" var="entry">
+                ${entry.value} ${entry.key} <br/>
+            </c:forEach>
+        </td>
+    </tr>
 </table>
 
 

@@ -10,10 +10,12 @@
 
 client.progress-log.form.title = Progress Logs form
 client.progress-log.list.title = Listing of Progress Log
+client.progress-log.list-all.title = Listing All of Progress Log
 client.progress-log.list.button.create = Create Progress Log
 client.progress-log.form.button.create = Create Progress Log
 client.progress-log.form.button.delete = Delete Progress Log
 client.progress-log.form.button.update = Update Progress Log
+client.progress-log.form.button.publish = Publish Progress Log
 
 client.progress-log.form.label.code = Code:
 client.progress-log.form.label.recordId = Record Id:

@@ -10,25 +10,23 @@ import acme.entities.contracts.ProgressLog;
 import acme.roles.Client;
 
 @Service
-public class ClientProgressLogUpdateService extends AbstractService<Client, ProgressLog> {
+public class ClientProgressLogPublishService extends AbstractService<Client, ProgressLog> {
 
-	//Internal state---------------------------------------------------------
 	@Autowired
-	private ClientProgressLogRepository cpr;
+	private ClientProgressLogRepository repository;
 
 
-	//AbstractService interface----------------------------------------------
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
+		int plId;
 		ProgressLog progressLog;
 		Client client;
 
-		masterId = super.getRequest().getData("id", int.class);
-		progressLog = this.cpr.findOneProgressLogById(masterId);
+		plId = super.getRequest().getData("id", int.class);
+		progressLog = this.repository.findOneProgressLogById(plId);
 		client = progressLog == null ? null : progressLog.getContract().getClient();
-		status = progressLog != null && super.getRequest().getPrincipal().hasRole(client);
+		status = progressLog != null && progressLog.isDraftMode() && super.getRequest().getPrincipal().hasRole(client);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -38,7 +36,7 @@ public class ClientProgressLogUpdateService extends AbstractService<Client, Prog
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.cpr.findOneProgressLogById(id);
+		object = this.repository.findOneProgressLogById(id);
 
 		super.getBuffer().addData(object);
 	}
@@ -47,37 +45,29 @@ public class ClientProgressLogUpdateService extends AbstractService<Client, Prog
 		assert object != null;
 
 		super.bind(object, "recordId", "percentageCompleteness", "comment", "responsiblePerson");
-
 	}
 
 	@Override
 	public void validate(final ProgressLog object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("recordId")) {
-			ProgressLog existing;
-
-			existing = this.cpr.findOneProgressLogByRecordId(object.getRecordId());
-			super.state(existing == null || existing.equals(object), "recordId", "client.progress-log.form.error.duplicated");
-		}
 	}
-
 	@Override
 	public void perform(final ProgressLog object) {
 		assert object != null;
 
-		this.cpr.save(object);
-
+		object.setDraftMode(false);
+		this.repository.save(object);
 	}
 
 	@Override
 	public void unbind(final ProgressLog object) {
 		assert object != null;
+
 		Dataset dataset;
 
-		dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson");
-		dataset.put("id", super.getRequest().getData("id", int.class));
-		dataset.put("draftMode", object.getContract().isDraftMode());
+		dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson", "draftMode");
 
 		super.getResponse().addData(dataset);
 	}
+
 }

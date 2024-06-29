@@ -10,10 +10,13 @@
 
 client.progress-log.form.title = Detalles de Resgistros de Progreso
 client.progress-log.list.title = Lista de Resgistros de Progreso
+client.progress-log.list-all.title = Lista Todos de Resgistros de Progreso
 client.progress-log.list.button.create = Crear Resgistro de Progreso
 client.progress-log.form.button.create = Crear Resgistros de Progreso
 client.progress-log.form.button.delete = Eliminar Resgistros de Progreso
 client.progress-log.form.button.update = Actualizar Resgistros de Progreso
+
+client.progress-log.form.button.publish = Publicar Registros de Proceso
 
 client.progress-log.form.label.code = Código:
 client.progress-log.form.label.recordId = Id de Registro:

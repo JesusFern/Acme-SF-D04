@@ -47,8 +47,8 @@ public class ProgressLog extends AbstractEntity {
 	@Min(0)
 	private double				percentageCompleteness;
 
-	@NotBlank
 	@Length(max = 100)
+	@NotBlank
 	private String				comment;
 
 	@Temporal(TemporalType.TIMESTAMP)

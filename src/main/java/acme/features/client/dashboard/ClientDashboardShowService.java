@@ -1,7 +1,8 @@
 
 package acme.features.client.dashboard;
 
-import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 import acme.client.data.datatypes.Money;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.entities.contracts.Contract;
 import acme.forms.ClientDashboard;
 import acme.roles.Client;
 
@@ -35,33 +35,62 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		int id;
 		id = super.getRequest().getPrincipal().getActiveRoleId();
 
-		Collection<Contract> contracts;
-		contracts = this.cdr.findManyContractByClientId(id);
-
-		for (Contract contract : contracts) {
-			Money quantity = contract.getBudget();
-			this.convertToEuros(quantity);
-		}
 		Integer totalNumberOfProgressLogsCompletenessBelow25;
 		Integer totalNumberOfProgressLogsCompletenessBetween25to50;
 		Integer totalNumberOfProgressLogsCompletenessBetween50to75;
 		Integer totalNumberOfProgressLogsCompletenessAbove75;
 
-		Money averageContractsBudget = new Money();
-		averageContractsBudget.setAmount(this.cdr.averageContractsBudget(id));
-		averageContractsBudget.setCurrency("EUR");
+		//DEVIATION
+		Money deviationContractsBudgetEUR = new Money();
+		deviationContractsBudgetEUR.setAmount(this.cdr.deviationContractsBudget(id, "EUR"));
+		deviationContractsBudgetEUR.setCurrency("EUR");
 
-		Money deviationContractsBudget = new Money();
-		deviationContractsBudget.setAmount(this.cdr.deviationContractsBudget(id));
-		deviationContractsBudget.setCurrency("EUR");
+		Money deviationContractsBudgetUSD = new Money();
+		deviationContractsBudgetUSD.setAmount(this.cdr.deviationContractsBudget(id, "USD"));
+		deviationContractsBudgetUSD.setCurrency("USD");
 
-		Money minimumContractsBudget = new Money();
-		minimumContractsBudget.setAmount(this.cdr.minimumContractsBudget(id));
-		minimumContractsBudget.setCurrency("EUR");
+		Money deviationContractsBudgetGBP = new Money();
+		deviationContractsBudgetGBP.setAmount(this.cdr.deviationContractsBudget(id, "GBP"));
+		deviationContractsBudgetGBP.setCurrency("GBP");
 
-		Money maximumContractsBudget = new Money();
-		maximumContractsBudget.setAmount(this.cdr.maximumContractsBudget(id));
-		maximumContractsBudget.setCurrency("EUR");
+		//AVERAGE
+		Money averageContractsBudgetEUR = new Money();
+		averageContractsBudgetEUR.setAmount(this.cdr.averageContractsBudget(id, "EUR"));
+		averageContractsBudgetEUR.setCurrency("EUR");
+
+		Money averageContractsBudgetUSD = new Money();
+		averageContractsBudgetUSD.setAmount(this.cdr.averageContractsBudget(id, "USD"));
+		averageContractsBudgetUSD.setCurrency("USD");
+
+		Money averageContractsBudgetGBP = new Money();
+		averageContractsBudgetGBP.setAmount(this.cdr.averageContractsBudget(id, "GBP"));
+		averageContractsBudgetGBP.setCurrency("GBP");
+
+		//MINIMUM
+		Money minimumContractsBudgetEUR = new Money();
+		minimumContractsBudgetEUR.setAmount(this.cdr.minimumContractsBudget(id, "EUR"));
+		minimumContractsBudgetEUR.setCurrency("EUR");
+
+		Money minimumContractsBudgetUSD = new Money();
+		minimumContractsBudgetUSD.setAmount(this.cdr.minimumContractsBudget(id, "USD"));
+		minimumContractsBudgetUSD.setCurrency("USD");
+
+		Money minimumContractsBudgetGBP = new Money();
+		minimumContractsBudgetGBP.setAmount(this.cdr.minimumContractsBudget(id, "GBP"));
+		minimumContractsBudgetGBP.setCurrency("GBP");
+
+		//MAXIMUM
+		Money maximumContractsBudgetEUR = new Money();
+		maximumContractsBudgetEUR.setAmount(this.cdr.maximumContractsBudget(id, "EUR"));
+		maximumContractsBudgetEUR.setCurrency("EUR");
+
+		Money maximumContractsBudgetUSD = new Money();
+		maximumContractsBudgetUSD.setAmount(this.cdr.maximumContractsBudget(id, "USD"));
+		maximumContractsBudgetUSD.setCurrency("USD");
+
+		Money maximumContractsBudgetGBP = new Money();
+		maximumContractsBudgetGBP.setAmount(this.cdr.maximumContractsBudget(id, "GBP"));
+		maximumContractsBudgetGBP.setCurrency("GBP");
 
 		totalNumberOfProgressLogsCompletenessBelow25 = this.cdr.totalNumberOfProgressLogsCompletenessBelow25(id);
 		totalNumberOfProgressLogsCompletenessBetween25to50 = this.cdr.totalNumberOfProgressLogsCompletenessBetween25to50(id);
@@ -69,6 +98,10 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		totalNumberOfProgressLogsCompletenessAbove75 = this.cdr.totalNumberOfProgressLogsCompletenessAbove75(id);
 
 		dashboard = new ClientDashboard();
+		Map<String, Double> maximumMap = new HashMap<>();
+		Map<String, Double> minimumMap = new HashMap<>();
+		Map<String, Double> averageMap = new HashMap<>();
+		Map<String, Double> deviationMap = new HashMap<>();
 		Money money0 = new Money();
 		money0.setAmount(0.00);
 		money0.setCurrency("EUR");
@@ -80,53 +113,31 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		dashboard.setTotalNumberOfProgressLogsCompletenessBelow25(0);
 		dashboard.setTotalNumberOfProgressLogsCompletenessBetween25to50(0);
 		dashboard.setTotalNumberOfProgressLogsCompletenessBetween50to75(0);
-		if (minimumContractsBudget.getAmount() != null) {
+
+		if (minimumContractsBudgetEUR != null || minimumContractsBudgetUSD != null || minimumContractsBudgetGBP != null) {
 			dashboard.setTotalNumberOfProgressLogsCompletenessBelow25(totalNumberOfProgressLogsCompletenessBelow25);
 			dashboard.setTotalNumberOfProgressLogsCompletenessBetween25to50(totalNumberOfProgressLogsCompletenessBetween25to50);
 			dashboard.setTotalNumberOfProgressLogsCompletenessBetween50to75(totalNumberOfProgressLogsCompletenessBetween50to75);
 			dashboard.setTotalNumberOfProgressLogsCompletenessAbove75(totalNumberOfProgressLogsCompletenessAbove75);
-			dashboard.setAverageContractsBudget(averageContractsBudget);
-			dashboard.setDeviationContractsBudget(deviationContractsBudget);
-			dashboard.setMinimumContractsBudget(minimumContractsBudget);
-			dashboard.setMaximumContractsBudget(maximumContractsBudget);
+			averageMap.put(averageContractsBudgetEUR.getCurrency(), averageContractsBudgetEUR.getAmount());
+			averageMap.put(averageContractsBudgetUSD.getCurrency(), averageContractsBudgetUSD.getAmount());
+			averageMap.put(averageContractsBudgetGBP.getCurrency(), averageContractsBudgetGBP.getAmount());
+			dashboard.setAverageContractsBudget(averageMap);
+			deviationMap.put(deviationContractsBudgetEUR.getCurrency(), deviationContractsBudgetEUR.getAmount());
+			deviationMap.put(deviationContractsBudgetUSD.getCurrency(), deviationContractsBudgetUSD.getAmount());
+			deviationMap.put(deviationContractsBudgetGBP.getCurrency(), deviationContractsBudgetGBP.getAmount());
+			dashboard.setDeviationContractsBudget(deviationMap);
+			minimumMap.put(minimumContractsBudgetEUR.getCurrency(), minimumContractsBudgetEUR.getAmount());
+			minimumMap.put(minimumContractsBudgetUSD.getCurrency(), minimumContractsBudgetUSD.getAmount());
+			minimumMap.put(minimumContractsBudgetGBP.getCurrency(), minimumContractsBudgetGBP.getAmount());
+			dashboard.setMinimumContractsBudget(minimumMap);
+			maximumMap.put(maximumContractsBudgetEUR.getCurrency(), maximumContractsBudgetEUR.getAmount());
+			maximumMap.put(maximumContractsBudgetUSD.getCurrency(), maximumContractsBudgetUSD.getAmount());
+			maximumMap.put(maximumContractsBudgetGBP.getCurrency(), maximumContractsBudgetGBP.getAmount());
+			dashboard.setMaximumContractsBudget(maximumMap);
+
 		}
 		super.getBuffer().addData(dashboard);
-	}
-
-	private Money convertToEuros(final Money money) {
-		Double currentAmount = money.getAmount();
-		String currentCurrency = money.getCurrency();
-
-		if (!currentCurrency.equals("EUR")) {
-			switch (currentCurrency) {
-			case "USD":
-				currentAmount *= 0.94;
-				break;
-			case "GBP":
-				currentAmount *= 1.17;
-				break;
-			case "AUD":
-				currentAmount *= 0.60;
-				break;
-			case "JPY":
-				currentAmount *= 0.0061;
-				break;
-			case "CAD":
-				currentAmount *= 0.68;
-				break;
-			case "MXN":
-				currentAmount *= 0.055;
-				break;
-			case "CNY":
-				currentAmount *= 0.13;
-				break;
-			default:
-				return money;
-			}
-			money.setCurrency("EUR");
-			money.setAmount(currentAmount);
-		}
-		return money;
 	}
 
 	@Override
