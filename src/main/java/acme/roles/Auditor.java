@@ -37,6 +37,7 @@ public class Auditor extends AbstractRole {
 	private String				certifications;
 
 	@URL
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------------
