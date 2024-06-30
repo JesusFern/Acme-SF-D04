@@ -1,5 +1,5 @@
 
-package acme.features.any.progressLog;
+package acme.features.authenticated.progressLog;
 
 import java.util.Collection;
 
@@ -11,7 +11,7 @@ import acme.entities.contracts.Contract;
 import acme.entities.contracts.ProgressLog;
 
 @Repository
-public interface AnyProgressLogRepository extends AbstractRepository {
+public interface AuthenticatedProgressLogRepository extends AbstractRepository {
 
 	@Query("select c from Contract c")
 	Collection<Contract> findManyContract();
@@ -21,6 +21,9 @@ public interface AnyProgressLogRepository extends AbstractRepository {
 
 	@Query("select pl from ProgressLog pl where pl.contract.id = :masterId")
 	Collection<ProgressLog> findManyProgressLogByMasterId(int masterId);
+
+	@Query("select pl from ProgressLog pl where pl.draftMode=false and pl.contract.id = :masterId")
+	Collection<ProgressLog> findManyProgressLogPublishByMasterId(int masterId);
 
 	@Query("select c from Contract c where c.id = :masterId")
 	Contract findOneContractById(int masterId);

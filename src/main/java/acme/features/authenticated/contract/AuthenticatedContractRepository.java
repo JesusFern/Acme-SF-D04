@@ -1,5 +1,5 @@
 
-package acme.features.any.contract;
+package acme.features.authenticated.contract;
 
 import java.util.Collection;
 
@@ -11,7 +11,7 @@ import acme.entities.contracts.Contract;
 import acme.entities.projects.Project;
 
 @Repository
-public interface AnyContractRepository extends AbstractRepository {
+public interface AuthenticatedContractRepository extends AbstractRepository {
 
 	@Query("select c from Contract c where c.draftMode = false")
 	Collection<Contract> findManyContractByAvailability();

@@ -1,24 +1,23 @@
 
-package acme.features.any.progressLog;
+package acme.features.authenticated.progressLog;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Any;
+import acme.client.data.accounts.Authenticated;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.entities.contracts.Contract;
 import acme.entities.contracts.ProgressLog;
 
 @Service
-public class AnyProgressLogListService extends AbstractService<Any, ProgressLog> {
+public class AuthenticatedProgressLogListAllService extends AbstractService<Authenticated, ProgressLog> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyProgressLogRepository cpr;
+	private AuthenticatedProgressLogRepository apr;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -34,7 +33,7 @@ public class AnyProgressLogListService extends AbstractService<Any, ProgressLog>
 		int masterId;
 		masterId = super.getRequest().getData("masterId", int.class);
 
-		objects = this.cpr.findManyProgressLogByMasterId(masterId);
+		objects = this.apr.findManyProgressLogPublishByMasterId(masterId);
 
 		super.getBuffer().addData(objects);
 	}
@@ -55,15 +54,8 @@ public class AnyProgressLogListService extends AbstractService<Any, ProgressLog>
 		assert objects != null;
 
 		int masterId;
-		Contract contract;
-		final boolean showCreate;
-
 		masterId = super.getRequest().getData("masterId", int.class);
-		contract = this.cpr.findOneContractById(masterId);
-		showCreate = contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
-
 		super.getResponse().addGlobal("masterId", masterId);
-		super.getResponse().addGlobal("showCreate", showCreate);
 	}
 
 }

@@ -1,5 +1,5 @@
 
-package acme.features.any.contract;
+package acme.features.authenticated.contract;
 
 import javax.annotation.PostConstruct;
 
@@ -7,17 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.client.controllers.AbstractController;
-import acme.client.data.accounts.Any;
+import acme.client.data.accounts.Authenticated;
 import acme.entities.contracts.Contract;
 
 @Controller
-public class AnyContractController extends AbstractController<Any, Contract> {
+public class AuthenticatedContractController extends AbstractController<Authenticated, Contract> {
 
 	@Autowired
-	private AnyContractListAllService	listAllService;
+	private AuthenticatedContractListAllService	listAllService;
 
 	@Autowired
-	private AnyContractShowService		listShowService;
+	private AuthenticatedContractShowService	listShowService;
 
 	// Constructors -----------------------------------------------------------
 

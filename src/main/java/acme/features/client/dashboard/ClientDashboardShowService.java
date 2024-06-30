@@ -102,9 +102,6 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		Map<String, Double> minimumMap = new HashMap<>();
 		Map<String, Double> averageMap = new HashMap<>();
 		Map<String, Double> deviationMap = new HashMap<>();
-		Money money0 = new Money();
-		money0.setAmount(0.00);
-		money0.setCurrency("EUR");
 		dashboard.setAverageContractsBudget(null);
 		dashboard.setDeviationContractsBudget(null);
 		dashboard.setMaximumContractsBudget(null);

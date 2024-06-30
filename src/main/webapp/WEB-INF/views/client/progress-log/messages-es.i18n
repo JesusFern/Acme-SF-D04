@@ -10,7 +10,7 @@
 
 client.progress-log.form.title = Detalles de Resgistros de Progreso
 client.progress-log.list.title = Lista de Resgistros de Progreso
-client.progress-log.list-all.title = Lista Todos de Resgistros de Progreso
+client.progress-log.list-all.title = Lista de Resgistros de Progreso Publicados
 client.progress-log.list.button.create = Crear Resgistro de Progreso
 client.progress-log.form.button.create = Crear Resgistros de Progreso
 client.progress-log.form.button.delete = Eliminar Resgistros de Progreso

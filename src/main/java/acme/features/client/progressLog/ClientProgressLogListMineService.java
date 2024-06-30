@@ -31,7 +31,7 @@ public class ClientProgressLogListMineService extends AbstractService<Client, Pr
 
 		contractId = super.getRequest().getData("masterId", int.class);
 		contract = this.cpr.findOneContractById(contractId);
-		status = contract != null && (!contract.isDraftMode() || super.getRequest().getPrincipal().hasRole(contract.getClient()));
+		status = contract != null && super.getRequest().getPrincipal().hasRole(contract.getClient());
 
 		super.getResponse().setAuthorised(status);
 	}

@@ -28,8 +28,12 @@
 			</jstl:when>
 	</jstl:choose>
 	<jstl:choose>
-	<jstl:when test="${_command == 'show' && draftMode == false}">
+	<jstl:when test="${_command == 'show' && draftMode == false && isMine == true}">
 			<acme:button code="client.progress-log.list.title" action="/client/progress-log/list-mine?masterId=${id}"/>	
+			<acme:button code="client.progress-log.list-all.title" action="/client/progress-log/list-all?masterId=${id}"/>			
+					
+		</jstl:when>
+		<jstl:when test="${_command == 'show' && draftMode == false && isMine == false}">
 			<acme:button code="client.progress-log.list-all.title" action="/client/progress-log/list-all?masterId=${id}"/>			
 					
 		</jstl:when>
