@@ -64,6 +64,8 @@ public class AuditorAuditRecordUpdateService extends AbstractService<Auditor, Au
 		assert object != null;
 
 		super.bind(object, "code", "periodStart", "periodEnd", "mark", "link");
+		if (object.getLink() == "")
+			object.setLink(null);
 
 	}
 
