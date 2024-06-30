@@ -51,6 +51,9 @@ public class ManagerProjectUpdateService extends AbstractService<Manager, Projec
 		assert object != null;
 
 		super.bind(object, "code", "title", "abstractString", "indication", "cost", "link");
+
+		if (object.getLink() == "")
+			object.setLink(null);
 	}
 	@Override
 	public void validate(final Project object) {

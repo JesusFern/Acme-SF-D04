@@ -53,6 +53,9 @@ public class ManagerUserStoryPublishService extends AbstractService<Manager, Use
 		assert object != null;
 
 		super.bind(object, "title", "description", "acceptanceCriteria", "estimatedCost", "priority", "link");
+
+		if (object.getLink() == "")
+			object.setLink(null);
 	}
 
 	@Override

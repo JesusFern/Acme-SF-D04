@@ -53,7 +53,7 @@ public class UserStory extends AbstractEntity {
 	private Priority			priority;
 
 	@URL
-	@Length(max = 255)
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	private boolean				draftMode;

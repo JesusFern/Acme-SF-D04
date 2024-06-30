@@ -22,5 +22,5 @@
 </acme:list>
 
 <jstl:if test="${_command == 'list'}">
-	<acme:button test="${showCreate}" code="client.progress-log.list.button.create" action="/client/progress-log/create?masterId=${masterId}"/>
+	<acme:button  code="client.progress-log.list.button.create" action="/client/progress-log/create?masterId=${masterId}"/>
 </jstl:if>	

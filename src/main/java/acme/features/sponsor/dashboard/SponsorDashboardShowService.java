@@ -1,7 +1,8 @@
 
 package acme.features.sponsor.dashboard;
 
-import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,8 +10,6 @@ import org.springframework.stereotype.Service;
 import acme.client.data.datatypes.Money;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.entities.sponsorships.Invoice;
-import acme.entities.sponsorships.Sponsorship;
 import acme.forms.SponsorDashboard;
 import acme.roles.Sponsor;
 
@@ -37,88 +36,104 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 		int id;
 		id = super.getRequest().getPrincipal().getActiveRoleId();
 
-		Collection<Sponsorship> sponsorships;
-		sponsorships = this.sdr.findManySponsorshipsBySponsorId(id);
-
-		for (Sponsorship sponsorship : sponsorships) {
-			Money amount = sponsorship.getAmount();
-			this.convertToEuros(amount);
-		}
-
-		Collection<Invoice> invoices;
-		invoices = this.sdr.findManyInvoicesBySponsorId(id);
-
-		for (Invoice invoice : invoices) {
-			Money quantity = invoice.getQuantity();
-			this.convertToEuros(quantity);
-		}
-
 		Integer totalNumberOfInvoicesWithTaxLessOrEquals21;
 		Integer totalNumberOfSponsorshipsLink;
 
-		Money averageSponsorshipsAmount = new Money();
-		averageSponsorshipsAmount.setAmount(this.sdr.averageSponsorshipsAmount(id));
-		averageSponsorshipsAmount.setCurrency("EUR");
+		Money averageSponsorshipsAmountEUR = new Money();
+		averageSponsorshipsAmountEUR.setAmount(this.sdr.averageSponsorshipsAmount(id, "EUR"));
+		averageSponsorshipsAmountEUR.setCurrency("EUR");
 
-		Money deviationSponsorshipsAmount = new Money();
-		deviationSponsorshipsAmount.setAmount(this.sdr.deviationSponsorshipsAmount(id));
-		deviationSponsorshipsAmount.setCurrency("EUR");
+		Money averageSponsorshipsAmountUSD = new Money();
+		averageSponsorshipsAmountUSD.setAmount(this.sdr.averageSponsorshipsAmount(id, "USD"));
+		averageSponsorshipsAmountUSD.setCurrency("USD");
 
-		Money averageSponsorshipsAmount0 = new Money();
-		averageSponsorshipsAmount0.setAmount(00.00);
-		averageSponsorshipsAmount0.setCurrency("EUR");
+		Money averageSponsorshipsAmountGBP = new Money();
+		averageSponsorshipsAmountGBP.setAmount(this.sdr.averageSponsorshipsAmount(id, "GBP"));
+		averageSponsorshipsAmountGBP.setCurrency("GBP");
 
-		Money deviationSponsorshipsAmount0 = new Money();
-		deviationSponsorshipsAmount0.setAmount(00.00);
-		deviationSponsorshipsAmount0.setCurrency("EUR");
+		Money deviationSponsorshipsAmountEUR = new Money();
+		deviationSponsorshipsAmountEUR.setAmount(this.sdr.deviationSponsorshipsAmount(id, "EUR"));
+		deviationSponsorshipsAmountEUR.setCurrency("EUR");
 
-		Money minimumSponsorshipsAmount = new Money();
-		minimumSponsorshipsAmount.setAmount(this.sdr.minimumSponsorshipsAmount(id));
-		minimumSponsorshipsAmount.setCurrency("EUR");
+		Money deviationSponsorshipsAmountUSD = new Money();
+		deviationSponsorshipsAmountUSD.setAmount(this.sdr.deviationSponsorshipsAmount(id, "USD"));
+		deviationSponsorshipsAmountUSD.setCurrency("USD");
 
-		Money minimumSponsorshipsAmount0 = new Money();
-		minimumSponsorshipsAmount0.setAmount(00.00);
-		minimumSponsorshipsAmount0.setCurrency("EUR");
+		Money deviationSponsorshipsAmountGBP = new Money();
+		deviationSponsorshipsAmountGBP.setAmount(this.sdr.deviationSponsorshipsAmount(id, "GBP"));
+		deviationSponsorshipsAmountGBP.setCurrency("GBP");
 
-		Money maximumSponsorshipsAmount = new Money();
-		maximumSponsorshipsAmount.setAmount(this.sdr.maximumSponsorshipsAmount(id));
-		maximumSponsorshipsAmount.setCurrency("EUR");
+		Money minimumSponsorshipsAmountEUR = new Money();
+		minimumSponsorshipsAmountEUR.setAmount(this.sdr.minimumSponsorshipsAmount(id, "EUR"));
+		minimumSponsorshipsAmountEUR.setCurrency("EUR");
 
-		Money maximumSponsorshipsAmount0 = new Money();
-		maximumSponsorshipsAmount0.setAmount(00.00);
-		maximumSponsorshipsAmount0.setCurrency("EUR");
+		Money minimumSponsorshipsAmountUSD = new Money();
+		minimumSponsorshipsAmountUSD.setAmount(this.sdr.minimumSponsorshipsAmount(id, "USD"));
+		minimumSponsorshipsAmountUSD.setCurrency("USD");
 
-		Money averageInvoicesQuantity = new Money();
-		averageInvoicesQuantity.setAmount(this.sdr.averageInvoicesQuantity(id));
-		averageInvoicesQuantity.setCurrency("EUR");
+		Money minimumSponsorshipsAmountGBP = new Money();
+		minimumSponsorshipsAmountGBP.setAmount(this.sdr.minimumSponsorshipsAmount(id, "GBP"));
+		minimumSponsorshipsAmountGBP.setCurrency("GBP");
 
-		Money deviationInvoicesQuantity = new Money();
-		deviationInvoicesQuantity.setAmount(this.sdr.deviationInvoicesQuantity(id));
-		deviationInvoicesQuantity.setCurrency("EUR");
+		Money maximumSponsorshipsAmountEUR = new Money();
+		maximumSponsorshipsAmountEUR.setAmount(this.sdr.maximumSponsorshipsAmount(id, "EUR"));
+		maximumSponsorshipsAmountEUR.setCurrency("EUR");
 
-		Money averageInvoicesQuantity0 = new Money();
-		averageInvoicesQuantity0.setAmount(00.00);
-		averageInvoicesQuantity0.setCurrency("EUR");
+		Money maximumSponsorshipsAmountUSD = new Money();
+		maximumSponsorshipsAmountUSD.setAmount(this.sdr.maximumSponsorshipsAmount(id, "USD"));
+		maximumSponsorshipsAmountUSD.setCurrency("USD");
 
-		Money deviationInvoicesQuantity0 = new Money();
-		deviationInvoicesQuantity0.setAmount(00.00);
-		deviationInvoicesQuantity0.setCurrency("EUR");
+		Money maximumSponsorshipsAmountGBP = new Money();
+		maximumSponsorshipsAmountGBP.setAmount(this.sdr.maximumSponsorshipsAmount(id, "GBP"));
+		maximumSponsorshipsAmountGBP.setCurrency("GBP");
 
-		Money minimumInvoicesQuantity = new Money();
-		minimumInvoicesQuantity.setAmount(this.sdr.minimumInvoicesQuantity(id));
-		minimumInvoicesQuantity.setCurrency("EUR");
+		Money averageInvoicesQuantityEUR = new Money();
+		averageInvoicesQuantityEUR.setAmount(this.sdr.averageInvoicesQuantity(id, "EUR"));
+		averageInvoicesQuantityEUR.setCurrency("EUR");
 
-		Money maximumInvoicesQuantity = new Money();
-		maximumInvoicesQuantity.setAmount(this.sdr.maximumInvoicesQuantity(id));
-		maximumInvoicesQuantity.setCurrency("EUR");
+		Money averageInvoicesQuantityUSD = new Money();
+		averageInvoicesQuantityUSD.setAmount(this.sdr.averageInvoicesQuantity(id, "USD"));
+		averageInvoicesQuantityUSD.setCurrency("USD");
 
-		Money minimumInvoicesQuantity0 = new Money();
-		minimumInvoicesQuantity0.setAmount(00.00);
-		minimumInvoicesQuantity0.setCurrency("EUR");
+		Money averageInvoicesQuantityGBP = new Money();
+		averageInvoicesQuantityGBP.setAmount(this.sdr.averageInvoicesQuantity(id, "GBP"));
+		averageInvoicesQuantityGBP.setCurrency("GBP");
 
-		Money maximumInvoicesQuantity0 = new Money();
-		maximumInvoicesQuantity0.setAmount(00.00);
-		maximumInvoicesQuantity0.setCurrency("EUR");
+		Money deviationInvoicesQuantityEUR = new Money();
+		deviationInvoicesQuantityEUR.setAmount(this.sdr.deviationInvoicesQuantity(id, "EUR"));
+		deviationInvoicesQuantityEUR.setCurrency("EUR");
+
+		Money deviationInvoicesQuantityUSD = new Money();
+		deviationInvoicesQuantityUSD.setAmount(this.sdr.deviationInvoicesQuantity(id, "USD"));
+		deviationInvoicesQuantityUSD.setCurrency("USD");
+
+		Money deviationInvoicesQuantityGBP = new Money();
+		deviationInvoicesQuantityGBP.setAmount(this.sdr.deviationInvoicesQuantity(id, "GBP"));
+		deviationInvoicesQuantityGBP.setCurrency("GBP");
+
+		Money minimumInvoicesQuantityEUR = new Money();
+		minimumInvoicesQuantityEUR.setAmount(this.sdr.minimumInvoicesQuantity(id, "EUR"));
+		minimumInvoicesQuantityEUR.setCurrency("EUR");
+
+		Money minimumInvoicesQuantityUSD = new Money();
+		minimumInvoicesQuantityUSD.setAmount(this.sdr.minimumInvoicesQuantity(id, "USD"));
+		minimumInvoicesQuantityUSD.setCurrency("USD");
+
+		Money minimumInvoicesQuantityGBP = new Money();
+		minimumInvoicesQuantityGBP.setAmount(this.sdr.minimumInvoicesQuantity(id, "GBP"));
+		minimumInvoicesQuantityGBP.setCurrency("GBP");
+
+		Money maximumInvoicesQuantityEUR = new Money();
+		maximumInvoicesQuantityEUR.setAmount(this.sdr.maximumInvoicesQuantity(id, "EUR"));
+		maximumInvoicesQuantityEUR.setCurrency("EUR");
+
+		Money maximumInvoicesQuantityUSD = new Money();
+		maximumInvoicesQuantityUSD.setAmount(this.sdr.maximumInvoicesQuantity(id, "USD"));
+		maximumInvoicesQuantityUSD.setCurrency("USD");
+
+		Money maximumInvoicesQuantityGBP = new Money();
+		maximumInvoicesQuantityGBP.setAmount(this.sdr.maximumInvoicesQuantity(id, "GBP"));
+		maximumInvoicesQuantityGBP.setCurrency("GBP");
 
 		totalNumberOfInvoicesWithTaxLessOrEquals21 = this.sdr.totalNumberOfInvoicesWithTaxLessOrEquals21(id);
 		totalNumberOfSponsorshipsLink = this.sdr.totalNumberOfSponsorshipsLink(id);
@@ -126,64 +141,60 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 		dashboard = new SponsorDashboard();
 		dashboard.setTotalNumberOfInvoicesWithTaxLessOrEquals21(0);
 		dashboard.setTotalNumberOfSponsorshipsLink(0);
-		dashboard.setMinimumSponsorshipsAmount(minimumSponsorshipsAmount0);
-		dashboard.setMaximumSponsorshipsAmount(maximumSponsorshipsAmount0);
-		dashboard.setMinimumInvoicesQuantity(minimumInvoicesQuantity0);
-		dashboard.setMaximumInvoicesQuantity(maximumInvoicesQuantity0);
-		dashboard.setAverageSponsorshipsAmount(averageSponsorshipsAmount0);
-		dashboard.setDeviationSponsorshipsAmount(deviationSponsorshipsAmount0);
-		dashboard.setAverageInvoicesQuantity(averageInvoicesQuantity0);
-		dashboard.setDeviationInvoicesQuantity(deviationInvoicesQuantity0);
+		Map<String, Double> maximumSponsorshipMap = new HashMap<>();
+		Map<String, Double> minimumSponsorshipMap = new HashMap<>();
+		Map<String, Double> averageSponsorshipMap = new HashMap<>();
+		Map<String, Double> deviationSponsorshipMap = new HashMap<>();
+		Map<String, Double> maximumInvoiceMap = new HashMap<>();
+		Map<String, Double> minimumInvoiceMap = new HashMap<>();
+		Map<String, Double> averageInvoiceMap = new HashMap<>();
+		Map<String, Double> deviationInvoiceMap = new HashMap<>();
 
-		if (averageSponsorshipsAmount != null) {
+		if (averageSponsorshipsAmountEUR.getAmount() != null || averageSponsorshipsAmountUSD.getAmount() != null || averageSponsorshipsAmountGBP.getAmount() != null) {
 			dashboard.setTotalNumberOfInvoicesWithTaxLessOrEquals21(totalNumberOfInvoicesWithTaxLessOrEquals21);
 			dashboard.setTotalNumberOfSponsorshipsLink(totalNumberOfSponsorshipsLink);
-			dashboard.setAverageSponsorshipsAmount(averageSponsorshipsAmount);
-			dashboard.setDeviationSponsorshipsAmount(deviationSponsorshipsAmount);
-			dashboard.setMinimumSponsorshipsAmount(minimumSponsorshipsAmount);
-			dashboard.setMaximumSponsorshipsAmount(maximumSponsorshipsAmount);
-			dashboard.setAverageInvoicesQuantity(averageInvoicesQuantity);
-			dashboard.setDeviationInvoicesQuantity(deviationInvoicesQuantity);
-			dashboard.setMinimumInvoicesQuantity(minimumInvoicesQuantity);
-			dashboard.setMaximumInvoicesQuantity(maximumInvoicesQuantity);
+
+			averageSponsorshipMap.put(averageSponsorshipsAmountEUR.getCurrency(), averageSponsorshipsAmountEUR.getAmount());
+			averageSponsorshipMap.put(averageSponsorshipsAmountUSD.getCurrency(), averageSponsorshipsAmountUSD.getAmount());
+			averageSponsorshipMap.put(averageSponsorshipsAmountGBP.getCurrency(), averageSponsorshipsAmountGBP.getAmount());
+			dashboard.setAverageSponsorshipsAmount(averageSponsorshipMap);
+
+			deviationSponsorshipMap.put(deviationSponsorshipsAmountEUR.getCurrency(), deviationSponsorshipsAmountEUR.getAmount());
+			deviationSponsorshipMap.put(deviationSponsorshipsAmountUSD.getCurrency(), deviationSponsorshipsAmountUSD.getAmount());
+			deviationSponsorshipMap.put(deviationSponsorshipsAmountGBP.getCurrency(), deviationSponsorshipsAmountGBP.getAmount());
+			dashboard.setDeviationSponsorshipsAmount(deviationSponsorshipMap);
+
+			minimumSponsorshipMap.put(minimumSponsorshipsAmountEUR.getCurrency(), minimumSponsorshipsAmountEUR.getAmount());
+			minimumSponsorshipMap.put(minimumSponsorshipsAmountUSD.getCurrency(), minimumSponsorshipsAmountUSD.getAmount());
+			minimumSponsorshipMap.put(minimumSponsorshipsAmountGBP.getCurrency(), minimumSponsorshipsAmountGBP.getAmount());
+			dashboard.setMinimumSponsorshipsAmount(minimumSponsorshipMap);
+
+			maximumSponsorshipMap.put(maximumSponsorshipsAmountEUR.getCurrency(), maximumSponsorshipsAmountEUR.getAmount());
+			maximumSponsorshipMap.put(maximumSponsorshipsAmountEUR.getCurrency(), maximumSponsorshipsAmountEUR.getAmount());
+			maximumSponsorshipMap.put(maximumSponsorshipsAmountEUR.getCurrency(), maximumSponsorshipsAmountEUR.getAmount());
+			dashboard.setMaximumSponsorshipsAmount(maximumSponsorshipMap);
+
+			averageInvoiceMap.put(averageInvoicesQuantityEUR.getCurrency(), averageInvoicesQuantityEUR.getAmount());
+			averageInvoiceMap.put(averageInvoicesQuantityUSD.getCurrency(), averageInvoicesQuantityUSD.getAmount());
+			averageInvoiceMap.put(averageInvoicesQuantityGBP.getCurrency(), averageInvoicesQuantityGBP.getAmount());
+			dashboard.setAverageInvoicesQuantity(averageInvoiceMap);
+
+			deviationInvoiceMap.put(deviationInvoicesQuantityEUR.getCurrency(), deviationInvoicesQuantityEUR.getAmount());
+			deviationInvoiceMap.put(deviationInvoicesQuantityUSD.getCurrency(), deviationInvoicesQuantityUSD.getAmount());
+			deviationInvoiceMap.put(deviationInvoicesQuantityGBP.getCurrency(), deviationInvoicesQuantityGBP.getAmount());
+			dashboard.setDeviationInvoicesQuantity(deviationInvoiceMap);
+
+			minimumInvoiceMap.put(minimumInvoicesQuantityEUR.getCurrency(), minimumInvoicesQuantityEUR.getAmount());
+			minimumInvoiceMap.put(minimumInvoicesQuantityUSD.getCurrency(), minimumInvoicesQuantityUSD.getAmount());
+			minimumInvoiceMap.put(minimumInvoicesQuantityGBP.getCurrency(), minimumInvoicesQuantityGBP.getAmount());
+			dashboard.setMinimumInvoicesQuantity(minimumInvoiceMap);
+
+			maximumInvoiceMap.put(maximumInvoicesQuantityEUR.getCurrency(), maximumInvoicesQuantityEUR.getAmount());
+			maximumInvoiceMap.put(maximumInvoicesQuantityEUR.getCurrency(), maximumInvoicesQuantityEUR.getAmount());
+			maximumInvoiceMap.put(maximumInvoicesQuantityEUR.getCurrency(), maximumInvoicesQuantityEUR.getAmount());
+			dashboard.setMaximumInvoicesQuantity(maximumInvoiceMap);
 		}
 		super.getBuffer().addData(dashboard);
-	}
-
-	private Money convertToEuros(final Money money) {
-		Double currentAmount = money.getAmount();
-		String currentCurrency = money.getCurrency();
-
-		if (!currentCurrency.equals("EUR")) {
-			switch (currentCurrency) {
-			case "USD":
-				currentAmount *= 0.94;
-				break;
-			case "GBP":
-				currentAmount *= 1.17;
-				break;
-			case "AUD":
-				currentAmount *= 0.60;
-				break;
-			case "JPY":
-				currentAmount *= 0.0061;
-				break;
-			case "CAD":
-				currentAmount *= 0.68;
-				break;
-			case "MXN":
-				currentAmount *= 0.055;
-				break;
-			case "CNY":
-				currentAmount *= 0.13;
-				break;
-			default:
-				return money;
-			}
-			money.setCurrency("EUR");
-			money.setAmount(currentAmount);
-		}
-		return money;
 	}
 
 	@Override

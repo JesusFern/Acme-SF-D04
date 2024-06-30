@@ -72,10 +72,10 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		Money money0 = new Money();
 		money0.setAmount(0.00);
 		money0.setCurrency("EUR");
-		dashboard.setAverageContractsBudget(money0);
-		dashboard.setDeviationContractsBudget(money0);
-		dashboard.setMaximumContractsBudget(money0);
-		dashboard.setMinimumContractsBudget(money0);
+		dashboard.setAverageContractsBudget(null);
+		dashboard.setDeviationContractsBudget(null);
+		dashboard.setMaximumContractsBudget(null);
+		dashboard.setMinimumContractsBudget(null);
 		dashboard.setTotalNumberOfProgressLogsCompletenessAbove75(0);
 		dashboard.setTotalNumberOfProgressLogsCompletenessBelow25(0);
 		dashboard.setTotalNumberOfProgressLogsCompletenessBetween25to50(0);
