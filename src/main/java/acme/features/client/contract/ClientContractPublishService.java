@@ -74,9 +74,11 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 		{
 			double totalBudgets = 0.0;
 			Project project = object.getProject();
+
 			Collection<Contract> contracts = this.ccr.findManyContractsAvailableByProjectId(project.getId());
 			for (Contract c : contracts)
 				totalBudgets += c.getBudget().getAmount();
+			totalBudgets += object.getBudget().getAmount();
 			double projectCost = object.getProject().getCost();
 			super.state(totalBudgets <= projectCost, "*", "client.contract.form.error.exceeded-project-cost");
 

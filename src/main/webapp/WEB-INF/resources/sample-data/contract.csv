@@ -1,6 +1,6 @@
 key,code,instantiation-moment,provider-name,customer-name,goals,budget,draft-mode,key:project,key:client
 contract-01,A-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.01,false,project-01,client-01
-contract-02,B-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.01,true,project-01,client-01
+contract-02,B-111,2013/01/01 12:30,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.01,false,project-01,client-01
 contract-03,C-111,2000/01/01 00:00,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.01,true,project-01,client-01
 contract-04,D-111,2000/01/01 00:01,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
 contract-05,E-111,2000/02/29 12:00,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis,Sed ut perspiciatis unde omnis iste natus error si,EUR 00.05,true,project-01,client-01
