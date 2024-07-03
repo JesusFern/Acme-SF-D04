@@ -63,6 +63,9 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 		assert object != null;
 
 		super.bind(object, "code", "dueDate", "quantity", "tax", "link");
+
+		if (object.getLink() == "")
+			object.setLink(null);
 	}
 
 	@Override
