@@ -130,7 +130,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			if (totalInvoiceAmount.getCurrency().equals(invoice.getQuantity().getCurrency()))
 				totalInvoiceAmount.setAmount(totalInvoiceAmount.getAmount() + invoice.totalAmount().getAmount());
 			else
-				super.state(totalInvoiceAmount.getCurrency() != invoice.getQuantity().getCurrency(), "*", "sponsor.sponsorship.form.error.invoice-currency-mismatch");
+				super.state(totalInvoiceAmount.getCurrency().equals(invoice.getQuantity().getCurrency()), "*", "sponsor.sponsorship.form.error.invoice-currency-mismatch");
 
 		super.state(totalInvoiceAmount.getAmount().equals(object.getAmount().getAmount()), "*", "sponsor.sponsorship.form.error.invoice-total-amount-mismatch");
 	}
