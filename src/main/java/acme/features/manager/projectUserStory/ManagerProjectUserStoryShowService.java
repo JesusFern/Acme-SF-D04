@@ -33,7 +33,7 @@ public class ManagerProjectUserStoryShowService extends AbstractService<Manager,
 
 		puId = super.getRequest().getData("id", int.class);
 		pu = this.repository.findOneProjectUserStoryById(puId);
-		status = pu != null && (!pu.getProject().isDraftMode() || super.getRequest().getPrincipal().hasRole(pu.getProject().getManager()));
+		status = pu != null && pu.getProject().isDraftMode() && super.getRequest().getPrincipal().hasRole(pu.getProject().getManager());
 
 		super.getResponse().setAuthorised(status);
 	}

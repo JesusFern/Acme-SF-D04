@@ -31,7 +31,7 @@ public class ManagerProjectUserStoryListInProjectService extends AbstractService
 
 		masterId = super.getRequest().getData("masterId", int.class);
 		project = this.repository.findOneProjectById(masterId);
-		status = project != null && super.getRequest().getPrincipal().hasRole(project.getManager());
+		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(project.getManager());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -64,15 +64,10 @@ public class ManagerProjectUserStoryListInProjectService extends AbstractService
 		assert objects != null;
 
 		int masterId;
-		Project project;
-		final boolean showCreate;
 
 		masterId = super.getRequest().getData("masterId", int.class);
-		project = this.repository.findOneProjectById(masterId);
-		showCreate = project.isDraftMode() && super.getRequest().getPrincipal().hasRole(project.getManager());
 
 		super.getResponse().addGlobal("masterId", masterId);
-		super.getResponse().addGlobal("showCreate", showCreate);
 	}
 
 }
