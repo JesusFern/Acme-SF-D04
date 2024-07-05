@@ -77,7 +77,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
 			Date minimumEnd;
 
-			minimumEnd = MomentHelper.deltaFromCurrentMoment(1, ChronoUnit.MONTHS);
+			minimumEnd = MomentHelper.deltaFromMoment(object.getRegistrationTime(), 1, ChronoUnit.MONTHS);
 			super.state(MomentHelper.isAfter(object.getDueDate(), minimumEnd), "dueDate", "sponsor.invoice.form.error.too-close");
 		}
 
@@ -90,7 +90,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 
 		if (!super.getBuffer().getErrors().hasErrors("quantity")) {
 			super.state(object.getQuantity().getAmount() > 0, "quantity", "sponsor.invoice.form.error.negative-quantity");
-			super.state(object.getQuantity().getAmount() <= 1000000, "quantity", "sponsor.invoice.form.error.too-high-amount");
+			super.state(object.getQuantity().getAmount() <= 1000000, "quantity", "sponsor.invoice.form.error.too-high-quantity");
 		}
 	}
 
