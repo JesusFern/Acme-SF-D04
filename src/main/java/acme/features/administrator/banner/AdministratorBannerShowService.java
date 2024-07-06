@@ -22,7 +22,14 @@ public class AdministratorBannerShowService extends AbstractService<Administrato
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		Banner banner;
+		int masterId;
+		masterId = super.getRequest().getData("id", int.class);
+
+		banner = this.repository.findOneBannerById(masterId);
+		status = banner != null;
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
