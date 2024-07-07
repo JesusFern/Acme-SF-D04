@@ -32,7 +32,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "id"), @Index(columnList = "code")
+	@Index(columnList = "code")
 })
 public class Invoice extends AbstractEntity {
 
