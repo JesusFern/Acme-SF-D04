@@ -16,14 +16,14 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-textarea code="any.progress-log.form.label.recordId" path="recordId"/>
-	<acme:input-double code="any.progress-log.form.label.percentageCompleteness" path="percentageCompleteness"/>
-	<acme:input-textarea code="any.progress-log.form.label.comment" path="comment"/>
-	<acme:input-textarea code="any.progress-log.form.label.responsiblePerson" path="responsiblePerson"/>
+	<acme:input-textarea code="authenticated.progress-log.form.label.recordId" path="recordId"/>
+	<acme:input-double code="authenticated.progress-log.form.label.percentageCompleteness" path="percentageCompleteness"/>
+	<acme:input-textarea code="authenticated.progress-log.form.label.comment" path="comment"/>
+	<acme:input-textarea code="authenticated.progress-log.form.label.responsiblePerson" path="responsiblePerson"/>
 
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show') }">
-	<acme:input-moment code="any.progress-log.form.label.registrationMoment" path="registrationMoment" readonly="true"/>
+	<acme:input-moment code="authenticated.progress-log.form.label.registrationMoment" path="registrationMoment" readonly="true"/>
 			</jstl:when>
 	</jstl:choose>
 </acme:form>

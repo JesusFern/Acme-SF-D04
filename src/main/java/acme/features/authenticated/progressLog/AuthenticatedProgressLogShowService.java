@@ -1,12 +1,12 @@
 
-package acme.features.any.progressLog;
+package acme.features.authenticated.progressLog;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Any;
+import acme.client.data.accounts.Authenticated;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
@@ -14,12 +14,12 @@ import acme.entities.contracts.Contract;
 import acme.entities.contracts.ProgressLog;
 
 @Service
-public class AnyProgressLogShowService extends AbstractService<Any, ProgressLog> {
+public class AuthenticatedProgressLogShowService extends AbstractService<Authenticated, ProgressLog> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyProgressLogRepository cpr;
+	private AuthenticatedProgressLogRepository apr;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -31,7 +31,7 @@ public class AnyProgressLogShowService extends AbstractService<Any, ProgressLog>
 		Contract contract;
 
 		progressLogId = super.getRequest().getData("id", int.class);
-		contract = this.cpr.findOneContractByProgressLogId(progressLogId);
+		contract = this.apr.findOneContractByProgressLogId(progressLogId);
 		status = contract != null && (!contract.isDraftMode() || super.getRequest().getPrincipal().hasRole(contract.getClient()));
 
 		super.getResponse().setAuthorised(status);
@@ -43,7 +43,7 @@ public class AnyProgressLogShowService extends AbstractService<Any, ProgressLog>
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.cpr.findOneProgressLogById(id);
+		object = this.apr.findOneProgressLogById(id);
 
 		super.getBuffer().addData(object);
 	}
@@ -51,13 +51,11 @@ public class AnyProgressLogShowService extends AbstractService<Any, ProgressLog>
 	public void unbind(final ProgressLog object) {
 		assert object != null;
 
-		assert object != null;
-
 		SelectChoices choicesC;
 		Dataset dataset;
 
 		Collection<Contract> contracts;
-		contracts = this.cpr.findManyContract();
+		contracts = this.apr.findManyContract();
 		choicesC = SelectChoices.from(contracts, "code", object.getContract());
 		dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson");
 		dataset.put("contract", choicesC.getSelected().getKey());

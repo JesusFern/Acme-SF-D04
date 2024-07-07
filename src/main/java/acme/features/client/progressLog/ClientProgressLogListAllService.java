@@ -1,31 +1,38 @@
 
-package acme.features.any.progressLog;
+package acme.features.client.progressLog;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Any;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.contracts.Contract;
 import acme.entities.contracts.ProgressLog;
+import acme.roles.Client;
 
 @Service
-public class AnyProgressLogListService extends AbstractService<Any, ProgressLog> {
+public class ClientProgressLogListAllService extends AbstractService<Client, ProgressLog> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyProgressLogRepository cpr;
+	private ClientProgressLogRepository cpr;
 
 	// AbstractService interface ----------------------------------------------
 
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int contractId;
+		Contract contract;
+
+		contractId = super.getRequest().getData("masterId", int.class);
+		contract = this.cpr.findOneContractById(contractId);
+		status = contract != null && !contract.isDraftMode();
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -34,7 +41,7 @@ public class AnyProgressLogListService extends AbstractService<Any, ProgressLog>
 		int masterId;
 		masterId = super.getRequest().getData("masterId", int.class);
 
-		objects = this.cpr.findManyProgressLogByMasterId(masterId);
+		objects = this.cpr.findManyProgressLogPublishByMasterId(masterId);
 
 		super.getBuffer().addData(objects);
 	}
@@ -55,15 +62,10 @@ public class AnyProgressLogListService extends AbstractService<Any, ProgressLog>
 		assert objects != null;
 
 		int masterId;
-		Contract contract;
-		final boolean showCreate;
 
 		masterId = super.getRequest().getData("masterId", int.class);
-		contract = this.cpr.findOneContractById(masterId);
-		showCreate = contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
 
 		super.getResponse().addGlobal("masterId", masterId);
-		super.getResponse().addGlobal("showCreate", showCreate);
 	}
 
 }

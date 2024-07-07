@@ -16,7 +16,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="any.progress-log.list.label.recordId" path="recordId" width="30%"/>
-	<acme:list-column code="any.progress-log.list.label.percentageCompleteness" path="percentageCompleteness" width="30%"/>
-	<acme:list-column code="any.progress-log.list.label.responsiblePerson" path="responsiblePerson" width="40%"/>		
+	<acme:list-column code="authenticated.contract.list.label.code" path="code" width="10%"/>
+	<acme:list-column code="authenticated.contract.list.label.providerName" path="providerName" width="45%"/>
+	<acme:list-column code="authenticated.contract.list.label.customerName" path="customerName" width="45%"/>	
 </acme:list>
+	

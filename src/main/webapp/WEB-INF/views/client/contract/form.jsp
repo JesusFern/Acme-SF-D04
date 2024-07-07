@@ -28,19 +28,25 @@
 			</jstl:when>
 	</jstl:choose>
 	<jstl:choose>
-	<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="client.progress-log.list.title" action="/client/progress-log/list?masterId=${id}"/>			
+	<jstl:when test="${_command == 'show' && draftMode == false && isMine == true}">
+			<acme:button code="client.progress-log.list.title" action="/client/progress-log/list-mine?masterId=${id}"/>	
+			<acme:button code="client.progress-log.list-all.title" action="/client/progress-log/list-all?masterId=${id}"/>			
+					
+		</jstl:when>
+		<jstl:when test="${_command == 'show' && draftMode == false && isMine == false}">
+			<acme:button code="client.progress-log.list-all.title" action="/client/progress-log/list-all?masterId=${id}"/>			
+					
 		</jstl:when>
 		
     <jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
-    		<acme:button code="client.progress-log.list.title" action="/client/progress-log/list?masterId=${id}"/>
-            <acme:submit code="client.contract.form.button.delete" action="/client/contract/delete"/>
-            <acme:submit code="client.contract.form.button.update" action="/client/contract/update"/>
-            <acme:submit code="client.contract.form.button.publish" action="/client/contract/publish"/>
+    					
+            <acme:submit code="client.contract.form.button.delete" action="/client/contract/delete?id=${id}"/>
+            <acme:submit code="client.contract.form.button.update" action="/client/contract/update?id=${id}"/>
+            <acme:submit code="client.contract.form.button.publish" action="/client/contract/publish?id=${id}"/>
             
         </jstl:when>
     <jstl:when test="${_command == 'create'}">
-            <acme:submit code="client.contract.form.button.create" action="/client/contract/create"/>
+            <acme:submit code="client.contract.form.button.create" action="/client/contract/creat"/>
         </jstl:when>
 
     </jstl:choose>
