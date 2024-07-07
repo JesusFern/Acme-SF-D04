@@ -50,6 +50,12 @@ public class ClientProgressLogPublishService extends AbstractService<Client, Pro
 	@Override
 	public void validate(final ProgressLog object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("recordId")) {
+			ProgressLog existing;
+
+			existing = this.repository.findOneProgressLogByRecordId(object.getRecordId());
+			super.state(existing == null || existing.equals(object), "recordId", "client.progress-log.form.error.duplicated");
+		}
 	}
 	@Override
 	public void perform(final ProgressLog object) {
@@ -66,7 +72,6 @@ public class ClientProgressLogPublishService extends AbstractService<Client, Pro
 		Dataset dataset;
 
 		dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson", "draftMode");
-
 		super.getResponse().addData(dataset);
 	}
 

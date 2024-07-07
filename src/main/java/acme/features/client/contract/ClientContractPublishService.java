@@ -81,19 +81,20 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 		{
 			double totalBudgets = 0.0;
 			Project project = object.getProject();
-			Money budget = new Money();
-			Collection<Contract> contracts = this.ccr.findManyContractsAvailableByProjectId(project.getId());
-			for (Contract c : contracts) {
-				budget = this.ConvertToEuros(c.getBudget());
-				totalBudgets += budget.getAmount();
+			if (project != null && object.getBudget() != null) {
+				Money budget = new Money();
+				Collection<Contract> contracts = this.ccr.findManyContractsAvailableByProjectId(project.getId());
+				for (Contract c : contracts) {
+					budget = this.ConvertToEuros(c.getBudget());
+					totalBudgets += budget.getAmount();
+				}
+
+				totalBudgets += this.ConvertToEuros(object.getBudget()).getAmount();
+				double projectCost = object.getProject().getCost();
+				Money projectCostEUR = this.hoursToEuros(projectCost);
+
+				super.state(totalBudgets <= projectCostEUR.getAmount(), "*", "client.contract.form.error.exceeded-project-cost");
 			}
-
-			totalBudgets += this.ConvertToEuros(object.getBudget()).getAmount();
-			double projectCost = object.getProject().getCost();
-			Money projectCostEUR = this.hoursToEuros(projectCost);
-
-			super.state(totalBudgets <= projectCostEUR.getAmount(), "*", "client.contract.form.error.exceeded-project-cost");
-
 		}
 	}
 	public Money hoursToEuros(double projectCost) {

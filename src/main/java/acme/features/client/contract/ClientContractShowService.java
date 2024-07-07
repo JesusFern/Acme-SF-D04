@@ -58,7 +58,7 @@ public class ClientContractShowService extends AbstractService<Client, Contract>
 		Collection<Project> projects;
 		boolean isMine;
 
-		isMine = object != null && super.getRequest().getPrincipal().hasRole(object.getClient());
+		isMine = super.getRequest().getPrincipal().hasRole(object.getClient());
 
 		projects = this.ccr.findManyProjectsByAvailability();
 		choicesP = SelectChoices.from(projects, "code", object.getProject());

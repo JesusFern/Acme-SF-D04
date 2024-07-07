@@ -28,7 +28,7 @@ public class ClientProgressLogUpdateService extends AbstractService<Client, Prog
 		masterId = super.getRequest().getData("id", int.class);
 		progressLog = this.cpr.findOneProgressLogById(masterId);
 		client = progressLog == null ? null : progressLog.getContract().getClient();
-		status = progressLog != null && super.getRequest().getPrincipal().hasRole(client);
+		status = progressLog != null && progressLog.isDraftMode() && super.getRequest().getPrincipal().hasRole(client);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -74,9 +74,8 @@ public class ClientProgressLogUpdateService extends AbstractService<Client, Prog
 		assert object != null;
 		Dataset dataset;
 
-		dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson");
+		dataset = super.unbind(object, "recordId", "percentageCompleteness", "comment", "registrationMoment", "responsiblePerson", "draftMode");
 		dataset.put("id", super.getRequest().getData("id", int.class));
-		dataset.put("draftMode", object.getContract().isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}

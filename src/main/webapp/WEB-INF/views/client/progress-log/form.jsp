@@ -29,8 +29,8 @@
 	<jstl:choose>
    <jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
             <acme:submit code="client.progress-log.form.button.delete" action="/client/progress-log/delete"/>
-			<acme:submit code="client.progress-log.form.button.update" action="/client/progress-log/update?masterId=${masterId}"/>
-			<acme:submit code="client.progress-log.form.button.publish" action="/client/progress-log/publish?masterId=${masterId}"/>
+			<acme:submit code="client.progress-log.form.button.update" action="/client/progress-log/update?masterId=${id}"/>
+			<acme:submit code="client.progress-log.form.button.publish" action="/client/progress-log/publish?masterId=${id}"/>
 			
         </jstl:when>
     <jstl:when test="${_command == 'create'}">

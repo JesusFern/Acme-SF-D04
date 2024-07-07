@@ -25,7 +25,14 @@ public class ClientProgressLogListAllService extends AbstractService<Client, Pro
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int contractId;
+		Contract contract;
+
+		contractId = super.getRequest().getData("masterId", int.class);
+		contract = this.cpr.findOneContractById(contractId);
+		status = contract != null && !contract.isDraftMode();
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -55,15 +62,10 @@ public class ClientProgressLogListAllService extends AbstractService<Client, Pro
 		assert objects != null;
 
 		int masterId;
-		Contract contract;
-		final boolean showCreate;
 
 		masterId = super.getRequest().getData("masterId", int.class);
-		contract = this.cpr.findOneContractById(masterId);
-		showCreate = !contract.isDraftMode() && contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
 
 		super.getResponse().addGlobal("masterId", masterId);
-		super.getResponse().addGlobal("showCreate", showCreate);
 	}
 
 }
