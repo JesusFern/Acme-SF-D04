@@ -20,3 +20,4 @@ auditor.audit-record.form.error.duplicated= Code is taken
 auditor.audit-record.form.error.too-close= Period should be at least 1 hour long
 auditor.audit-record.form.error.bad-date= Invalid Date
 auditor.audit-record.form.error.setStartDate= Start date is needed
+auditor.audit-record.form.error.bad-date-codeAudit= Date should be after code audit's time of execution 
