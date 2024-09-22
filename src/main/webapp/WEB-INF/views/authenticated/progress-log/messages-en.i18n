@@ -1,0 +1,32 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.progress-log.form.title = Progress Logs form
+authenticated.progress-log.list.title = Listing of Progress Log
+authenticated.progress-log.list.button.create = Create Progress Log
+authenticated.progress-log.form.button.create = Create Progress Log
+authenticated.progress-log.form.button.delete = Delete Progress Log
+authenticated.progress-log.form.button.update = Update Progress Log
+
+authenticated.progress-log.form.label.code = Code:
+authenticated.progress-log.form.label.recordId = Record Id:
+authenticated.progress-log.form.label.percentageCompleteness = Percentage Completeness:
+authenticated.progress-log.form.label.comment = Comment:
+authenticated.progress-log.form.label.registrationMoment = Registration Moment:
+authenticated.progress-log.form.label.contract = Contract:
+authenticated.progress-log.form.label.responsiblePerson = Responsible Person:
+
+authenticated.progress-log.form.error.duplicated = RecordId Duplicated
+
+
+authenticated.progress-log.list.label.code = Code
+authenticated.progress-log.list.label.recordId = Record Id
+authenticated.progress-log.list.label.percentageCompleteness =  Percentage Completeness
+authenticated.progress-log.list.label.responsiblePerson = Responsible Person

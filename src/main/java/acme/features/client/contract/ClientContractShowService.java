@@ -56,6 +56,9 @@ public class ClientContractShowService extends AbstractService<Client, Contract>
 		Dataset dataset;
 
 		Collection<Project> projects;
+		boolean isMine;
+
+		isMine = super.getRequest().getPrincipal().hasRole(object.getClient());
 
 		projects = this.ccr.findManyProjectsByAvailability();
 		choicesP = SelectChoices.from(projects, "code", object.getProject());
@@ -64,5 +67,6 @@ public class ClientContractShowService extends AbstractService<Client, Contract>
 		dataset.put("projects", choicesP);
 
 		super.getResponse().addData(dataset);
+		super.getResponse().addGlobal("isMine", isMine);
 	}
 }

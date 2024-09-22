@@ -21,6 +21,6 @@
 	<acme:list-column code="client.progress-log.list.label.responsiblePerson" path="responsiblePerson" width="40%"/>		
 </acme:list>
 
-<jstl:if test="${_command == 'list'}">
+<jstl:if test="${_command == 'list-mine'}">
 	<acme:button  code="client.progress-log.list.button.create" action="/client/progress-log/create?masterId=${masterId}"/>
 </jstl:if>	

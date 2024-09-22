@@ -111,11 +111,11 @@ master.menu.auditor.my-dashboard= Show my dashboard
 # master.menu.client ####################################################
 
 master.menu.client = Client
-master.menu.client.my-contracts = List my contracts
-master.menu.client.all-contracts = List all contracts
-master.menu.client.create-contracts = Create a contract
-master.menu.client.my-dashboard = Show my dashboard
-master.menu.client.my-progressLogs = List my progress logs
+master.menu.client.my-contracts = List my Contracts
+master.menu.client.all-contracts = List all Contracts
+master.menu.client.create-contracts = Create a Contract
+master.menu.client.my-dashboard = Show my Dashboard
+master.menu.client.my-progressLogs = List my Progress Logs
 
 # master.menu.sponsor ####################################################
 
