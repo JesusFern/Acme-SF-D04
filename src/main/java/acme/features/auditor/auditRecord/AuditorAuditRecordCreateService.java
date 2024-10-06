@@ -71,7 +71,8 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 		assert object != null;
 
 		super.bind(object, "code", "periodStart", "periodEnd", "mark", "link");
-
+		if (object.getLink() == "")
+			object.setLink(null);
 	}
 
 	@Override
@@ -116,6 +117,8 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MINUTES);
 			super.state(MomentHelper.isBefore(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.bad-date");
 		}
+
+		super.state(object.getPeriodStart().after(object.getCodeAudit().getExecution()), "*", "auditor.audit-record.form.error.bad-date-codeAudit");
 	}
 
 	@Override

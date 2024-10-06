@@ -37,7 +37,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "id"), @Index(columnList = "code"), @Index(columnList = "auditor_id"), @Index(columnList = "project_id")
+	@Index(columnList = "draftMode"), @Index(columnList = "code"), @Index(columnList = "type, draftMode")
 })
 public class CodeAudit extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------

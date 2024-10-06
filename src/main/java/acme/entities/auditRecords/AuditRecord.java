@@ -28,7 +28,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "id"), @Index(columnList = "code")
+	@Index(columnList = "code"), @Index(columnList = "periodStart, periodEnd")
 })
 public class AuditRecord extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
@@ -55,7 +55,7 @@ public class AuditRecord extends AbstractEntity {
 	private Mark				mark;
 
 	@URL
-	@Length(max = 255)
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	// Relationships ----------------------------------------------------------

@@ -98,18 +98,22 @@ public class AuditorCodeAuditPublishService extends AbstractService<Auditor, Cod
 		assert object != null;
 		SelectChoices choices;
 		SelectChoices choicesP;
+		SelectChoices choicesM;
 		Dataset dataset;
-
+		int id;
+		id = super.getRequest().getData("id", int.class);
 		Collection<Project> projects;
 
 		choices = SelectChoices.from(Type.class, object.getType());
 		projects = this.repository.findManyProjectsByAvailability();
 		choicesP = SelectChoices.from(projects, "code", object.getProject());
+		choicesM = SelectChoices.from(Mark.class, object.getMark(this.repository.findManyAuditRecordByCodeAuditId(id)));
 
 		dataset = super.unbind(object, "code", "execution", "type", "correctiveActions", "link", "draftMode");
 		dataset.put("types", choices);
 		dataset.put("project", choicesP.getSelected().getKey());
 		dataset.put("projects", choicesP);
+		dataset.put("marks", choicesM);
 
 		super.getResponse().addData(dataset);
 	}

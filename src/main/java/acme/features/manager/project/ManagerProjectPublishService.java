@@ -54,15 +54,18 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		assert object != null;
 
 		super.bind(object, "code", "title", "abstractString", "indication", "cost", "link");
+
+		if (object.getLink() == "")
+			object.setLink(null);
 	}
 
 	@Override
 	public void validate(final Project object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("indication"))
+		{
 			super.state(!object.isIndication(), "indication", "manager.project.form.error.indication");
-
+		}
 		{
 			Collection<UserStory> userStories;
 			boolean allPublished;

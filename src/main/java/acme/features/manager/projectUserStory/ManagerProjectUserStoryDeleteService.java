@@ -4,7 +4,6 @@ package acme.features.manager.projectUserStory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.projects.ProjectUserStory;
 import acme.roles.Manager;
@@ -66,15 +65,7 @@ public class ManagerProjectUserStoryDeleteService extends AbstractService<Manage
 
 	@Override
 	public void unbind(final ProjectUserStory object) {
-		assert object != null;
 
-		Dataset dataset;
-
-		dataset = super.unbind(object, "version");
-		dataset.put("masterId", object.getProject().getId());
-		dataset.put("draftMode", object.getProject().isDraftMode());
-
-		super.getResponse().addData(dataset);
 	}
 
 }

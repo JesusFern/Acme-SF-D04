@@ -58,6 +58,8 @@ public class TrainingSession extends AbstractEntity {
 	@Length(max = 255)
 	private String				email;
 
+	private boolean				draftMode;
+
 	@URL
 	@Length(max = 255)
 	private String				link;

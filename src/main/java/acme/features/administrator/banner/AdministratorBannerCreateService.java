@@ -51,12 +51,7 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	@Override
 	public void validate(final Banner object) {
 		assert object != null;
-
-		Date firstDate = MomentHelper.parse("2000-01-01 00:00", "yyyy-MM-dd HH:mm");
 		Date lastDate = MomentHelper.parse("2200-12-31 23:59", "yyyy-MM-dd HH:mm");
-
-		if (!super.getBuffer().getErrors().hasErrors("startDisplayPeriod"))
-			super.state(MomentHelper.isAfterOrEqual(object.getStartDisplayPeriod(), firstDate), "startDisplayPeriod", "administrator.banner.form.error.first-date");
 
 		if (!super.getBuffer().getErrors().hasErrors("startDisplayPeriod"))
 			super.state(MomentHelper.isBeforeOrEqual(object.getStartDisplayPeriod(), MomentHelper.deltaFromMoment(lastDate, -7, ChronoUnit.DAYS)), "startDisplayPeriod", "administrator.banner.form.error.start-period");
@@ -65,13 +60,10 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 			super.state(MomentHelper.isAfterOrEqual(object.getStartDisplayPeriod(), object.getInstantiationMoment()), "startDisplayPeriod", "administrator.banner.form.error.after-instantiation-moment");
 
 		if (!super.getBuffer().getErrors().hasErrors("endDisplayPeriod"))
-			super.state(MomentHelper.isAfterOrEqual(object.getEndDisplayPeriod(), firstDate), "endDisplayPeriod", "administrator.banner.form.error.first-date");
-
-		if (!super.getBuffer().getErrors().hasErrors("endDisplayPeriod"))
 			super.state(MomentHelper.isBeforeOrEqual(object.getEndDisplayPeriod(), lastDate), "endDisplayPeriod", "administrator.banner.form.error.start-period");
 
 		if (!super.getBuffer().getErrors().hasErrors("endDisplayPeriod"))
-			super.state(MomentHelper.isAfterOrEqual(object.getEndDisplayPeriod(), MomentHelper.deltaFromMoment(firstDate, 7, ChronoUnit.DAYS)), "endDisplayPeriod", "administrator.banner.form.error.end-period");
+			super.state(MomentHelper.isAfterOrEqual(object.getEndDisplayPeriod(), MomentHelper.deltaFromMoment(object.getInstantiationMoment(), 7, ChronoUnit.DAYS)), "endDisplayPeriod", "administrator.banner.form.error.end-period");
 
 		if (!super.getBuffer().getErrors().hasErrors("startDisplayPeriod") && !super.getBuffer().getErrors().hasErrors("endDisplayPeriod")) {
 

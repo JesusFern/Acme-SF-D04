@@ -44,10 +44,10 @@ public class Notice extends AbstractEntity {
 	private String				message;
 
 	@Email
-	@Length(max = 255)
+	@Length(min = 6, max = 255)
 	private String				email;
 
 	@URL
-	@Length(max = 255)
+	@Length(min = 7, max = 255)
 	private String				link;
 }

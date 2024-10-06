@@ -31,7 +31,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "id"), @Index(columnList = "code")
+	@Index(columnList = "code")
 })
 public class Sponsorship extends AbstractEntity {
 
@@ -68,11 +68,11 @@ public class Sponsorship extends AbstractEntity {
 	private Type				type;
 
 	@Email
-	@Length(max = 255)
+	@Length(min = 6, max = 255)
 	private String				email;
 
 	@URL
-	@Length(max = 255)
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	// Relationships ----------------------------------------------------------

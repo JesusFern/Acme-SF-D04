@@ -2,9 +2,7 @@
 package acme.entities.projects;
 
 import javax.persistence.Entity;
-import javax.persistence.Index;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -22,9 +20,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(indexes = {
-	@Index(columnList = "id"), @Index(columnList = "manager_id")
-})
 public class UserStory extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -53,7 +48,7 @@ public class UserStory extends AbstractEntity {
 	private Priority			priority;
 
 	@URL
-	@Length(max = 255)
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	private boolean				draftMode;

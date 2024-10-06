@@ -25,9 +25,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "id"), @Index(columnList = "manager_id"), @Index(columnList = "code")
+	@Index(columnList = "code")
 })
-
 public class Project extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -56,7 +55,7 @@ public class Project extends AbstractEntity {
 	private int					cost;
 
 	@URL
-	@Length(max = 255)
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	private boolean				draftMode;
