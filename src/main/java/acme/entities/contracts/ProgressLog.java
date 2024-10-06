@@ -29,7 +29,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "recordId")
+	@Index(columnList = "draftMode"),
+	@Index(columnList = "recordId"),
+	@Index(columnLits = "percentageCompleteness")
 })
 public class ProgressLog extends AbstractEntity {
 
