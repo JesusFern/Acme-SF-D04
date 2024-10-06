@@ -118,7 +118,7 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 			super.state(MomentHelper.isBefore(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.bad-date");
 		}
 
-		super.state(object.getPeriodStart().after(object.getCodeAudit().getExecution()), "*", "auditor.audit-record.form.error.bad-date-codeAudit");
+		super.state(object.getPeriodStart().after(object.getCodeAudit().getExecution()) || object.getPeriodStart().equals(object.getCodeAudit().getExecution()), "*", "auditor.audit-record.form.error.bad-date-codeAudit");
 	}
 
 	@Override

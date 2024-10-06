@@ -86,14 +86,15 @@ public class AuditorAuditRecordUpdateService extends AbstractService<Auditor, Au
 			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 59, ChronoUnit.MINUTES);
 			super.state(MomentHelper.isAfter(object.getPeriodStart(), minimumEnd), "periodStart", "auditor.audit-record.form.error.bad-date");
 		}
-		if (!super.getBuffer().getErrors().hasErrors("periodStart")) {
-			Date minimumEnd;
+		if (!super.getBuffer().getErrors().hasErrors("periodStart"))
+			if (object.getPeriodStart() != null) {
+				Date minimumEnd;
 
-			minimumEnd = java.sql.Date.valueOf("2022-07-29");
-			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 23, ChronoUnit.HOURS);
-			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MINUTES);
-			super.state(MomentHelper.isBefore(object.getPeriodStart(), minimumEnd), "periodStart", "auditor.audit-record.form.error.bad-date");
-		}
+				minimumEnd = java.sql.Date.valueOf("2022-07-29");
+				minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 23, ChronoUnit.HOURS);
+				minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MINUTES);
+				super.state(MomentHelper.isBefore(object.getPeriodStart(), minimumEnd), "periodStart", "auditor.audit-record.form.error.bad-date");
+			}
 
 		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
 			Date minimumEnd;
@@ -111,8 +112,9 @@ public class AuditorAuditRecordUpdateService extends AbstractService<Auditor, Au
 			minimumEnd = MomentHelper.deltaFromMoment(minimumEnd, 1, ChronoUnit.MINUTES);
 			super.state(MomentHelper.isBefore(object.getPeriodEnd(), minimumEnd), "periodEnd", "auditor.audit-record.form.error.bad-date");
 		}
-		super.state(object.getPeriodStart().after(object.getCodeAudit().getExecution()), "*", "auditor.audit-record.form.error.bad-date-codeAudit");
 
+		if (object.getPeriodStart() != null)
+			super.state(object.getPeriodStart().after(object.getCodeAudit().getExecution()), "*", "auditor.audit-record.form.error.bad-date-codeAudit");
 	}
 
 	@Override
