@@ -29,10 +29,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "draftMode"),
-	@Index(columnList = "code"),
-	@Index(columnList = "budget_currency","draftMode")
-	
+	@Index(columnList = "draftMode"), @Index(columnList = "code"), @Index(columnList = "draftMode ,  project_id"), @Index(columnList = "budget_currency ,  draftMode, client_id")
+
 })
 public class Contract extends AbstractEntity {
 

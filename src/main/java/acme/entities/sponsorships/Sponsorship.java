@@ -31,7 +31,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "code")
+	@Index(columnList = "draftMode"), @Index(columnList = "code"), @Index(columnList = "link, sponsor_id, draftMode"), @Index(columnList = "amount_currency, sponsor_id, draftMode"), @Index(columnList = "sponsor_id, draftMode")
 })
 public class Sponsorship extends AbstractEntity {
 
