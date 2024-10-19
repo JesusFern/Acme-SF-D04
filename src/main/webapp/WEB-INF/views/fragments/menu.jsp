@@ -87,15 +87,20 @@
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.options">	
 			<acme:menu-suboption code="master.menu.user-account.claim" action="/any/claim/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-code-audit" action="/any/code-audit/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-contracts" action="/any/contract/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-training-module" action="/any/training-module/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-sponsorship" action="/any/sponsorship/list-all"/>
+			<acme:menu-suboption code="master.menu.any.all-projects" action="/any/project/list-all"/>
 		</acme:menu-option>
-		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">	
+		<%-- <acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">	
 			<acme:menu-suboption code="master.menu.auditor.all-code-audit" action="/authenticated/code-audit/list-all"/>
 			<acme:menu-suboption code="master.menu.client.all-contracts" action="/authenticated/contract/list-all"/>
 			<acme:menu-suboption code="master.menu.any.all-training-module" action="/any/training-module/list-all"/>
 			<acme:menu-suboption code="master.menu.any.all-training-module" action="/any/training-module/list-all"/>
 			<acme:menu-suboption code="master.menu.any.all-sponsorship" action="/any/sponsorship/list-all"/>
 			<acme:menu-suboption code="master.menu.any.all-projects" action="/any/project/list-all"/>
-		</acme:menu-option>
+		</acme:menu-option> --%>
 		
 		
 	</acme:menu-left>

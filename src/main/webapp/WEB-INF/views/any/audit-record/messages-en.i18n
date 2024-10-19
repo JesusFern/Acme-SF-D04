@@ -1,0 +1,22 @@
+any.audit-record.list.title = Listing of audit records
+
+any.audit-record.list.label.code = Code
+any.audit-record.list.label.mark= Mark
+
+any.audit-record.form.title = Details of audit records
+
+any.audit-record.form.label.code= Code
+any.audit-record.form.label.periodStart= Start of period
+any.audit-record.form.label.periodEnd= End of period
+any.audit-record.form.label.mark= Mark
+any.code-audit.form.label.project= Project
+any.code-audit.form.label.draftMode=Draft Mode
+any.audit-record.form.label.link= Link
+
+any.auditRecord.form.button.create= Create
+any.audit-record.list.button.create= Create audit record
+any.audit-record.form.button.update= Update
+any.audit-record.form.button.delete= Delete
+
+any.code-audit.form.error.duplicated= Code is taken
+any.audit-record.form.error.too-close= Period should be at least 1 hour long

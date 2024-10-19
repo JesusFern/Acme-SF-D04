@@ -1,0 +1,22 @@
+any.audit-record.list.title = Listado de registros de auditorias
+any.audit-record.list.label.code = Código
+any.audit-record.list.label.mark = Nota
+
+any.audit-record.form.title = Detalle de registro de auditorias
+
+any.audit-record.form.label.code= Código
+any.audit-record.form.label.periodStart= Periodo de inicio
+any.audit-record.form.label.periodEnd= Periodo de fin
+any.audit-record.form.label.mark= Nota
+any.code-audit.form.label.project= Proyecto
+any.code-audit.form.label.draftMode= Borrador 
+any.audit-record.form.label.link= Link
+
+
+any.auditRecord.form.button.create= Crear
+any.audit-record.list.button.create=Crear registro de auditoria
+any.audit-record.form.button.delete= Borrar
+any.audit-record.form.button.update= Actualizar
+
+any.audit-record.form.error.too-close= El periodo debe ser almenos de 1 hora
+any.code-audit.form.error.duplicated= El código ya esta siendo utilizado
