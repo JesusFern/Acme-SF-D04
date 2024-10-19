@@ -127,7 +127,7 @@ master.menu.client.my-contracts = Ver mis contratos
 master.menu.client.create-contracts = Crear un contrato
 master.menu.client.all-contracts = Ver todos los contratos
 master.menu.client.my-dashboard = Ver mi panel
-
+master.menu.user-account.client = Datos del cliente
 master.menu.client.my-progressLogs = Ver mis registros de proceso
 
 

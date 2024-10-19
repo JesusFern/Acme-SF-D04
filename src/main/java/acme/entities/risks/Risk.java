@@ -35,7 +35,7 @@ public class Risk extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Column(unique = true)
-	@Pattern(regexp = "^R-[0-9]{3}$")
+	@Pattern(regexp = "^R-[0-9]{3}$", message = "{validation.pattern}  R-000")
 	@NotBlank
 	private String				reference;
 
