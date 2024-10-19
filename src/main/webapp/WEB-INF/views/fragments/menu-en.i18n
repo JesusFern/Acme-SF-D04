@@ -48,10 +48,13 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.claim ##########################################################
 master.menu.actions = Actions
 master.menu.user-account.claim= Claims
+
 master.menu.auditor.all-code-audit= List all Code audits
+master.menu.any.all-code-audit= List all Code audits
 
 master.menu.contract = Contract
 master.menu.any.all-contracts= Lists of Contracts
+
 master.menu.project = Project
 master.menu.any.all-projects = List of projects
 
