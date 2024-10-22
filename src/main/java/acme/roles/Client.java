@@ -1,6 +1,7 @@
 
 package acme.roles;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -8,7 +9,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import org.checkerframework.common.aliasing.qual.Unique;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
@@ -26,9 +26,8 @@ public class Client extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 	@NotBlank
-	@Unique
+	@Column(unique = true)
 	@Pattern(regexp = "^CLI-[0-9]{4}$", message = "{validation.pattern}  CLI-1111")
-
 	private String				identification;
 
 	@NotBlank

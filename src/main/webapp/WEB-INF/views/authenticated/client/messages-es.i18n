@@ -18,3 +18,4 @@ authenticated.client.form.label.optionalLink= Link Opcional
 
 authenticated.client.form.button.create = Registrar
 authenticated.client.form.button.update = Actualizar
+authenticated.client.form.error.duplicated= Identificador ya existe
